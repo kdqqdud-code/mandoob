@@ -1,5 +1,8 @@
-// إعدادات Firebase لمنصة «مندوب»
-// الصق هنا الكود اللي ينسخ من: Firebase ← Project settings ← Your apps ← Web app
-// بدّل null بالكود، مثل:
-// window.MANDOOB_FIREBASE = { apiKey: "...", authDomain: "...", projectId: "...", storageBucket: "...", messagingSenderId: "...", appId: "..." };
-window.MANDOOB_FIREBASE = null;
+window.MANDOOB_FIREBASE = {
+  apiKey: "AIzaSyAUOJJqC0uaNImLiV2efaQjI5cIqgcyUaw",
+  authDomain: "mandoob-26eff.firebaseapp.com",
+  projectId: "mandoob-26eff",
+  storageBucket: "mandoob-26eff.firebasestorage.app",
+  messagingSenderId: "509985564756",
+  appId: "1:509985564756:web:720d3951cf2351f85c65c1"
+};
