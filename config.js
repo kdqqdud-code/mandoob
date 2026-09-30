@@ -1,3 +1,4 @@
+// Mandoob - Firebase web config (public by design; security is in Firestore rules)
 window.MANDOOB_FIREBASE = {
   apiKey: "AIzaSyAUOJJqC0uaNImLiV2efaQjI5cIqgcyUaw",
   authDomain: "mandoob-26eff.firebaseapp.com",

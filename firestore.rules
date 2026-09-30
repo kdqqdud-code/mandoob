@@ -1,86 +1,118 @@
 rules_version = '2';
+// Mandoob - Firestore security rules (phase 1)
 
 service cloud.firestore {
-  match /databases/{database}/documents {
-    function signedIn() {
-      return request.auth != null;
+  match /databases/{db}/documents {
+
+    function signedIn()  { return request.auth != null; }
+    function realUser()  { return signedIn() && request.auth.token.firebase.sign_in_provider != 'anonymous'; }
+    function isAdmin()   { return signedIn() && exists(/databases/$(db)/documents/admins/$(request.auth.uid)); }
+    function nowMs()     { return request.time.toMillis(); }
+
+    function validPhone(p) { return p is string && p.matches('^[79][0-9]{7}$'); }
+
+    function allKeys() {
+      return ['name','phone','email','verifiedBy','gov','wil','services','vehicle','area','times','lang',
+              'createdAt','agreedAt','status','featured','paidUntil','payHist',
+              'available','onlineUntil','lat','lng'];
+    }
+    function ownerKeys() {
+      return ['name','gov','wil','services','vehicle','area','times','lang','available','onlineUntil','lat','lng'];
     }
 
-    function isAdmin() {
-      return signedIn()
-        && exists(/databases/$(database)/documents/admins/$(request.auth.uid))
-        && get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.active == true;
+    function validProfile(d) {
+      return d.name is string && d.name.size() >= 3 && d.name.size() <= 40
+        && d.gov is string && d.gov.size() >= 2 && d.gov.size() <= 40
+        && d.wil is string && d.wil.size() >= 2 && d.wil.size() <= 40
+        && d.services is list && d.services.size() >= 1 && d.services.size() <= 4
+        && d.services.hasOnly(['food','errands','parcels','bulky'])
+        && d.vehicle in ['car','bike','pickup','van']
+        && d.area is string && d.area.size() <= 80
+        && d.times is string && d.times.size() <= 60
+        && d.lang in ['ar','en','ur'];
     }
 
-    function isOwner(uid) {
-      return signedIn() && request.auth.uid == uid;
+    function validPresence(d) {
+      return d.available is bool
+        && d.onlineUntil is int && d.onlineUntil <= nowMs() + 7260000
+        && (d.lat == null || (d.lat is number && d.lat >= 16.0 && d.lat <= 27.0))
+        && (d.lng == null || (d.lng is number && d.lng >= 51.0 && d.lng <= 60.5))
+        && (d.available == true || (d.lat == null && d.lng == null));
     }
 
-    function immutableAccountFields() {
-      return [
-        'role', 'admin', 'accountStatus', 'paymentStatus',
-        'subscriptionStart', 'subscriptionEnd', 'paidUntil',
-        'payHist', 'featured', 'suspendedAt', 'suspendedReason',
-        'createdAt', 'agreedAt', 'verifiedBy', 'email'
-      ];
-    }
-
-    match /admins/{uid} {
-      allow read: if isAdmin() || isOwner(uid);
-      allow write: if false;
+    function verifiedOk(d) {
+      return (d.verifiedBy == 'phone' && request.auth.token.phone_number == '+968' + d.phone)
+          || (d.verifiedBy == 'email' && request.auth.token.email == d.email
+              && request.auth.token.email_verified == true);
     }
 
     match /drivers/{uid} {
-      allow read: if isAdmin()
-        || (resource.data.accountStatus == 'active'
-          && resource.data.paymentStatus == 'paid'
-          && resource.data.subscriptionEnd > request.time.toMillis())
-        || isOwner(uid);
+      allow read: if resource.data.status == 'active'
+                  || (signedIn() && request.auth.uid == uid)
+                  || isAdmin();
 
-      allow create: if isOwner(uid)
-        && request.resource.data.role == 'driver'
-        && request.resource.data.accountStatus == 'pending'
-        && request.resource.data.paymentStatus == 'pending'
+      allow create: if realUser() && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(allKeys())
+        && validProfile(request.resource.data)
+        && validPresence(request.resource.data)
+        && validPhone(request.resource.data.phone)
+        && verifiedOk(request.resource.data)
+        && request.resource.data.status == 'pending'
         && request.resource.data.featured == false
+        && request.resource.data.paidUntil == null
         && request.resource.data.payHist.size() == 0
-        && request.resource.data.subscriptionStart == null
-        && request.resource.data.subscriptionEnd == null;
+        && request.resource.data.available == false
+        && request.resource.data.createdAt is int
+        && request.resource.data.createdAt > nowMs() - 600000 && request.resource.data.createdAt < nowMs() + 600000
+        && getAfter(/databases/$(db)/documents/phones/$(request.resource.data.phone)).data.uid == uid;
 
       allow update: if isAdmin()
-        || (isOwner(uid)
-          && request.resource.data.diff(resource.data).affectedKeys()
-            .hasOnly([
-              'name', 'phone', 'gov', 'wil', 'services', 'vehicle', 'area',
-              'times', 'lang', 'available', 'onlineUntil', 'lat', 'lng', 'updatedAt'
-            ])
-          && request.resource.data.role == resource.data.role
-          && request.resource.data.accountStatus == resource.data.accountStatus
-          && request.resource.data.paymentStatus == resource.data.paymentStatus
-          && request.resource.data.subscriptionEnd == resource.data.subscriptionEnd
-          && request.resource.data.paidUntil == resource.data.paidUntil
-          && request.resource.data.featured == resource.data.featured
-          && (request.resource.data.available == false
-            || (request.resource.data.available == true
-              && resource.data.accountStatus == 'active'
-              && resource.data.paymentStatus == 'paid'
-              && resource.data.subscriptionEnd > request.time.toMillis())));
+        || (realUser() && request.auth.uid == uid
+            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(ownerKeys())
+            && validProfile(request.resource.data)
+            && validPresence(request.resource.data)
+            && (request.resource.data.available == false || resource.data.status == 'active'));
 
-      allow delete: if isAdmin() || isOwner(uid);
+      allow delete: if isAdmin() || (signedIn() && request.auth.uid == uid);
     }
 
     match /phones/{phone} {
-      allow read: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
-      allow create: if signedIn()
+      allow create: if realUser() && validPhone(phone)
+        && request.resource.data.keys().hasOnly(['uid'])
         && request.resource.data.uid == request.auth.uid
-        && !exists(/databases/$(database)/documents/phones/$(phone));
-      allow update, delete: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
+        && getAfter(/databases/$(db)/documents/drivers/$(request.auth.uid)).data.phone == phone;
+      allow delete: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
+      allow read, update: if false;
     }
 
     match /msgs/{id} {
       allow create: if signedIn()
+        && request.resource.data.keys().hasOnly(['type','name','reach','text','lang','at','read','driverId','driverName','reason','by'])
+        && request.resource.data.type in ['contact','report']
         && request.resource.data.by == request.auth.uid
-        && request.resource.data.read == false;
+        && request.resource.data.read == false
+        && request.resource.data.at is int
+        && request.resource.data.name is string && request.resource.data.name.size() <= 40
+        && request.resource.data.reach is string && request.resource.data.reach.size() <= 60
+        && request.resource.data.text is string && request.resource.data.text.size() <= 600
+        && request.resource.data.driverId is string && request.resource.data.driverId.size() <= 128
+        && request.resource.data.driverName is string && request.resource.data.driverName.size() <= 40
+        && request.resource.data.reason is string && request.resource.data.reason.size() <= 40
+        && request.resource.data.lang in ['ar','en','ur'];
       allow read, update, delete: if isAdmin();
+    }
+
+    match /admins/{uid} {
+      allow read: if signedIn() && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    match /payments/{id} {
+      allow read, write: if isAdmin();
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
     }
   }
 }
