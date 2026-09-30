@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مندوب | دليل مندوبي التوصيل في عُمان</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F6F3; --surface:#FFFFFF; --ink:#13282A; --muted:#5B6E6C; --line:#DCE3E0;
+  --sea:#0E4A4F; --sea-ink:#FFFFFF; --signal:#F26A12; --signal-soft:#FFF0E5;
+  --wa:#1C9E4F; --danger:#B42318; --ok:#1C7C45; --scrim:rgba(10,25,26,.55);
+  --radius:14px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1716; --surface:#15211F; --ink:#E7EFEC; --muted:#93A7A3; --line:#26332F;
+    --sea:#12585E; --signal:#FF7A26; --signal-soft:#2E1E12; --wa:#27B35E; --danger:#F0776B; --ok:#4CC27E; --scrim:rgba(0,0,0,.65);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1716; --surface:#15211F; --ink:#E7EFEC; --muted:#93A7A3; --line:#26332F;
+  --sea:#12585E; --signal:#FF7A26; --signal-soft:#2E1E12; --wa:#27B35E; --danger:#F0776B; --ok:#4CC27E; --scrim:rgba(0,0,0,.65);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Readex Pro","Noto Sans Arabic","Segoe UI",Tahoma,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body.lock{overflow:hidden}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px}
+
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:8px}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:1.25rem}
+.brand .pin{width:24px;height:24px;border-radius:50% 50% 50% 4px;background:var(--signal);transform:rotate(45deg);display:grid;place-items:center;flex:none}
+.brand .pin::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--bg)}
+.clock{border-top:1px solid var(--line);font-size:.8rem;color:var(--muted)}
+.clock .wrap{display:flex;justify-content:space-between;align-items:center;height:30px}
+.clock b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+.brand small{font-weight:400;font-size:.78rem;color:var(--muted)}
+.head-actions{display:flex;gap:6px;align-items:center}
+.terms-btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;border:1.5px solid var(--line);border-radius:10px;padding:6px 10px;font-size:.8rem;font-weight:500;min-height:38px;background:var(--surface)}
+.terms-btn svg{width:18px;height:18px;flex:none}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:10px;padding:11px 18px;font-weight:600;cursor:pointer;text-decoration:none;font-size:.95rem;min-height:46px}
+.btn-signal{background:var(--signal);color:#fff}
+.btn-sea{background:var(--sea);color:var(--sea-ink)}
+.btn-ghost{background:transparent;border:1.5px solid var(--line)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-sm{padding:7px 12px;min-height:38px;font-size:.85rem;border-radius:8px}
+.btn-block{width:100%}
+.btn-danger{background:transparent;border:1.5px solid var(--danger);color:var(--danger)}
+.btn-ok{background:var(--ok);color:#fff}
+.btn[disabled]{opacity:.55;cursor:not-allowed}
+.linkish{background:none;border:0;padding:0;color:var(--sea);text-decoration:underline;cursor:pointer;font-size:.9rem}
+:root:not([data-theme="light"]) .linkish{color:inherit}
+
+.hero{padding:26px 0 8px}
+.hero h1{font-size:clamp(1.65rem,6vw,2.5rem);line-height:1.25;margin:0 0 6px;font-weight:700;letter-spacing:-.02em}
+.hero p.lead{margin:0 0 18px;color:var(--muted);max-width:52ch}
+.sign{background:var(--sea);color:var(--sea-ink);border-radius:18px;padding:6px}
+.sign-inner{border:2px solid rgba(255,255,255,.85);border-radius:13px;padding:18px 16px 16px}
+.sign-q{font-size:clamp(1.2rem,4.5vw,1.55rem);font-weight:600;margin:0 0 14px;display:flex;align-items:center;gap:10px}
+.sign-q .arrow{display:inline-block;width:0;height:0;border-top:9px solid transparent;border-bottom:9px solid transparent;border-right:13px solid var(--signal)}
+.sign-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sign label{display:block;font-size:.8rem;opacity:.8;margin-bottom:4px}
+.sign select{width:100%;appearance:none;-webkit-appearance:none;background-color:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.35);color:#fff;border-radius:10px;padding:12px 12px 12px 30px;font-size:1.05rem;font-weight:500;min-height:48px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-position:12px center;background-size:16px 16px;background-repeat:no-repeat}
+.sign select option{color:#13282A}
+
+.choices{display:grid;gap:10px}
+.choice{display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.35);border-radius:12px;padding:14px;text-decoration:none;color:#fff;min-height:78px}
+.choice.primary{background:var(--signal);border-color:var(--signal)}
+.choice .ic{font-size:1.9rem;line-height:1;flex:none}
+.choice b{display:block;font-size:1.12rem;font-weight:600}
+.choice small{display:block;opacity:.85;font-size:.85rem}
+.choice .go{margin-inline-start:auto;font-size:1.3rem;opacity:.8}
+.sum{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px;margin-bottom:16px;font-size:.9rem}
+.sum-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.sum p{margin:2px 0;color:var(--muted)}
+.list-title{font-size:1.2rem;margin:0}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0 4px;padding:0;list-style:none;counter-reset:s}
+.how li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px;font-size:.82rem;counter-increment:s;line-height:1.45}
+.how li::before{content:counter(s);display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--signal);color:#fff;font-weight:700;font-size:.75rem;margin-bottom:4px}
+
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 6px}
+.chip{border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 14px;font-size:.88rem;cursor:pointer;min-height:38px;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip.now[aria-pressed="true"]{background:var(--ok);border-color:var(--ok);color:#fff}
+.count{color:var(--muted);font-size:.9rem;margin:10px 0 12px;min-height:1em}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-bottom:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;display:flex;flex-direction:column;gap:10px}
+.card.featured{border:2px solid var(--signal)}
+.card .top-row{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.card h3{margin:0;font-size:1.1rem;font-weight:600}
+.card .where{color:var(--muted);font-size:.9rem}
+.badges{display:flex;gap:4px;flex-direction:column;align-items:flex-end}
+.badge{font-size:.72rem;border-radius:6px;padding:2px 8px;font-weight:600;white-space:nowrap}
+.badge.feat{background:var(--signal);color:#fff}
+.badge.demo{background:var(--line);color:var(--muted)}
+.badge.ver{background:transparent;border:1px solid var(--ok);color:var(--ok)}
+.status{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;color:var(--muted)}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--muted);display:inline-block}
+.status.on{color:var(--ok)} .status.on i{background:var(--ok)}
+.meta{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:.8rem;background:var(--bg);border-radius:6px;padding:3px 9px}
+.line-info{font-size:.88rem}
+.report{background:none;border:0;color:var(--muted);font-size:.78rem;text-decoration:underline;cursor:pointer;align-self:flex-start;padding:4px 0}
+.empty{background:var(--surface);border:1.5px dashed var(--line);border-radius:var(--radius);padding:28px 20px;text-align:center;margin-bottom:18px;grid-column:1/-1}
+.empty h3{margin:0 0 6px}
+.empty p{margin:0 0 14px;color:var(--muted)}
+.fine{font-size:.82rem;color:var(--muted);margin:0 0 26px}
+.fine a{color:var(--ink)}
+
+footer{border-top:1px solid var(--line);padding:22px 0 30px;color:var(--muted);font-size:.85rem}
+footer .links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+footer a{text-decoration:none;color:var(--ink)}
+
+.page{padding-top:24px;padding-bottom:40px}
+.page h1{font-size:clamp(1.45rem,5vw,2rem);margin:0 0 6px;line-height:1.3}
+.page .sub{color:var(--muted);margin:0 0 18px}
+.form{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;display:grid;gap:16px;max-width:620px}
+.lbl{display:block;font-weight:500;margin-bottom:6px;font-size:.95rem}
+.hint{font-size:.8rem;color:var(--muted);margin-top:4px}
+.inp,.form select,.sheet select{width:100%;border:1.5px solid var(--line);background:var(--bg);border-radius:10px;padding:11px 12px;min-height:46px;font-size:1rem}
+textarea.inp{min-height:84px;resize:vertical}
+.inp[readonly]{opacity:.7}
+.phone-row{display:flex;gap:8px;direction:ltr}
+.phone-row span{display:flex;align-items:center;padding:0 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);font-weight:500}
+.phone-row input{flex:1;text-align:left}
+.ltr{direction:ltr;text-align:left}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.checks{display:flex;flex-wrap:wrap;gap:8px}
+.checks label{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--line);border-radius:999px;padding:6px 12px;font-size:.88rem;cursor:pointer}
+.checks input,.plan input{accent-color:var(--signal)}
+.plans{display:grid;gap:10px}
+.plan{display:flex;gap:12px;align-items:center;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer}
+.plan:has(input:checked){border-color:var(--signal);background:var(--signal-soft)}
+.plan b{display:block}
+.plan small{color:var(--muted)}
+.plan .price{margin-inline-start:auto;font-weight:600;white-space:nowrap}
+.free-banner{background:var(--ok);color:#fff;border-radius:10px;padding:10px 14px;font-weight:500}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:.9rem}
+.agree input{margin-top:5px;accent-color:var(--signal);width:18px;height:18px;flex:none}
+.err{color:var(--danger);font-size:.85rem;margin-top:4px}
+.err:empty{display:none}
+.done{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 18px;max-width:620px}
+.done ol{padding-inline-start:20px;margin:12px 0 18px}
+.steps-bar{display:flex;gap:6px;margin:0 0 14px;max-width:620px}
+.steps-bar span{flex:1;height:5px;border-radius:3px;background:var(--line)}
+.steps-bar span.on{background:var(--signal)}
+
+/* OTP */
+.seg{display:grid;grid-template-columns:1fr 1fr;border:1.5px solid var(--line);border-radius:12px;padding:4px;gap:4px}
+.seg button{border:0;background:transparent;border-radius:9px;min-height:42px;font-weight:500;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--sea);color:var(--sea-ink)}
+.code-inp{font-size:1.5rem;letter-spacing:.5em;text-align:center;direction:ltr;font-weight:600}
+.demo-code{background:var(--signal-soft);border:1px dashed var(--signal);border-radius:10px;padding:10px 12px;font-size:.85rem}
+.demo-code b{font-size:1.1rem;letter-spacing:.15em;direction:ltr;display:inline-block}
+.verified{display:flex;align-items:center;gap:8px;color:var(--ok);font-weight:500;font-size:.92rem}
+
+/* terms */
+.terms{max-width:68ch}
+.terms h2{font-size:1.08rem;margin:20px 0 6px}
+.terms-tabs{display:flex;gap:6px;margin:0 0 6px;flex-wrap:wrap}
+.terms-sec p,.terms-sec li{margin:0 0 8px}
+
+/* sheet */
+.sheet-wrap{position:fixed;inset:0;z-index:40;background:var(--scrim);display:flex;align-items:flex-end;justify-content:center}
+.sheet{background:var(--surface);width:100%;max-width:560px;max-height:92%;overflow-y:auto;border-radius:18px 18px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom,0px))}
+@media (min-width:640px){.sheet-wrap{align-items:center}.sheet{border-radius:18px;max-height:88%}}
+.sheet-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:12px}
+.sheet-head h2{margin:0;font-size:1.2rem}
+.sheet-head p{margin:2px 0 0;color:var(--muted);font-size:.88rem}
+.x{border:0;background:var(--bg);border-radius:50%;width:38px;height:38px;font-size:1.2rem;cursor:pointer;flex:none}
+.sheet .form{border:0;padding:0;max-width:none}
+.loc-row{display:flex;gap:8px}
+.loc-row .inp{flex:1}
+.loc-ok{font-size:.82rem;color:var(--ok);margin-top:4px}
+
+/* account/admin */
+.acct{max-width:620px;display:grid;gap:12px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.box h2{margin:0 0 6px;font-size:1.1rem}
+.st{display:inline-block;border-radius:8px;padding:3px 10px;font-size:.85rem;font-weight:600}
+.st.active{background:color-mix(in srgb,var(--ok) 15%,transparent);color:var(--ok)}
+.st.pending{background:var(--signal-soft);color:var(--signal)}
+.st.off{background:var(--line);color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px}
+.stat b{display:block;font-size:1.35rem}
+.stat span{font-size:.8rem;color:var(--muted)}
+.tabs{display:flex;gap:6px;margin:10px 0 12px;overflow-x:auto;padding-bottom:4px}
+.row{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:10px}
+.row .r-head{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.row .r-meta{font-size:.85rem;color:var(--muted);margin:4px 0 10px}
+.row .r-actions{display:flex;flex-wrap:wrap;gap:6px}
+
+/* شريط التنقل السفلي */
+body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
+.bnav{position:fixed;bottom:0;left:0;right:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);display:grid;grid-template-columns:repeat(4,1fr)}
+.bnav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:8px 2px;min-height:60px;font-size:.72rem;text-decoration:none;color:var(--muted)}
+.bnav a svg{width:23px;height:23px}
+.bnav a[aria-current="page"]{color:var(--signal);font-weight:600}
+@media (min-width:760px){.bnav{max-width:520px;margin:0 auto;border:1px solid var(--line);border-bottom:0;border-radius:16px 16px 0 0}}
+/* الرادار */
+.radar-card{background:var(--sea);color:#fff;border-radius:18px;padding:14px 14px 10px;margin:0 0 16px}
+.radar-card h3{margin:0;font-size:1.02rem;font-weight:600;display:flex;align-items:center;gap:8px}
+.radar-card .live{width:9px;height:9px;border-radius:50%;background:#4ADE80;box-shadow:0 0 0 4px rgba(74,222,128,.25)}
+.radar-card p{margin:2px 0 0;font-size:.8rem;opacity:.8}
+.radar{display:block;width:100%;max-width:340px;height:auto;margin:6px auto 0;touch-action:manipulation}
+.radar .dotg{cursor:pointer}
+.sweep{animation:spin 5s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.pulse{animation:pulse 2s ease-out infinite;transform-origin:0 0}
+@keyframes pulse{from{transform:scale(.6);opacity:.9}to{transform:scale(2.4);opacity:0}}
+.radar-cta{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-top:8px}
+.radar-cta .btn{background:#fff;color:var(--sea)}
+.card.flash{animation:flash 1.2s ease-out}
+@keyframes flash{0%{box-shadow:0 0 0 4px var(--signal)}100%{box-shadow:0 0 0 0 transparent}}
+.dist{font-weight:600;color:var(--ink)}
+/* زر متصل الآن */
+.online-btn{width:100%;display:flex;align-items:center;gap:14px;border:2px solid var(--line);background:var(--surface);border-radius:16px;padding:16px;cursor:pointer;text-align:start}
+.online-btn .dot{width:22px;height:22px;border-radius:50%;background:var(--muted);flex:none;transition:box-shadow .2s}
+.online-btn b{display:block;font-size:1.08rem}
+.online-btn small{display:block;color:var(--muted);font-size:.82rem}
+.online-btn.on{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 10%,var(--surface))}
+.online-btn.on .dot{background:var(--ok);box-shadow:0 0 0 6px color-mix(in srgb,var(--ok) 25%,transparent)}
+.hidden{display:none!important}
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:10px;font-size:.9rem;z-index:60;opacity:0;pointer-events:none;transition:opacity .2s;max-width:90vw;text-align:center}
+.toast.show{opacity:1}
+@media (max-width:420px){.sign-grid,.two{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.terms-btn .t-long{display:none}}
+@media (min-width:421px){.terms-btn .t-short{display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* الدفع */
+.price-box{display:flex;align-items:center;gap:12px;background:var(--signal-soft);border:1.5px solid var(--signal);border-radius:12px;padding:12px 14px}
+.price-box .amt{font-size:1.5rem;font-weight:700;white-space:nowrap}
+.price-box small{display:block;color:var(--muted);font-size:.82rem}
+.pay-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 18px;max-width:620px;display:grid;gap:12px}
+.pay-amt{font-size:2.2rem;font-weight:700;text-align:center;margin:4px 0}
+.pay-amt small{font-size:1rem;font-weight:500;color:var(--muted)}
+.pay-lines{list-style:none;padding:0;margin:0;display:grid;gap:6px;font-size:.92rem}
+.pay-lines li::before{content:"✓ ";color:var(--ok);font-weight:700}
+.secure{font-size:.8rem;color:var(--muted);text-align:center}
+.done:has(.pay-card){background:none;border:0;padding:0}
+.renew-box{border:1.5px solid var(--signal);background:var(--signal-soft)}
+/* شاشة الترحيب */
+.splash{position:fixed;inset:0;z-index:65;background:radial-gradient(120% 80% at 50% 0%,#15666C 0%,var(--sea) 55%,#08302F 100%);color:#fff;display:flex;align-items:center;justify-content:center;padding:calc(24px + env(safe-area-inset-top,0px)) 22px calc(24px + env(safe-area-inset-bottom,0px));overflow-y:auto;animation:fadeIn .4s ease-out}
+.splash-in{width:100%;max-width:400px;text-align:center}
+.splash .pin-xl{width:58px;height:58px;border-radius:50% 50% 50% 6px;background:var(--signal);transform:rotate(45deg);display:inline-grid;place-items:center;animation:drop .7s cubic-bezier(.2,1.4,.4,1) both;box-shadow:0 10px 30px rgba(242,106,18,.35)}
+.splash .pin-xl::after{content:"";width:20px;height:20px;border-radius:50%;background:var(--sea)}
+.splash h1{font-size:2.1rem;margin:18px 0 2px;font-weight:700;letter-spacing:-.02em;animation:up .6s .15s ease-out both}
+.splash .sp-tag{margin:0 0 26px;opacity:.8;animation:up .6s .25s ease-out both}
+.sp-row{display:flex;gap:14px;align-items:center;text-align:start;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:14px 16px;margin-bottom:10px;animation:up .6s ease-out both}
+.sp-row:nth-of-type(1){animation-delay:.4s}.sp-row:nth-of-type(2){animation-delay:.6s}
+.sp-row .ic{font-size:1.8rem;flex:none}
+.sp-row b{display:block;font-size:1.02rem}
+.sp-row small{display:block;opacity:.78;font-size:.85rem}
+.sp-row.drv{border-color:rgba(242,106,18,.6);background:rgba(242,106,18,.12)}
+.pill{display:inline-block;margin-top:6px;background:var(--signal);color:#fff;border-radius:999px;padding:3px 12px;font-size:.82rem;font-weight:600}
+.sp-bar{height:4px;background:rgba(255,255,255,.18);border-radius:3px;overflow:hidden;margin:22px auto 14px;max-width:220px}
+.sp-bar i{display:block;height:100%;width:0;background:#fff;border-radius:3px;animation:fill 5s linear forwards}
+.sp-skip{background:#fff;color:var(--sea);border:0;border-radius:12px;padding:12px 28px;font-weight:600;font-family:inherit;font-size:1rem;cursor:pointer;min-height:48px}
+@keyframes fill{to{width:100%}}
+@keyframes fadeIn{from{opacity:0}}
+@keyframes up{from{opacity:0;transform:translateY(12px)}}
+@keyframes drop{from{opacity:0;transform:rotate(45deg) translate(-30px,-30px)}}
+.choice .pill{margin-top:6px}
+/* افتتاح بإشعارات */
+.boot{position:fixed;inset:0;z-index:65;background:radial-gradient(120% 70% at 50% 0%,#17707A 0%,var(--sea) 50%,#072B2A 100%);color:#fff;display:flex;flex-direction:column;padding:calc(18px + env(safe-area-inset-top,0px)) 18px calc(18px + env(safe-area-inset-bottom,0px));animation:fadeIn .4s ease-out}
+.boot-head{text-align:center;padding-top:4vh}
+.boot-head .pin-xl{width:54px;height:54px;border-radius:50% 50% 50% 6px;background:var(--signal);transform:rotate(45deg);display:inline-grid;place-items:center;animation:drop .7s cubic-bezier(.2,1.4,.4,1) both;box-shadow:0 10px 30px rgba(242,106,18,.4)}
+.boot-head .pin-xl::after{content:"";width:18px;height:18px;border-radius:50%;background:var(--sea)}
+.boot-head h1{font-size:2rem;margin:14px 0 0;font-weight:700;letter-spacing:-.02em;animation:up .6s .15s ease-out both}
+.boot-head p{margin:2px 0 0;opacity:.75;font-size:.92rem;animation:up .6s .25s ease-out both}
+.notifs{flex:1;display:flex;flex-direction:column;gap:9px;justify-content:center;width:100%;max-width:420px;margin:18px auto;overflow:hidden}
+.nt{display:flex;gap:12px;align-items:center;background:rgba(255,255,255,.93);color:#13282A;border-radius:18px;padding:11px 13px;box-shadow:0 8px 24px rgba(0,0,0,.22);animation:notif .55s cubic-bezier(.2,1.2,.4,1) both;text-align:start}
+.nt .ap{width:38px;height:38px;border-radius:10px;background:var(--sea);display:grid;place-items:center;font-size:1.2rem;flex:none}
+.nt.hot .ap{background:var(--signal)}
+.nt .tx{flex:1;min-width:0}
+.nt .tx b{display:block;font-size:.93rem}
+.nt .tx small{display:block;font-size:.8rem;color:#5B6E6C;line-height:1.45}
+.nt .tm{font-size:.7rem;color:#8A9A98;align-self:flex-start;white-space:nowrap}
+.nt.hot{outline:2px solid var(--signal)}
+@keyframes notif{from{opacity:0;transform:translateY(-18px) scale(.96)}}
+.boot-foot{width:100%;max-width:420px;margin:0 auto}
+.boot-status{display:flex;justify-content:space-between;font-size:.82rem;opacity:.85;margin-bottom:8px}
+.boot-line{height:5px;background:rgba(255,255,255,.18);border-radius:4px;overflow:hidden}
+.boot-line i{display:block;height:100%;width:0;background:linear-gradient(90deg,#fff,#FFD2B0);border-radius:4px;transition:width .25s linear}
+.boot-skip{display:block;margin:12px auto 0;background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:999px;padding:7px 18px;font-size:.82rem;font-family:inherit;cursor:pointer;min-height:36px}
+@media (max-height:640px){.boot-head{padding-top:0}.boot-head h1{font-size:1.6rem}.nt .tx small{display:none}}
+.fee-chip{background:color-mix(in srgb,var(--ok) 10%,var(--surface));border:1px solid color-mix(in srgb,var(--ok) 35%,transparent);border-radius:12px;padding:10px 12px;font-size:.88rem;font-weight:500}
+/* افتتاح بمشهدين */
+.boot-head.sm{padding-top:3vh}
+.boot-head.sm .pin-xl{width:40px;height:40px}
+.boot-head.sm .pin-xl::after{width:13px;height:13px}
+.boot-head.sm h1{font-size:1.5rem;margin-top:10px}
+.scenes{flex:1;position:relative;width:100%;max-width:420px;margin:0 auto;min-height:260px}
+.scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;opacity:0;transform:translateY(16px) scale(.98);transition:opacity .7s ease,transform .7s ease;pointer-events:none}
+.scene.on{opacity:1;transform:none}
+.scene .orb{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;font-size:3.1rem;background:rgba(255,255,255,.1);box-shadow:0 0 0 12px rgba(255,255,255,.05),0 0 0 26px rgba(255,255,255,.03);margin-bottom:26px}
+.scene.drv .orb{background:var(--signal);box-shadow:0 0 0 12px rgba(242,106,18,.18),0 0 0 26px rgba(242,106,18,.08)}
+.scene.on .orb{animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.scene h2{margin:0;font-size:1.9rem;font-weight:700;letter-spacing:-.01em}
+.scene p{margin:8px 0 0;font-size:1.15rem;opacity:.85}
+.dots{display:flex;gap:6px;justify-content:center;margin-bottom:16px}
+.dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.3);transition:all .4s}
+.dots i.on{width:22px;border-radius:4px;background:#fff}
+/* خطوات بعناوين */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:0 0 16px;max-width:620px;list-style:none;padding:0}
+.steps li{font-size:.78rem;color:var(--muted);text-align:center}
+.steps li::before{content:"";display:block;height:5px;border-radius:3px;background:var(--line);margin-bottom:6px}
+.steps li.on{color:var(--ink);font-weight:600}
+.steps li.on::before{background:var(--signal)}
+/* إشعار نجاح الدفع */
+.notice-sheet{text-align:center;padding-top:26px}
+.notice-sheet h2{margin:12px 0 6px;font-size:1.3rem}
+.notice-sheet p{margin:0 0 18px;color:var(--muted);line-height:1.8}
+.check-anim{width:76px;height:76px;margin:0 auto}
+.check-anim circle{fill:none;stroke:var(--ok);stroke-width:4;stroke-dasharray:226;stroke-dashoffset:226;animation:draw .6s ease-out forwards}
+.check-anim path{fill:none;stroke:var(--ok);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:60;stroke-dashoffset:60;animation:draw .4s .5s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.paid-chip{display:inline-flex;align-items:center;gap:6px;background:color-mix(in srgb,var(--ok) 12%,transparent);color:var(--ok);border-radius:999px;padding:4px 12px;font-size:.85rem;font-weight:600}
+.terms-sheet .terms h2{font-size:1rem}
+/* اختيار اللغة */
+.lang-wrap{position:fixed;inset:0;z-index:70;background:var(--sea);display:flex;align-items:center;justify-content:center;padding:calc(24px + env(safe-area-inset-top,0px)) 20px calc(24px + env(safe-area-inset-bottom,0px));overflow-y:auto}
+.lang-box{width:100%;max-width:420px;color:#fff;text-align:center}
+.lang-logo{display:inline-flex;align-items:center;gap:12px;font-size:1.5rem;font-weight:700}
+.lang-logo .pin{width:30px;height:30px;border-radius:50% 50% 50% 4px;background:var(--signal);transform:rotate(45deg);display:grid;place-items:center}
+.lang-logo .pin::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--sea)}
+.lang-box h2{font-size:1.05rem;font-weight:500;line-height:1.9;margin:16px 0 22px;opacity:.9}
+.lang-opt{display:flex;align-items:center;gap:14px;width:100%;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.35);color:#fff;border-radius:14px;padding:14px 18px;margin-bottom:12px;font-size:1.2rem;font-weight:600;cursor:pointer;min-height:66px;font-family:inherit}
+.lang-opt .flag{font-size:2rem;line-height:1}
+.lang-opt small{margin-inline-start:auto;font-weight:400;opacity:.7;font-size:.85rem}
+.lang-opt[aria-pressed="true"]{background:var(--signal);border-color:var(--signal)}
+.flag-sm{font-size:1.1rem;line-height:1}
+#langBtn{cursor:pointer;font-family:inherit}
+/* اتجاه اليسار لليمين */
+[dir="ltr"] .sign-q .arrow{border-right:0;border-left:13px solid var(--signal)}
+[dir="ltr"] .sign select{background-position:calc(100% - 12px) center;padding:12px 30px 12px 12px}
+[lang="ur"] body{line-height:1.85}
+</style>
+</head>
+<body>
+
+<!-- اختيار اللغة -->
+<div class="lang-wrap hidden" id="langGate" role="dialog" aria-modal="true" aria-labelledby="langTitle">
+  <div class="lang-box">
+    <div class="lang-logo"><span class="pin lg" aria-hidden="true"></span><span>مندوب · Mandoob</span></div>
+    <h2 id="langTitle">اختر لغتك<br>Choose your language<br>اپنی زبان منتخب کریں</h2>
+    <button type="button" class="lang-opt" data-l="ar"><span class="flag" aria-hidden="true">🇴🇲</span>العربية<small>Arabic</small></button>
+    <button type="button" class="lang-opt" data-l="en"><span class="flag" aria-hidden="true">🇬🇧</span>English<small>إنجليزي</small></button>
+    <button type="button" class="lang-opt" data-l="ur"><span class="flag" aria-hidden="true">🇵🇰</span>اردو<small>Urdu</small></button>
+  </div>
+</div>
+
+<!-- شاشة الافتتاح -->
+<div class="boot hidden" id="splash" role="dialog" aria-modal="true" aria-labelledby="spTitle">
+  <div class="boot-head sm">
+    <span class="pin-xl" aria-hidden="true"></span>
+    <h1 id="spTitle" class="brandText"></h1>
+  </div>
+  <div class="scenes" aria-live="polite">
+    <div class="scene" id="sc1"><span class="orb" aria-hidden="true">📦</span><h2 data-i18n="sc1t"></h2><p data-i18n="sc1s"></p></div>
+    <div class="scene drv" id="sc2"><span class="orb" aria-hidden="true">🛵</span><h2 data-i18n="sc2t"></h2><p data-i18n="sc2s"></p></div>
+  </div>
+  <div class="boot-foot">
+    <div class="dots" aria-hidden="true"><i id="dt1"></i><i id="dt2"></i></div>
+    <div class="boot-line" role="progressbar" aria-valuemin="0" aria-valuemax="100"><i id="bootBar"></i></div>
+    <button type="button" class="boot-skip" id="spSkip" data-i18n="spSkip"></button>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#home"><span class="pin" aria-hidden="true"></span><span class="brandText"></span> <small data-i18n="oman"></small></a>
+    <div class="head-actions">
+      <button type="button" class="terms-btn" id="langBtn" data-i18n-aria="changeLang"><span class="flag-sm" id="langFlag"></span><span id="langCode"></span></button>
+      <a class="terms-btn" href="#terms" data-i18n-aria="terms">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>
+        <span class="t-long" data-i18n="terms"></span><span class="t-short" data-i18n="termsShort"></span>
+      </a>
+    </div>
+  </div>
+  <div class="clock"><div class="wrap"><span id="clkDate"></span><span>🕒 <span data-i18n="muscatTime"></span> <b id="clkTime"></b></span></div></div>
+</header>
+
+<main>
+<!-- البوابة -->
+<section id="view-home" class="wrap">
+  <div class="hero">
+    <h1 id="helloTitle"></h1>
+    <p class="lead" data-i18n="homeLead"></p>
+    <div class="sign"><div class="sign-inner">
+      <p class="sign-q"><span class="arrow" aria-hidden="true"></span><span data-i18n="whatToday"></span></p>
+      <div class="choices">
+        <a class="choice primary" href="#order"><span class="ic" aria-hidden="true">📦</span><span><b data-i18n="chCust"></b><small data-i18n="chCustSub"></small></span><span class="go" aria-hidden="true" data-i18n="goArrow"></span></a>
+        <a class="choice" href="#join"><span class="ic" aria-hidden="true">🛵</span><span><b data-i18n="chDrv"></b><small data-i18n="chDrvSub"></small></span><span class="go" aria-hidden="true" data-i18n="goArrow"></span></a>
+      </div>
+    </div></div>
+    <p style="margin:14px 0 0;font-size:.9rem"><span data-i18n="haveDrv"></span> <a href="#account" data-i18n="loginLink"></a></p>
+    <div class="fee-chip feeTxt" style="margin-top:14px"></div>
+    <ol class="how"><li data-i18n="how1"></li><li data-i18n="how2"></li><li data-i18n="how3"></li></ol>
+  </div>
+  <p class="fine"><span data-i18n="fine"></span> <a href="#terms" data-i18n="terms"></a></p>
+</section>
+
+<!-- طلب توصيل -->
+<section id="view-order" class="wrap page hidden">
+  <div id="ordStep1">
+    <h1 data-i18n="ordTitle"></h1>
+    <p class="sub" data-i18n="ordSub"></p>
+    <div class="steps-bar" aria-hidden="true"><span class="on"></span><span></span></div>
+    <form class="form" id="orderForm" novalidate>
+      <div><label class="lbl" for="oName" data-i18n="yourName"></label><input class="inp" type="text" id="oName" maxlength="40" autocomplete="name"><div class="err" id="eoName"></div></div>
+      <div class="two">
+        <div><label class="lbl" for="oGov" data-i18n="gov"></label><select id="oGov"></select></div>
+        <div><label class="lbl" for="oWil" data-i18n="wil"></label><select id="oWil"></select></div>
+      </div>
+      <div><label class="lbl" for="oWhat" data-i18n="what"></label><textarea class="inp" id="oWhat" maxlength="400" data-i18n-ph="whatPh"></textarea><div class="err" id="eoWhat"></div></div>
+      <div><label class="lbl" for="oFrom" data-i18n="from"></label><input class="inp" type="text" id="oFrom" maxlength="120" data-i18n-ph="fromPh"><div class="err" id="eoFrom"></div></div>
+      <div><label class="lbl" for="oTo" data-i18n="to"></label>
+        <div class="loc-row"><input class="inp" type="text" id="oTo" maxlength="120" data-i18n-ph="toPh"><button type="button" class="btn btn-ghost btn-sm" id="oLoc" data-i18n="myLoc"></button></div>
+        <div class="loc-ok hidden" id="oLocOk" data-i18n="locOk"></div><div class="err" id="eoTo"></div></div>
+      <div><label class="lbl" for="oWhen" data-i18n="when"></label><select id="oWhen"></select></div>
+      <div><label class="lbl" for="oNote" data-i18n="note"></label><input class="inp" type="text" id="oNote" maxlength="150" data-i18n-ph="notePh"></div>
+      <div class="fee-chip feeTxt"></div>
+      <p class="hint" style="margin:0" data-i18n="privacyHint"></p>
+      <button class="btn btn-signal" type="submit" data-i18n="showDrivers"></button>
+    </form>
+  </div>
+  <div id="ordStep2" class="hidden">
+    <div class="steps-bar" aria-hidden="true"><span class="on"></span><span class="on"></span></div>
+    <div class="sum"><div class="sum-head"><b data-i18n="yourOrder"></b><button type="button" class="linkish" id="ordEdit" data-i18n="edit"></button></div><div id="ordSum"></div></div>
+    <div id="radarBox"></div>
+    <h2 class="list-title" id="ordTitle"></h2>
+    <div class="filters" id="fServices" role="group"></div>
+    <p class="count" id="count"></p>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- التسجيل -->
+<section id="view-join" class="wrap page hidden">
+  <h1 data-i18n="joinTitle"></h1>
+  <p class="sub" data-i18n="joinSub2"></p>
+  <ol class="steps" aria-label="steps"><li id="sb1" class="on" data-i18n="stepVerify"></li><li id="sb2" data-i18n="stepPay"></li><li id="sb3" data-i18n="stepData"></li></ol>
+  <div id="joinVerify" class="form"></div>
+  <div id="joinPay" class="hidden"></div>
+  <form class="form hidden" id="joinForm" novalidate>
+    <span class="paid-chip" id="joinPaidChip"></span>
+    <div class="verified" id="joinVerified"></div>
+    <div><label class="lbl" for="jName" data-i18n="name"></label><input class="inp" type="text" id="jName" maxlength="40" autocomplete="name"><div class="err" id="eName"></div></div>
+    <div><label class="lbl" for="jPhone" data-i18n="waNum"></label>
+      <div class="phone-row"><span>+968</span><input class="inp" type="tel" id="jPhone" inputmode="numeric" maxlength="12" placeholder="9XXXXXXX"></div>
+      <div class="err" id="ePhone"></div></div>
+    <div class="two">
+      <div><label class="lbl" for="jGov" data-i18n="gov"></label><select id="jGov"></select></div>
+      <div><label class="lbl" for="jWil" data-i18n="wil"></label><select id="jWil"></select></div>
+    </div>
+    <div><span class="lbl" data-i18n="svcType"></span><div class="checks" id="jServices"></div><div class="err" id="eServices"></div></div>
+    <div><label class="lbl" for="jVehicle" data-i18n="vehicle"></label><select id="jVehicle"></select></div>
+    <div><label class="lbl" for="jArea" data-i18n="area"></label><input class="inp" type="text" id="jArea" maxlength="80" data-i18n-ph="areaPh"></div>
+    <div><label class="lbl" for="jTimes" data-i18n="times"></label><input class="inp" type="text" id="jTimes" maxlength="60" data-i18n-ph="timesPh"></div>
+    <label class="agree"><input type="checkbox" id="jAgree"><span data-i18n-html="agree"></span></label>
+    <div class="err" id="eAgree"></div>
+    <button class="btn btn-signal" type="submit" data-i18n="publishAd"></button>
+  </form>
+  <div class="done hidden" id="joinDone"></div>
+  <p style="margin-top:16px"><span data-i18n="haveAcct"></span> <a href="#account" data-i18n="loginLink"></a></p>
+</section>
+
+<!-- حساب المندوب -->
+<section id="view-account" class="wrap page hidden">
+  <h1 data-i18n="acctTitle"></h1>
+  <p class="sub" id="acctSub" data-i18n-html="acctSub"></p>
+  <div id="acctLogin" class="form"></div>
+  <div id="acctPanel" class="acct hidden"></div>
+</section>
+
+<!-- الشروط -->
+<section id="view-terms" class="wrap page hidden">
+  <div class="terms">
+    <h1 data-i18n="terms"></h1>
+    <p class="sub" data-i18n="termsSub"></p>
+    <div class="terms-tabs" id="termsTabs">
+      <button type="button" class="chip" data-t="terms" aria-pressed="true" data-i18n="terms"></button>
+      <button type="button" class="chip" data-t="privacy" aria-pressed="false" data-i18n="tPriv"></button>
+    </div>
+    <div class="terms-sec" id="termsBody"></div>
+    <p class="hint" id="termsPrevail"></p>
+  </div>
+</section>
+
+<!-- الإدارة (بالعربي دائماً) -->
+<section id="view-admin" class="wrap page hidden" dir="rtl" lang="ar">
+  <h1>لوحة الإدارة</h1>
+  <div class="box hidden" id="adminLocal"><p style="margin:0">لوحة الإدارة تشتغل بس بعد ربط Firebase، وبتسجيل دخول مدير حقيقي. في وضع المعاينة ما فيه لوحة إدارة.</p></div>
+  <form class="form hidden" id="pinForm" novalidate>
+    <div><label class="lbl" for="admPass">كلمة مرور الإدارة</label><input class="inp ltr" type="password" id="admPass" autocomplete="current-password" autocapitalize="off" autocorrect="off" spellcheck="false"><label class="hint" style="display:flex;gap:8px;align-items:center;margin-top:8px"><input type="checkbox" id="admShow"> إظهار كلمة المرور</label></div>
+    <div class="err" id="ePin"></div>
+    <button class="btn btn-sea" type="submit">دخول</button>
+    <button class="linkish" type="button" id="admForgot">نسيت كلمة المرور؟</button>
+    <div class="hint hidden" id="admResetMsg" aria-live="polite"></div>
+  </form>
+  <div class="box hidden" id="adminDenied"><p style="margin:0 0 10px">هذا الحساب ما عنده صلاحية إدارة.</p><button type="button" class="btn btn-ghost btn-sm" id="admOut2">تسجيل خروج</button></div>
+  <div id="adminPanel" class="hidden">
+    <p style="margin:0 0 8px"><button type="button" class="btn btn-ghost btn-sm" id="admOut">تسجيل خروج المدير</button></p>
+    <div class="stats" id="stats"></div>
+    <div class="tabs" id="adminTabs"></div>
+    <div id="adminList"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© <span id="yr"></span> <span class="brandText"></span>. <span data-i18n="copy"></span> <a href="#terms" data-i18n="terms"></a> · <a href="#privacy" data-i18n="tPriv"></a></div>
+  </div>
+</footer>
+
+<nav class="bnav" id="bnav">
+  <a href="#home" data-v="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg><span data-i18n="navHome"></span></a>
+  <a href="#order" data-v="order"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg><span data-i18n="navOrder"></span></a>
+  <a href="#account" data-v="account"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M9 17h6l-3-7H8"/><path d="M15 17l-2-7h4"/></svg><span data-i18n="navDriver"></span></a>
+  <a id="navContact" href="#" role="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/></svg><span data-i18n="navContact"></span></a>
+</nav>
+<div class="sheet-wrap hidden" id="payWrap" role="dialog" aria-modal="true" aria-labelledby="payGwTitle">
+  <div class="sheet">
+    <div class="sheet-head"><div><h2 id="payGwTitle" data-i18n="payDemoTitle"></h2><p data-i18n="payDemoNote"></p></div></div>
+    <div class="pay-amt" id="payGwAmt"></div>
+    <p class="secure" id="payGwWho"></p>
+    <div style="display:grid;gap:10px;margin-top:10px">
+      <button type="button" class="btn btn-signal btn-block" id="payGwOk" data-i18n="payConfirm"></button>
+      <button type="button" class="btn btn-ghost btn-block" id="payGwCancel" data-i18n="cancel"></button>
+    </div>
+  </div>
+</div>
+<!-- إشعار نجاح الدفع -->
+<div class="sheet-wrap hidden" id="paidWrap" role="dialog" aria-modal="true" aria-labelledby="paidOkTitle">
+  <div class="sheet notice-sheet">
+    <svg class="check-anim" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="36"/><path d="M24 41l11 11 22-24"/></svg>
+    <h2 id="paidOkTitle" data-i18n="paidOkTitle"></h2>
+    <p id="paidOkSub"></p>
+    <div style="display:grid;gap:10px">
+      <button type="button" class="btn btn-signal btn-block" id="paidGo" data-i18n="enterData"></button>
+      <button type="button" class="btn btn-ghost btn-block" id="paidTerms" data-i18n="readTerms"></button>
+    </div>
+  </div>
+</div>
+<!-- الشروط داخل التسجيل -->
+<div class="sheet-wrap hidden" id="termsWrap" role="dialog" aria-modal="true" aria-labelledby="termsSheetTitle">
+  <div class="sheet terms-sheet">
+    <div class="sheet-head"><h2 id="termsSheetTitle" data-i18n="terms"></h2><button class="x" type="button" id="termsClose" data-i18n-aria="close">×</button></div>
+    <div class="terms" id="termsSheetBody"></div>
+    <button type="button" class="btn btn-signal btn-block" id="termsAgree" style="margin-top:14px" data-i18n="iAgree"></button>
+  </div>
+</div>
+<!-- تواصل معنا -->
+<div class="sheet-wrap hidden" id="contactWrap" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+  <div class="sheet">
+    <div class="sheet-head"><div><h2 id="contactTitle" data-i18n="contactTitle"></h2><p data-i18n="contactSub"></p></div><button class="x" type="button" data-close="#contactWrap" data-i18n-aria="close">×</button></div>
+    <form class="form" id="contactForm" novalidate>
+      <div><label class="lbl" for="cName" data-i18n="cName"></label><input class="inp" id="cName" maxlength="40" autocomplete="name"></div>
+      <div><label class="lbl" for="cReach" data-i18n="cReach"></label><input class="inp" id="cReach" maxlength="60"></div>
+      <div><label class="lbl" for="cMsg" data-i18n="cMsg"></label><textarea class="inp" id="cMsg" maxlength="600"></textarea><div class="err" id="ecMsg"></div></div>
+      <button class="btn btn-signal btn-block" type="submit" data-i18n="cSend"></button>
+    </form>
+  </div>
+</div>
+<!-- بلاغ -->
+<div class="sheet-wrap hidden" id="reportWrap" role="dialog" aria-modal="true" aria-labelledby="reportTitle">
+  <div class="sheet">
+    <div class="sheet-head"><div><h2 id="reportTitle"></h2><p data-i18n="repSub"></p></div><button class="x" type="button" data-close="#reportWrap" data-i18n-aria="close">×</button></div>
+    <form class="form" id="reportForm" novalidate>
+      <div><span class="lbl" data-i18n="repWhy"></span><div class="checks" id="repReasons"></div><div class="err" id="erWhy"></div></div>
+      <div><label class="lbl" for="rMore" data-i18n="repMore"></label><textarea class="inp" id="rMore" maxlength="500"></textarea></div>
+      <button class="btn btn-danger btn-block" type="submit" data-i18n="repSend"></button>
+    </form>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="config.js"></script>
+<script>
+/* ===== الإعدادات ===== */
+const CONFIG = {
+  name: { ar:"مندوب", en:"Mandoob", ur:"مندوب" },
+  thawaniLink: "",
+  // إعدادات Firebase تنقرا من ملف config.js المنفصل، عشان أي تحديث للتطبيق ما يمسحها.
+  // إذا الملف غير موجود، المنصة تشتغل بوضع المعاينة المحلي.
+  firebase: window.MANDOOB_FIREBASE || null,
+  auth: { email: true, phone: false },
+  trialFree: true,      // الفترة التجريبية: التسجيل مجاني، والإدارة تتحقق من الرقم يدوياً قبل التفعيل   // phone = رسالة SMS (تحتاج خطة Blaze في Firebase)
+  demoOtp: true,
+  price: 1.5,          // سعر اشتراك المندوب بالريال
+  days: 60,            // مدة الاشتراك بالأيام
+  splashSeconds: 8,    // مدة شاشة الافتتاح بالثواني
+  deliveryFrom: 2,     // سعر التوصيل الاسترشادي (يبدأ من)
+  featuredPrice: 2,     // الإعلان المميز (تفعّله أنت من لوحة الإدارة)
+  // بريد مدير Firebase للدخول واستعادة كلمة المرور؛ لا يظهر في واجهة تسجيل الإدارة.
+  adminEmail: "ahbv4552@gmail.com"
+};
+const LANGS = { ar:{ flag:"🇴🇲", code:"ع", dir:"rtl", loc:"ar-OM-u-nu-latn" }, en:{ flag:"🇬🇧", code:"EN", dir:"ltr", loc:"en-GB" }, ur:{ flag:"🇵🇰", code:"اردو", dir:"rtl", loc:"ur-PK-u-nu-latn" } };
+const LI = { ar:0, en:1, ur:2 };
+
+/* ===== النصوص: [عربي، English، اردو] ===== */
+const STR = {
+  oman:["عُمان","Oman","عمان"],
+  terms:["الشروط والأحكام","Terms & Conditions","شرائط و ضوابط"],
+  termsShort:["الشروط","Terms","شرائط"],
+  changeLang:["تغيير اللغة","Change language","زبان تبدیل کریں"],
+  muscatTime:["توقيت مسقط","Muscat time","مسقط کا وقت"],
+  hello:["هلا فيك في {b} 👋","Welcome to {b} 👋","{b} میں خوش آمدید 👋"],
+  homeLead:["منصة تربط الزبائن بمندوبي التوصيل في ولايتهم، مباشرة على الواتساب.","Connecting customers with delivery drivers in their area, directly on WhatsApp.","یہ پلیٹ فارم گاہکوں کو ان کے علاقے کے ڈیلیوری ڈرائیوروں سے براہِ راست واٹس ایپ پر جوڑتا ہے۔"],
+  whatToday:["وش تبغى اليوم؟","What do you need today?","آج آپ کو کیا چاہیے؟"],
+  chCust:["أبغى أوصّل طلب","I need a delivery","مجھے ڈیلیوری چاہیے"],
+  chCustSub:["اكتب طلبك واختر مندوب قريب منك","Describe your order and pick a nearby driver","اپنا آرڈر لکھیں اور قریبی ڈرائیور چنیں"],
+  chDrv:["أنا مندوب توصيل","I'm a delivery driver","میں ڈیلیوری ڈرائیور ہوں"],
+  chDrvSub:["سجّل وخلّ الزبائن يوصلون لك","Register and let customers reach you","رجسٹر کریں تاکہ گاہک آپ تک پہنچیں"],
+  goArrow:["‹","›","‹"],
+  haveDrv:["عندك حساب مندوب؟","Already a driver?","پہلے سے ڈرائیور ہیں؟"],
+  haveAcct:["عندك حساب؟","Have an account?","اکاؤنٹ ہے؟"],
+  loginLink:["ادخل لحسابك","Log in","لاگ ان کریں"],
+  how1:["اكتب تفاصيل طلبك وولايتك","Enter your order and area","اپنا آرڈر اور علاقہ لکھیں"],
+  how2:["اختر مندوب من القائمة","Pick a driver from the list","فہرست سے ڈرائیور چنیں"],
+  how3:["يوصله طلبك على الواتساب","Your order reaches them on WhatsApp","آرڈر واٹس ایپ پر پہنچ جاتا ہے"],
+  fine:["المنصة دليل إعلاني وليست طرفاً في الخدمة، والسعر يُتفق عليه مع المندوب مباشرة.","This platform is a listings directory, not a party to the service. Prices are agreed directly with the driver.","یہ پلیٹ فارم صرف اشتہاری ڈائریکٹری ہے، سروس کا فریق نہیں۔ قیمت ڈرائیور سے براہِ راست طے کریں۔"],
+  copy:["دليل إعلاني لمندوبي التوصيل في سلطنة عُمان.","A listings directory for delivery drivers in Oman.","عمان میں ڈیلیوری ڈرائیوروں کی اشتہاری ڈائریکٹری۔"],
+  navHome:["الرئيسية","Home","ہوم"], navOrder:["اطلب توصيل","Delivery","ڈیلیوری"], navDriver:["المندوب","Driver","ڈرائیور"], navContact:["تواصل","Contact","رابطہ"],
+  contactMsg:["مرحباً، عندي استفسار عن منصة مندوب","Hello, I have a question about Mandoob","السلام علیکم، مندوب کے بارے میں سوال ہے"],
+  // الطلب
+  ordTitle:["اطلب توصيل","Request a delivery","ڈیلیوری منگوائیں"],
+  ordSub:["اكتب تفاصيل طلبك، وبعدها نعرض لك المندوبين في ولايتك.","Enter your order details, then we'll show drivers in your area.","آرڈر کی تفصیل لکھیں، پھر ہم آپ کے علاقے کے ڈرائیور دکھائیں گے۔"],
+  yourName:["اسمك","Your name","آپ کا نام"], gov:["المحافظة","Governorate","محافظہ"], wil:["الولاية","Wilayat","ولایت"],
+  what:["وش تبغى يوصل؟","What needs delivering?","کیا ڈیلیور کرنا ہے؟"],
+  whatPh:["مثال: طلب من مطعم باسم أحمد، أو كرتون أغراض متوسط","e.g. a restaurant order under Ahmed, or a medium box","مثلاً: ریسٹورنٹ کا آرڈر احمد کے نام، یا درمیانہ ڈبہ"],
+  from:["الاستلام من","Pick up from","کہاں سے اٹھانا ہے"], fromPh:["اسم المحل أو العنوان","Shop name or address","دکان کا نام یا پتہ"],
+  to:["التوصيل إلى","Deliver to","کہاں پہنچانا ہے"], toPh:["الحي، الشارع، رقم البيت","Area, street, house number","علاقہ، گلی، گھر نمبر"],
+  myLoc:["📍 موقعي","📍 My location","📍 میری لوکیشن"], locating:["جاري التحديد…","Locating…","تلاش جاری ہے…"],
+  locOk:["✓ تم إرفاق موقعك على الخريطة","✓ Your map location is attached","✓ آپ کی لوکیشن شامل کر دی گئی"],
+  when:["متى؟","When?","کب؟"],
+  whenOpts:[["الحين","خلال ساعة","اليوم المسا","بكرة"],["Now","Within an hour","This evening","Tomorrow"],["ابھی","ایک گھنٹے میں","آج شام","کل"]],
+  note:["ملاحظات (اختياري)","Notes (optional)","نوٹس (اختیاری)"], notePh:["مثال: اتصل لما توصل","e.g. call when you arrive","مثلاً: پہنچ کر کال کریں"],
+  privacyHint:["تفاصيل طلبك تنرسل من جوالك للمندوب مباشرة، والمنصة ما تحفظها. السعر تتفق عليه مع المندوب.","Your order goes straight from your phone to the driver; the platform doesn't store it. Agree the price with the driver.","آرڈر کی تفصیل آپ کے فون سے سیدھی ڈرائیور کو جاتی ہے، پلیٹ فارم محفوظ نہیں کرتا۔ قیمت ڈرائیور سے طے کریں۔"],
+  showDrivers:["اعرض المندوبين","Show drivers","ڈرائیور دکھائیں"],
+  yourOrder:["طلبك","Your order","آپ کا آرڈر"], edit:["تعديل","Edit","تبدیل کریں"],
+  pickIn:["اختر مندوب في {p}","Choose a driver in {p}","{p} میں ڈرائیور چنیں"],
+  govOf:["محافظة {g}","{g} Governorate","محافظہ {g}"],
+  countLine:["{n} مندوب · {o} متصل الآن","{n} drivers · {o} online now","{n} ڈرائیور · {o} ابھی آن لائن"],
+  all:["الكل","All","سب"], onlineChip:["المتصلين الآن","Online now","ابھی آن لائن"],
+  errName:["اكتب اسمك.","Enter your name.","اپنا نام لکھیں۔"], errWhat:["اكتب وش تبغى يوصل.","Describe what to deliver.","بتائیں کیا ڈیلیور کرنا ہے۔"],
+  errFrom:["اكتب مكان الاستلام.","Enter the pick-up place.","اٹھانے کی جگہ لکھیں۔"], errTo:["اكتب مكان التوصيل أو أرفق موقعك.","Enter the drop-off or attach your location.","پہنچانے کی جگہ لکھیں یا لوکیشن شامل کریں۔"],
+  fixFields:["كمّل البيانات المطلوبة","Please complete the required fields","براہِ کرم ضروری خانے پُر کریں"],
+  noLoc:["ما قدرنا نحدد موقعك. اكتب العنوان أو أرسل اللوكيشن في الواتساب.","Couldn't get your location. Type the address or send it on WhatsApp.","لوکیشن نہیں مل سکی۔ پتہ لکھیں یا واٹس ایپ پر لوکیشن بھیجیں۔"],
+  noGeo:["جهازك ما يدعم تحديد الموقع.","Your device doesn't support location.","آپ کا فون لوکیشن سپورٹ نہیں کرتا۔"],
+  emptyTitle:["ما في مندوبين في {p} للحين","No drivers in {p} yet","{p} میں ابھی کوئی ڈرائیور نہیں"],
+  emptySub:["المنصة جديدة والمندوبين يسجلون أول بأول.","We're new, and drivers are joining every day.","پلیٹ فارم نیا ہے، ڈرائیور روز شامل ہو رہے ہیں۔"],
+  showGov:["اعرض مندوبين محافظة {g} ({n})","Show drivers across {g} ({n})","پورے {g} کے ڈرائیور دکھائیں ({n})"],
+  invite:["تعرف مندوب؟ أرسل له رابط المنصة","Know a driver? Send them the link","کسی ڈرائیور کو جانتے ہیں؟ انہیں لنک بھیجیں"],
+  inviteMsg:["تشتغل مندوب توصيل؟ سجّل في منصة {b} وخلّ الزبائن في ولايتك يوصلون لك: {u}","Are you a delivery driver? Join {b} so customers in your area can reach you: {u}","کیا آپ ڈیلیوری ڈرائیور ہیں؟ {b} پر رجسٹر کریں تاکہ آپ کے علاقے کے گاہک آپ تک پہنچیں: {u}"],
+  radarCount:["{n} مندوب متصل الآن","{n} drivers online now","{n} ڈرائیور ابھی آن لائن"],
+  radarShare:["شارك موقعك عشان تشوفهم على الرادار وتعرف الأقرب لك.","Share your location to see them on the radar and find the nearest.","لوکیشن شیئر کریں تاکہ ریڈار پر قریب ترین ڈرائیور دیکھ سکیں۔"],
+  shareMyLoc:["📍 شارك موقعي","📍 Share my location","📍 لوکیشن شیئر کریں"],
+  radarTitle:["المتصلين حولك الآن","Online around you","آپ کے قریب آن لائن"],
+  radarNote:["المواقع تقريبية لحماية خصوصية المندوب. اضغط على أي نقطة.","Locations are approximate to protect drivers' privacy. Tap a dot.","ڈرائیور کی پرائیویسی کے لیے لوکیشن تقریبی ہے۔ کسی نقطے کو دبائیں۔"],
+  radarAria:["رادار المندوبين المتصلين حولك","Radar of online drivers around you","آپ کے قریب آن لائن ڈرائیوروں کا ریڈار"],
+  you:["أنت","You","آپ"], km:["{n} كم","{n} km","{n} کلومیٹر"], lessKm:["أقل من 1 كم","under 1 km","1 کلومیٹر سے کم"],
+  featured:["مميز","Featured","نمایاں"], verified:["✓ رقم موثّق","✓ Verified number","✓ تصدیق شدہ نمبر"],
+  online:["متصل الآن","Online now","ابھی آن لائن"], offline:["غير متصل حالياً","Offline","آف لائن"],
+  away:["يبعد عنك {d}","{d} away","آپ سے {d} دور"],
+  sendTo:["أرسل الطلب لـ {n}","Send order to {n}","{n} کو آرڈر بھیجیں"],
+  report:["بلّغ عن هذا الرقم","Report this number","اس نمبر کی شکایت کریں"],
+  waOpened:["فتحنا لك الواتساب، اضغط إرسال","WhatsApp is open. Tap Send","واٹس ایپ کھل گیا، بھیجیں دبائیں"],
+  mHi:["مرحباً {n}، جيتك من منصة {b} 📍","Hi {n}, I found you on {b} 📍","السلام علیکم {n}، میں نے آپ کو {b} پر دیکھا 📍"],
+  mNew:["*طلب توصيل جديد*","*New delivery request*","*نیا ڈیلیوری آرڈر*"],
+  mName:["الاسم","Name","نام"], mOrder:["الطلب","Order","آرڈر"], mFrom:["الاستلام من","Pick up","کہاں سے"], mTo:["التوصيل إلى","Deliver to","کہاں تک"],
+  mMap:["الموقع على الخريطة","Map location","نقشے پر لوکیشن"], mTime:["الوقت","Time","وقت"], mNote:["ملاحظات","Notes","نوٹس"],
+  mAttached:["حسب الموقع المرفق","see attached location","منسلک لوکیشن کے مطابق"], mPrice:["السعر المتعارف في المنصة من {f} ر.ع، كم يكلف التوصيل؟","The usual price on the platform starts at {f} OMR. How much for this delivery?","پلیٹ فارم پر عام قیمت {f} ریال سے ہے، اس ڈیلیوری کے کتنے ہوں گے؟"],
+  // التسجيل
+  joinTitle:["سجّل كمندوب توصيل","Register as a driver","ڈرائیور کے طور پر رجسٹر کریں"],
+  joinSub:["نتحقق من رقمك أو إيميلك برمز، بعدها تكمل بياناتك.","We verify your number or email with a code, then you add your details.","ہم کوڈ سے آپ کا نمبر یا ای میل تصدیق کریں گے، پھر آپ تفصیل لکھیں۔"],
+  name:["الاسم","Name","نام"], waNum:["رقم الواتساب اللي يوصلك عليه الزبائن","WhatsApp number customers will contact","واٹس ایپ نمبر جس پر گاہک رابطہ کریں"],
+  svcType:["نوع التوصيل","Delivery type","ڈیلیوری کی قسم"], vehicle:["المركبة","Vehicle","گاڑی"],
+  area:["المناطق اللي تغطيها","Areas you cover","جن علاقوں میں جاتے ہیں"], areaPh:["مثال: المعبيلة، الخوض، الموالح","e.g. Al Maabilah, Al Khoudh, Al Mawaleh","مثلاً: معبیلہ، الخوض، موالح"],
+  times:["أوقات التوفر","Working hours","کام کے اوقات"], timesPh:["مثال: يومياً من 4 العصر إلى 12 الليل","e.g. daily 4 pm to midnight","مثلاً: روزانہ شام 4 سے رات 12"],
+  plan:["الاشتراك","Plan","پلان"],
+  agree:['قرأت <a href="#terms">الشروط والأحكام</a> وأوافق عليها، وأقر إني مسؤول عن تراخيصي وعن الخدمة اللي أقدمها.','I have read and accept the <a href="#terms">Terms & Conditions</a>, and I am responsible for my own licences and the service I provide.','میں نے <a href="#terms">شرائط و ضوابط</a> پڑھ کر قبول کیں، اور اپنے لائسنس اور سروس کا میں خود ذمہ دار ہوں۔'],
+  submitReg:["أرسل طلب التسجيل","Submit registration","رجسٹریشن بھیجیں"],
+  freeBanner:["التسجيل مجاني حالياً لأول {n} مندوب 🎉","Free registration for the first {n} drivers 🎉","پہلے {n} ڈرائیوروں کے لیے رجسٹریشن مفت 🎉"],
+  monthly:["اشتراك شهري","Monthly","ماہانہ"], yearly:["اشتراك سنوي","Yearly","سالانہ"], yearlyNote:["توفّر 3 ريال","Save 3 OMR","3 ریال کی بچت"],
+  perMonth:["ر.ع / شهر","OMR / month","ریال / ماہ"], perYear:["ر.ع / سنة","OMR / year","ریال / سال"], freeWord:["مجاناً","Free","مفت"],
+  featPlan:["إعلان مميز","Featured listing","نمایاں اشتہار"], featPlanSub:["يظهر إعلانك أول القائمة في ولايتك","Show at the top in your wilayat","اپنی ولایت میں سب سے اوپر دکھیں"], featPer:["+{p} ر.ع / شهر","+{p} OMR / month","+{p} ریال / ماہ"],
+  verifiedWa:["✓ تم التحقق من رقمك {x}","✓ Number verified {x}","✓ نمبر کی تصدیق ہو گئی {x}"], verifiedEmail:["✓ تم التحقق من {x}","✓ Verified {x}","✓ تصدیق ہو گئی {x}"],
+  eName3:["اكتب اسمك (3 أحرف على الأقل).","Enter your name (at least 3 letters).","اپنا نام لکھیں (کم از کم 3 حروف)۔"],
+  ePhone:["اكتب رقم عُماني من 8 أرقام يبدأ بـ 7 أو 9.","Enter an 8-digit Omani number starting with 7 or 9.","7 یا 9 سے شروع ہونے والا 8 ہندسوں کا عمانی نمبر لکھیں۔"],
+  eTaken:["هذا الرقم مسجل من قبل.","This number is already registered.","یہ نمبر پہلے سے رجسٹرڈ ہے۔"],
+  eSvc:["اختر نوع توصيل واحد على الأقل.","Choose at least one delivery type.","کم از کم ایک قسم چنیں۔"],
+  eAgree:["لازم توافق على الشروط والأحكام.","You must accept the Terms.","شرائط قبول کرنا ضروری ہے۔"],
+  checkFields:["راجع الحقول المطلوبة","Check the required fields","ضروری خانے چیک کریں"],
+  doneTitle:["مبروك {n}، إعلانك ظاهر الحين ✅","Congrats {n}, you're live ✅","مبارک ہو {n}، آپ کا اشتہار اب نظر آ رہا ہے ✅"],
+  doneSub:["الزبائن في {w} يقدرون يشوفونك ويرسلون لك طلباتهم على الواتساب مباشرة.","Customers in {w} can now see you and send orders on WhatsApp.","{w} کے گاہک اب آپ کو دیکھ کر واٹس ایپ پر آرڈر بھیج سکتے ہیں۔"],
+  featActivate:["فعّل الإعلان المميز ({p} ر.ع)","Activate featured listing ({p} OMR)","نمایاں اشتہار فعال کریں ({p} ریال)"],
+  goOnline:["● اضغط «أنا متصل الآن» من حسابك","● Open your account and tap “I'm online”","● اپنے اکاؤنٹ میں «میں آن لائن ہوں» دبائیں"],
+  goOnlineHint:["لما تكون متصل، تظهر على الرادار للزبائن القريبين منك وتطلع أول القائمة.","When online, you appear on nearby customers' radar and at the top of the list.","آن لائن ہونے پر آپ قریبی گاہکوں کے ریڈار پر اور فہرست میں سب سے اوپر دکھیں گے۔"],
+  pendTitle:["وصلنا طلبك ✅","Request received ✅","درخواست موصول ✅"],
+  pendSub:["باقي خطوة عشان يظهر إعلانك:","A step left before you go live:","اشتہار فعال ہونے میں ایک قدم باقی:"],
+  payStep:["ادفع {t} ر.ع، ونرسل لك طريقة الدفع على الواتساب.","Pay {t} OMR. We'll send payment details on WhatsApp.","{t} ریال ادا کریں، ادائیگی کا طریقہ واٹس ایپ پر بھیجیں گے۔"],
+  sendActStep:["أرسل طلب التفعيل على الواتساب، ونفعّل إعلانك خلال يوم.","Send the activation request on WhatsApp; we'll activate within a day.","واٹس ایپ پر درخواست بھیجیں، ایک دن میں فعال کر دیں گے۔"],
+  sendAct:["أرسل طلب التفعيل على الواتساب","Send activation request on WhatsApp","واٹس ایپ پر درخواست بھیجیں"],
+  feeChip:["💰 الطلب مجاني · سعر التوصيل من {f} ر.ع، تتفق عليه مع المندوب","💰 Ordering is free · Delivery from {f} OMR, agreed with the driver","💰 آرڈر مفت · ڈیلیوری {f} ریال سے، ڈرائیور سے طے کریں"],
+  contactTitle:["تواصل معنا","Contact us","ہم سے رابطہ"], contactSub:["رسالتك توصل لإدارة المنصة مباشرة.","Your message goes straight to the platform team.","آپ کا پیغام براہِ راست پلیٹ فارم ٹیم کو جائے گا۔"],
+  cName:["اسمك (اختياري)","Your name (optional)","آپ کا نام (اختیاری)"], cReach:["رقمك أو إيميلك للرد (اختياري)","Phone or email for a reply (optional)","جواب کے لیے فون یا ای میل (اختیاری)"],
+  cMsg:["رسالتك","Your message","آپ کا پیغام"], cSend:["أرسل","Send","بھیجیں"], cSent:["وصلتنا رسالتك، شكراً لك","Message received, thank you","پیغام موصول ہو گیا، شکریہ"], cErr:["اكتب رسالتك.","Write your message.","اپنا پیغام لکھیں۔"],
+  repTitle:["بلاغ عن {n}","Report {n}","{n} کی شکایت"], repSub:["بلاغك سري، والمندوب ما يعرف مين أرسله.","Your report is confidential; the driver won't know who sent it.","آپ کی شکایت خفیہ ہے، ڈرائیور کو پتہ نہیں چلے گا۔"],
+  repWhy:["سبب البلاغ","Reason","وجہ"], repMore:["تفاصيل (اختياري)","Details (optional)","تفصیل (اختیاری)"], repSend:["أرسل البلاغ","Send report","شکایت بھیجیں"],
+  repSent:["وصلنا بلاغك، بنراجعه","Report received; we'll review it","شکایت موصول، ہم جائزہ لیں گے"], repPick:["اختر سبب البلاغ.","Choose a reason.","وجہ منتخب کریں۔"],
+  reasons:[["ما يرد","رقم غلط","سعر مبالغ فيه","سلوك غير لائق","أخرى"],["Doesn't answer","Wrong number","Overcharging","Inappropriate behaviour","Other"],["جواب نہیں دیتا","غلط نمبر","زیادہ قیمت","نامناسب رویہ","دیگر"]],
+  tPriv:["الخصوصية","Privacy","رازداری"],
+  // الدفع
+  priceMonthly:["اشتراك شهري","Monthly subscription","ماہانہ سبسکرپشن"],
+  priceSub:["إعلانك يظهر للزبائن مباشرة بعد الدفع","Your listing goes live right after payment","ادائیگی کے فوراً بعد اشتہار فعال"],
+  omr:["ر.ع","OMR","ریال"],
+  submitPay:["التالي: الدفع","Next: payment","اگلا: ادائیگی"],
+  payTitle:["باقي خطوة وحدة: الدفع","One last step: payment","آخری قدم: ادائیگی"],
+  payPer:["لمدة {d} يوم","for {d} days","{d} دن کے لیے"],
+  payL1:["إعلانك يظهر للزبائن في {w}","Your listing shows to customers in {w}","آپ کا اشتہار {w} کے گاہکوں کو دکھے گا"],
+  payL2:["تظهر على الرادار لما تكون متصل","You appear on the radar when online","آن لائن ہونے پر ریڈار پر دکھیں گے"],
+  payL3:["الطلبات توصلك على الواتساب مباشرة، بدون عمولة","Orders come straight to your WhatsApp, no commission","آرڈر سیدھے واٹس ایپ پر، کوئی کمیشن نہیں"],
+  payNow:["ادفع الآن {p} ر.ع","Pay {p} OMR now","ابھی {p} ریال ادا کریں"],
+  secure:["🔒 دفع آمن ببطاقة بنكية عبر بوابة دفع عمانية","🔒 Secure card payment via an Omani payment gateway","🔒 عمانی گیٹ وے کے ذریعے محفوظ کارڈ ادائیگی"],
+  payLater:["تقدر تدفع لاحقاً من «حسابي».","You can also pay later from “My account”.","آپ بعد میں «میرا اکاؤنٹ» سے بھی ادا کر سکتے ہیں۔"],
+  payDemoTitle:["بوابة الدفع (تجريبية)","Payment gateway (demo)","ادائیگی گیٹ وے (ڈیمو)"],
+  payDemoNote:["في النسخة النهائية تنفتح هنا صفحة الدفع الحقيقية.","In the live version, the real payment page opens here.","اصل ورژن میں یہاں اصل ادائیگی صفحہ کھلے گا۔"],
+  payConfirm:["إتمام الدفع","Complete payment","ادائیگی مکمل کریں"], cancel:["إلغاء","Cancel","منسوخ کریں"],
+  payCancelled:["تم إلغاء الدفع","Payment cancelled","ادائیگی منسوخ"],
+  paidTitle:["تم الدفع ✅ إعلانك ظاهر الحين","Payment done ✅ You're live","ادائیگی ہو گئی ✅ آپ کا اشتہار فعال ہے"],
+  paidSub:["اشتراكك فعّال لين {d}.","Your subscription is active until {d}.","آپ کی سبسکرپشن {d} تک فعال ہے۔"],
+  stUnpaid:["بانتظار الدفع","Awaiting payment","ادائیگی باقی"],
+  unpaidBox:["إعلانك مو ظاهر للزبائن لين تدفع الاشتراك.","Your listing isn't visible until you pay.","ادائیگی تک آپ کا اشتہار نظر نہیں آئے گا۔"],
+  expiredBox:["انتهى اشتراكك، وإعلانك مخفي عن الزبائن.","Your subscription ended and your listing is hidden.","سبسکرپشن ختم، اشتہار چھپا دیا گیا۔"],
+  renewNow:["جدّد اشتراكك {p} ر.ع","Renew for {p} OMR","{p} ریال میں تجدید کریں"],
+  renewSoon:["اشتراكك ينتهي خلال {n} أيام.","Your subscription ends in {n} days.","سبسکرپشن {n} دن میں ختم ہو گی۔"],
+  // الترحيب والتسجيل المدفوع
+  spTag:["مندوبك الأقرب، بضغطة","Your nearest driver, one tap away","قریبی ڈرائیور، ایک ٹیپ پر"],
+  spCust:["للزبائن","For customers","گاہکوں کے لیے"], spCustSub:["اطلب مجاناً من مندوب قريب منك","Order for free from a driver near you","قریبی ڈرائیور سے مفت آرڈر کریں"],
+  spDrv:["للعمل كمندوب","Work as a driver","ڈرائیور بن کر کام کریں"], spDrvSub:["سجّل واستلم الطلبات على الواتساب مباشرة","Register and get orders straight on WhatsApp","رجسٹر کریں اور آرڈر سیدھے واٹس ایپ پر پائیں"],
+  spStart:["ابدأ","Start","شروع کریں"],
+  sc1t:["تحتاج توصيل؟","Need a delivery?","ڈیلیوری چاہیے؟"], sc1s:["المندوب متوفر هنا","Drivers are right here","ڈرائیور یہیں موجود ہیں"],
+  sc2t:["أنت مندوب؟","Are you a driver?","کیا آپ ڈرائیور ہیں؟"], sc2s:["الشغل متوفر هنا","Work is right here","کام یہیں موجود ہے"], spSkip:["تخطي","Skip","چھوڑیں"], now:["الآن","now","ابھی"],
+  bt1:["جاري فتح المنصة…","Opening the platform…","پلیٹ فارم کھل رہا ہے…"], bt2:["نجهز كل شي لك…","Getting everything ready…","سب کچھ تیار ہو رہا ہے…"], bt3:["جاهز ✓","Ready ✓","تیار ✓"],
+  n1t:["الطلب عبر المنصة مجاني","Ordering on the platform is free","پلیٹ فارم پر آرڈر مفت ہے"], n1s:["سعر التوصيل من {f} ر.ع، تتفق عليه مع المندوب مباشرة","Delivery from {f} OMR, agreed directly with the driver","ڈیلیوری {f} ریال سے، ڈرائیور سے براہِ راست طے کریں"],
+  n2t:["اشتراك المندوب {p} ر.ع","Driver subscription {p} OMR","ڈرائیور سبسکرپشن {p} ریال"], n2s:["لمدة {d} يوم، وبدون أي عمولة على الطلبات","For {d} days, with no commission on orders","{d} دن کے لیے، آرڈرز پر کوئی کمیشن نہیں"],
+  n3t:["الطلبات على الواتساب","Orders on WhatsApp","واٹس ایپ پر آرڈر"], n3s:["توصل من الزبون للمندوب مباشرة","Straight from the customer to the driver","گاہک سے سیدھا ڈرائیور تک"],
+  n4t:["الأقرب إليك، لحظة بلحظة","Nearest to you, live","آپ کے قریب ترین، لمحہ بہ لمحہ"], n4s:["اكتشف المندوبين المتصلين بالقرب منك","Discover drivers online near you","اپنے قریب آن لائن ڈرائیور دیکھیں"],
+  n5t:["الشروط والأحكام","Terms & Conditions","شرائط و ضوابط"], n5s:["اقرأها قبل ما تسجل كمندوب","Read them before registering as a driver","ڈرائیور رجسٹریشن سے پہلے پڑھیں"],
+  priceTxt:["رسوم التسجيل {p} ر.ع / {d} يوم","Registration {p} OMR / {d} days","رجسٹریشن {p} ریال / {d} دن"],
+  joinSub2:["ثلاث خطوات بسيطة، وتبدأ تستلم الطلبات.","Three simple steps and you start getting orders.","تین آسان مراحل، اور آرڈر آنا شروع۔"],
+  stepVerify:["التحقق","Verify","تصدیق"], stepPay:["الدفع","Payment","ادائیگی"], stepData:["البيانات","Details","تفصیل"],
+  paidOkTitle:["تم استلام المبلغ بنجاح","Payment received","ادائیگی موصول ہو گئی"],
+  paidOkSub:["شكراً لك. الحين أدخل بياناتك لو سمحت، واقرأ الشروط والأحكام في المنصة قبل ما يظهر إعلانك للزبائن.","Thank you. Now please enter your details and read the platform's Terms & Conditions before your listing goes live.","شکریہ۔ اب براہِ کرم اپنی تفصیل لکھیں اور اشتہار فعال ہونے سے پہلے پلیٹ فارم کی شرائط و ضوابط پڑھیں۔"],
+  enterData:["أدخل بياناتي","Enter my details","میری تفصیل لکھیں"], readTerms:["اقرأ الشروط والأحكام","Read the Terms & Conditions","شرائط و ضوابط پڑھیں"],
+  iAgree:["قرأتها وأوافق عليها","I've read and agree","میں نے پڑھ کر قبول کیا"], close:["إغلاق","Close","بند کریں"],
+  paidChip:["✓ مدفوع · فعّال لين {d}","✓ Paid · active until {d}","✓ ادا شدہ · {d} تک فعال"],
+  publishAd:["انشر إعلاني","Publish my listing","میرا اشتہار شائع کریں"],
+  liveTitle:["مبروك {n} 🎉 إعلانك ظاهر الحين","Congrats {n} 🎉 You're live","مبارک ہو {n} 🎉 آپ کا اشتہار فعال ہے"],
+  incompleteBox:["دفعت الاشتراك، باقي تكمل بياناتك عشان يظهر إعلانك.","You've paid. Complete your details so your listing goes live.","ادائیگی ہو گئی۔ اشتہار فعال کرنے کے لیے تفصیل مکمل کریں۔"],
+  completeNow:["أكمل بياناتي","Complete my details","تفصیل مکمل کریں"],
+  stIncomplete:["بانتظار البيانات","Details needed","تفصیل باقی"],
+  // Firebase
+  smsTab:["رسالة نصية","SMS","ایس ایم ایس"],
+  sentLink:["أرسلنا رابط دخول إلى {x}. افتح الإيميل من نفس الجوال واضغط الرابط.","We sent a sign-in link to {x}. Open the email on this phone and tap the link.","ہم نے {x} پر لاگ ان لنک بھیجا ہے۔ اسی فون پر ای میل کھول کر لنک دبائیں۔"],
+  sendLink:["أرسل رابط الدخول","Send sign-in link","لاگ ان لنک بھیجیں"],
+  confirmEmail:["اكتب إيميلك للتأكيد","Enter your email to confirm","تصدیق کے لیے اپنی ای میل لکھیں"],
+  netErr:["صار خطأ في الاتصال، حاول مرة ثانية.","Connection problem, please try again.","رابطے میں مسئلہ، دوبارہ کوشش کریں۔"],
+  signingIn:["جاري تسجيل الدخول…","Signing in…","لاگ ان ہو رہا ہے…"],
+  pendingChip:["⏳ إعلانك يتفعل بعد تأكيد الاشتراك من الإدارة","⏳ Your listing activates after the team confirms your subscription","⏳ ٹیم کی تصدیق کے بعد اشتہار فعال ہوگا"],
+  trialInfo:["التسجيل مجاني في الفترة التجريبية. كمّل بياناتك، وإعلانك يظهر بعد ما نتحقق من رقمك.","Registration is free during the trial. Complete your details; your listing goes live once we verify your number.","تجرباتی مدت میں رجسٹریشن مفت ہے۔ تفصیل مکمل کریں، نمبر کی تصدیق کے بعد اشتہار فعال ہوگا۔"],
+  trialChip:["⏳ بانتظار التحقق من رقمك","⏳ Waiting for number verification","⏳ نمبر کی تصدیق کا انتظار"],
+  trialTitle:["تسجيل مجاني","Free registration","مفت رجسٹریشن"],
+  payInfoFB:["الدفع الإلكتروني قريباً. كمّل بياناتك، وإعلانك يتفعل بعد ما تأكد الإدارة اشتراكك.","Online payment is coming soon. Complete your details and your listing activates once the team confirms your subscription.","آن لائن ادائیگی جلد آ رہی ہے۔ تفصیل مکمل کریں، ٹیم کی تصدیق کے بعد اشتہار فعال ہوگا۔"],
+  continueData:["متابعة لإدخال بياناتي","Continue to my details","اپنی تفصیل کی طرف جائیں"],
+  regDoneTitle:["تم التسجيل ✅","Registered ✅","رجسٹریشن مکمل ✅"],
+  regDoneSub:["بياناتك محفوظة. إعلانك يظهر للزبائن بعد ما تفعّله الإدارة.","Your details are saved. Your listing goes live once the team activates it.","آپ کی تفصیل محفوظ ہے۔ ٹیم کے فعال کرنے کے بعد اشتہار نظر آئے گا۔"],
+  eTakenOrInvalid:["ما قدرنا نحفظ: الرقم مسجل من قبل أو في بيانات غير صحيحة.","Couldn't save: the number is already registered or some details are invalid.","محفوظ نہیں ہو سکا: نمبر پہلے سے رجسٹرڈ ہے یا کچھ تفصیل غلط ہے۔"],
+  stPendingAdmin:["بانتظار التفعيل","Pending activation","فعال ہونے کا انتظار"],
+  pendingBox:["إعلانك محفوظ، وبيظهر للزبائن بعد ما تفعّله الإدارة.","Your listing is saved and will show once the team activates it.","آپ کا اشتہار محفوظ ہے، ٹیم کے فعال کرنے کے بعد نظر آئے گا۔"],
+  renewContact:["للتجديد، راسلنا من «تواصل»","To renew, message us via “Contact”","تجدید کے لیے «رابطہ» سے پیغام بھیجیں"],
+  noListing:["ما عندك إعلان مندوب بهذا الحساب.","There's no driver listing on this account.","اس اکاؤنٹ پر کوئی ڈرائیور اشتہار نہیں۔"],
+  loading:["جاري التحميل…","Loading…","لوڈ ہو رہا ہے…"],
+  // التحقق
+  verifyVia:["التحقق عن طريق","Verify via","تصدیق کا طریقہ"], waTab:["واتساب","WhatsApp","واٹس ایپ"], emailTab:["إيميل","Email","ای میل"],
+  waNumLbl:["رقم الواتساب","WhatsApp number","واٹس ایپ نمبر"], emailLbl:["الإيميل","Email","ای میل"], sendCode:["أرسل الرمز","Send code","کوڈ بھیجیں"],
+  sentWa:["أرسلنا رمز التحقق على واتساب {x}","We sent a code to WhatsApp {x}","ہم نے واٹس ایپ {x} پر کوڈ بھیجا"], sentEmail:["أرسلنا رمز التحقق إلى {x}","We sent a code to {x}","ہم نے {x} پر کوڈ بھیجا"],
+  demoCode:["وضع التجربة: الرمز هو {c}","Demo mode: your code is {c}","ڈیمو موڈ: کوڈ ہے {c}"],
+  demoNote:["بعد الربط بالخادم يوصل الرمز فعلياً.","Once the server is connected, the code is really sent.","سرور جڑنے کے بعد کوڈ واقعی بھیجا جائے گا۔"],
+  enterCode:["اكتب الرمز (6 أرقام)","Enter the 6-digit code","6 ہندسوں کا کوڈ لکھیں"], confirm:["تأكيد","Confirm","تصدیق کریں"],
+  resend:["غيّر الرقم أو أرسل رمز جديد","Change number or resend","نمبر بدلیں یا دوبارہ بھیجیں"],
+  eEmail:["اكتب إيميل صحيح.","Enter a valid email.","درست ای میل لکھیں۔"],
+  existsGoLogin:['مسجل من قبل. <a href="#account">ادخل لحسابك</a>','Already registered. <a href="#account">Log in</a>','پہلے سے رجسٹرڈ ہے۔ <a href="#account">لاگ ان کریں</a>'],
+  notFound:['ما لقينا حساب. <a href="#join">سجّل كمندوب</a>','No account found. <a href="#join">Register</a>','کوئی اکاؤنٹ نہیں ملا۔ <a href="#join">رجسٹر کریں</a>'],
+  otpNone:["اطلب رمز جديد.","Request a new code.","نیا کوڈ منگوائیں۔"], otpExpired:["انتهت صلاحية الرمز. اطلب رمز جديد.","Code expired. Request a new one.","کوڈ کی مدت ختم۔ نیا کوڈ منگوائیں۔"],
+  otpMany:["محاولات كثيرة. اطلب رمز جديد.","Too many attempts. Request a new code.","بہت زیادہ کوششیں۔ نیا کوڈ منگوائیں۔"], otpWrong:["الرمز غير صحيح.","Incorrect code.","کوڈ غلط ہے۔"],
+  // الحساب
+  acctTitle:["حسابي","My account","میرا اکاؤنٹ"],
+  acctSub:['ادخل برقم الواتساب أو الإيميل اللي سجلت فيه. جديد؟ <a href="#join">سجّل كمندوب</a>','Log in with the WhatsApp number or email you registered with. New? <a href="#join">Register</a>','رجسٹرڈ واٹس ایپ نمبر یا ای میل سے لاگ ان کریں۔ نئے ہیں؟ <a href="#join">رجسٹر کریں</a>'],
+  hi:["أهلاً {n}","Hi {n}","السلام علیکم {n}"], adStatus:["حالة إعلانك:","Listing status:","اشتہار کی حالت:"],
+  stPending:["بانتظار التفعيل","Pending","زیرِ التوا"], stStopped:["موقوف","Suspended","معطل"], stLive:["ظاهر للزبائن","Live","فعال"], stExpired:["الاشتراك منتهي","Expired","میعاد ختم"],
+  subEnds:["الاشتراك ينتهي {d}","Plan ends {d}","پلان ختم {d}"],
+  sendNow:["إذا ما أرسلت طلب التفعيل، أرسله الحين","If you haven't sent your activation request, send it now","اگر درخواست نہیں بھیجی تو ابھی بھیجیں"],
+  onBtnOn:["أنت متصل الآن","You're online","آپ آن لائن ہیں"], onBtnOff:["أنا متصل الآن","I'm online","میں آن لائن ہوں"],
+  onSubRadar:["ظاهر على الرادار للزبائن القريبين","Visible on nearby customers' radar","قریبی گاہکوں کے ریڈار پر نظر آ رہے ہیں"],
+  onSubNoLoc:["ظاهر متصل (بدون مكان على الرادار)","Shown online (no radar position)","آن لائن (ریڈار پر جگہ کے بغیر)"],
+  offIn:["يطفي بعد {t}","ends in {t}","{t} میں بند"], tapStop:["اضغط للإيقاف","tap to stop","بند کرنے کو دبائیں"],
+  offSub:["اضغط عشان تظهر للزبائن القريبين على الرادار لمدة ساعتين","Tap to appear on nearby customers' radar for 2 hours","2 گھنٹے کے لیے قریبی گاہکوں کے ریڈار پر آنے کو دبائیں"],
+  locatingApprox:["جاري تحديد موقعك التقريبي…","Getting your approximate location…","تقریبی لوکیشن معلوم کی جا رہی ہے…"],
+  nowOnline:["أنت متصل الآن ✅","You're online ✅","آپ آن لائن ہیں ✅"], nowOffline:["صرت غير متصل","You're offline","آپ آف لائن ہیں"],
+  onNoLoc:["ما قدرنا نحدد موقعك، بتظهر متصل بدون مكان على الرادار.","Couldn't get your location; you'll show online without a radar position.","لوکیشن نہیں ملی، آپ ریڈار پر جگہ کے بغیر آن لائن دکھیں گے۔"],
+  adData:["بيانات الإعلان","Listing details","اشتہار کی تفصیل"], save:["حفظ التعديلات","Save changes","تبدیلیاں محفوظ کریں"], saved:["تم حفظ التعديلات","Changes saved","محفوظ ہو گیا"],
+  logout:["تسجيل خروج","Log out","لاگ آؤٹ"], delAcct:["حذف حسابي وبياناتي","Delete my account and data","اکاؤنٹ اور ڈیٹا حذف کریں"],
+  delConfirm:["متأكد؟ بينحذف إعلانك وبياناتك نهائياً.","Are you sure? Your listing and data will be permanently deleted.","کیا آپ کو یقین ہے؟ آپ کا اشتہار اور ڈیٹا ہمیشہ کے لیے حذف ہو جائے گا۔"],
+  deleted:["تم حذف حسابك","Account deleted","اکاؤنٹ حذف ہو گیا"],
+  // الشروط
+  termsSub:["باستخدامك للمنصة أو تسجيلك فيها، فإنك توافق على هذه الشروط.","By using or registering on the platform, you agree to these terms.","پلیٹ فارم استعمال یا رجسٹر کر کے آپ ان شرائط سے اتفاق کرتے ہیں۔"],
+  tGen:["عن المنصة","About","پلیٹ فارم"], tCust:["للزبائن","Customers","گاہکوں کے لیے"], tDrv:["للمندوبين","Drivers","ڈرائیوروں کے لیے"],
+  prevail:["","In case of any difference between translations, the Arabic text prevails.","ترجمے میں کسی فرق کی صورت میں عربی متن معتبر ہوگا۔"]
+};
+const SERVICES = { food:["طلبات مطاعم","Restaurant orders","ریسٹورنٹ آرڈر"], errands:["أغراض ومشاوير","Errands & shopping","سودا سلف"], parcels:["طرود وشحنات","Parcels","پارسل"], bulky:["أغراض كبيرة","Large items","بڑا سامان"] };
+const VEHICLES = { car:["سيارة","Car","کار"], bike:["دراجة نارية","Motorbike","موٹر سائیکل"], pickup:["بيك أب","Pickup","پک اپ"], van:["فان نقل","Van","وین"] };
+const REG = [
+  ["مسقط","Muscat",[["مسقط","Muscat"],["مطرح","Muttrah"],["بوشر","Bawshar"],["السيب","As Seeb"],["العامرات","Al Amarat"],["قريات","Qurayyat"]]],
+  ["ظفار","Dhofar",[["صلالة","Salalah"],["طاقة","Taqah"],["مرباط","Mirbat"],["رخيوت","Rakhyut"],["ثمريت","Thumrait"],["ضلكوت","Dhalkut"],["المزيونة","Al Mazyunah"],["مقشن","Muqshin"],["شليم وجزر الحلانيات","Shalim & Hallaniyat Islands"],["سدح","Sadah"]]],
+  ["شمال الباطنة","North Al Batinah",[["صحار","Sohar"],["شناص","Shinas"],["لوى","Liwa"],["صحم","Saham"],["الخابورة","Al Khaburah"],["السويق","As Suwaiq"]]],
+  ["جنوب الباطنة","South Al Batinah",[["الرستاق","Ar Rustaq"],["العوابي","Al Awabi"],["نخل","Nakhal"],["وادي المعاول","Wadi Al Maawil"],["بركاء","Barka"],["المصنعة","Al Musannah"]]],
+  ["الداخلية","Ad Dakhiliyah",[["نزوى","Nizwa"],["بهلاء","Bahla"],["منح","Manah"],["الحمراء","Al Hamra"],["أدم","Adam"],["إزكي","Izki"],["سمائل","Samail"],["بدبد","Bidbid"],["الجبل الأخضر","Al Jabal Al Akhdar"]]],
+  ["شمال الشرقية","North Ash Sharqiyah",[["إبراء","Ibra"],["المضيبي","Al Mudhaibi"],["بدية","Bidiyah"],["القابل","Al Qabil"],["وادي بني خالد","Wadi Bani Khalid"],["دماء والطائيين","Dima Wa Al Taiyyin"]]],
+  ["جنوب الشرقية","South Ash Sharqiyah",[["صور","Sur"],["الكامل والوافي","Al Kamil Wal Wafi"],["جعلان بني بو حسن","Jaalan Bani Bu Hassan"],["جعلان بني بو علي","Jaalan Bani Bu Ali"],["مصيرة","Masirah"]]],
+  ["الظاهرة","Ad Dhahirah",[["عبري","Ibri"],["ينقل","Yanqul"],["ضنك","Dhank"]]],
+  ["البريمي","Al Buraimi",[["البريمي","Al Buraimi"],["محضة","Mahdah"],["السنينة","As Sunaynah"]]],
+  ["الوسطى","Al Wusta",[["هيما","Haima"],["محوت","Mahout"],["الدقم","Duqm"],["الجازر","Al Jazer"]]],
+  ["مسندم","Musandam",[["خصب","Khasab"],["دبا","Dibba"],["بخا","Bukha"],["مدحاء","Madha"]]]
+];
+const EN_NAME = {}; REG.forEach(([g,ge,ws]) => { EN_NAME[g] = ge; ws.forEach(([w,we]) => { EN_NAME[w] = we; }); });
+const WILS = g => (REG.find(r=>r[0]===g)||REG[0])[2].map(w=>w[0]);
+const DAY = 86400000, ONLINE_HOURS = 2;
+
+/* ===== اللغة ===== */
+let LANG = "ar";
+const t = (k, v) => { const e = STR[k]; let s = e ? (Array.isArray(e[LI[LANG]]) ? e[LI[LANG]] : (e[LI[LANG]] || e[0])) : k; if (v && typeof s === "string") s = s.replace(/\{(\w+)\}/g, (m,x) => v[x] ?? m); return s; };
+const pl = ar => LANG==="en" ? (EN_NAME[ar] || ar) : ar;
+const svcName = k => (SERVICES[k]||[k])[LI[LANG]] || k;
+const vehName = k => (VEHICLES[k]||[k])[LI[LANG]] || k;
+const brand = () => CONFIG.name[LANG];
+const sep = () => LANG==="en" ? ", " : "، ";
+
+/* ===== التخزين (يُستبدل بـ Firebase عند الإطلاق) ===== */
+const KEY = "mandoob_v7", SKEY = "mandoob_session", CKEY = "mandoob_customer", LKEY = "mandoob_lang";
+const ls = { get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }, set(k,v){ try { localStorage.setItem(k,v); } catch(e){} }, del(k){ try { localStorage.removeItem(k); } catch(e){} } };
+let mem = null;
+const store = {
+  load(){ if (mem) return mem; try { mem = JSON.parse(ls.get(KEY)||"null"); } catch(e){ mem = null; } if (!mem || !Array.isArray(mem.drivers)) { mem = { drivers: [] }; } if (!Array.isArray(mem.msgs)) mem.msgs = []; store.save(); return mem; },
+  msgs(){ return FB.on ? FB.msgs : store.load().msgs; },
+  addMsg(m){
+    if (FB.on){ const { id, ...rest } = m; return ensureAuth().then(uid => FB.db.collection("msgs").add({ type:"", name:"", reach:"", text:"", lang:LANG, at:Date.now(), read:false, driverId:"", driverName:"", reason:"", ...rest, by:uid })).catch(fbErr); }
+    store.load().msgs.unshift(m); store.save();
+  },
+  msgUpdate(id, patch){ if (FB.on) return FB.db.collection("msgs").doc(id).update(patch).catch(fbErr); const x = store.msgs().find(y=>y.id===id); if (x){ Object.assign(x, patch); store.save(); } },
+  msgDelete(id){ if (FB.on) return FB.db.collection("msgs").doc(id).delete().catch(fbErr); mem.msgs = store.msgs().filter(y=>y.id!==id); store.save(); },
+  save(){ ls.set(KEY, JSON.stringify(mem)); },
+  all(){
+    if (!FB.on) return store.load().drivers;
+    const m = { ...(FB.all || FB.pub) }; if (FB.me) m[FB.me.id] = FB.me; return Object.values(m);
+  },
+  get(id){ return store.all().find(x=>x.id===id); },
+  byContact(ch, v){ return store.all().find(d => ch==="wa" ? d.phone===v : (d.email||"")===v); },
+  add(d){ store.load().drivers.push(d); store.save(); },
+  update(id, p){
+    const d = store.get(id); if (d) Object.assign(d, p);   // تحديث فوري للواجهة، والخادم يأكد أو يرفض
+    if (FB.on) return FB.db.collection("drivers").doc(id).update(p).catch(fbErr);
+    store.save();
+  },
+  remove(id){
+    if (FB.on){
+      const d = store.get(id); const b = FB.db.batch();
+      b.delete(FB.db.collection("drivers").doc(id)); if (d && d.phone) b.delete(FB.db.collection("phones").doc(d.phone));
+      return b.commit().then(() => { if (FB.user && FB.user.uid===id) return FB.user.delete().catch(() => FB.auth.signOut()); }).catch(fbErr);
+    }
+    store.load(); mem.drivers = mem.drivers.filter(x=>x.id!==id); store.save();
+  },
+  // إنشاء مندوب جديد: حجز الرقم + ملف المندوب في عملية وحدة (الخادم يرفض لو الرقم محجوز)
+  async createDriver(d){
+    const uid = FB.user.uid, b = FB.db.batch(); const { id, ...doc } = d;
+    b.set(FB.db.collection("phones").doc(doc.phone), { uid });
+    b.set(FB.db.collection("drivers").doc(uid), doc);
+    await b.commit();
+  }
+};
+
+/* ===== الخلفية: وضع المعاينة المحلي أو Firebase =====
+   بدون CONFIG.firebase: كل شي يشتغل محلياً على الجهاز (للمعاينة فقط).
+   مع CONFIG.firebase: البيانات مشتركة بين كل الأجهزة، والحماية تفرضها قواعد Firestore على الخادم. */
+const FB = { on:false, auth:null, db:null, user:null, isAdmin:false, adminChecked:false, pub:{}, me:null, meLoaded:false, all:null, msgs:[], unsubs:[] };
+const LOCAL = () => !FB.on;
+function loadScript(src){ return new Promise((res,rej) => { const el = document.createElement("script"); el.src = src; el.onload = res; el.onerror = rej; document.head.appendChild(el); }); }
+const cleanDoc = d => ({ id:d.id, ...d.data() });
+async function initBackend(){
+  if (!CONFIG.firebase) return;
+  const base = "https://www.gstatic.com/firebasejs/10.12.2/";
+  try { await loadScript(base + "firebase-app-compat.js"); await Promise.all([loadScript(base + "firebase-auth-compat.js"), loadScript(base + "firebase-firestore-compat.js")]); }
+  catch(e){ toast(t("netErr")); return; }
+  firebase.initializeApp(CONFIG.firebase);
+  FB.auth = firebase.auth(); FB.db = firebase.firestore(); FB.on = true;
+  // المندوبين الظاهرين للعامة فقط (status == active) — القاعدة على الخادم تمنع قراءة غيرهم
+  FB.db.collection("drivers").where("status","==","active").onSnapshot(q => { FB.pub = {}; q.forEach(d => FB.pub[d.id] = cleanDoc(d)); refreshView(); }, e => console.warn("drivers", e));
+  FB.auth.onAuthStateChanged(async u => {
+    FB.unsubs.forEach(f => f()); FB.unsubs = []; FB.user = u; FB.me = null; FB.meLoaded = false; FB.isAdmin = false; FB.adminChecked = false; FB.all = null; FB.msgs = [];
+    if (u && !u.isAnonymous){
+      ls.set(SKEY, u.uid);
+      FB.unsubs.push(FB.db.collection("drivers").doc(u.uid).onSnapshot(sn => { FB.me = sn.exists ? cleanDoc(sn) : null; FB.meLoaded = true; refreshView(); }, () => { FB.meLoaded = true; refreshView(); }));
+      try { FB.isAdmin = (await FB.db.collection("admins").doc(u.uid).get()).exists; } catch(e){ FB.isAdmin = false; }
+      FB.adminChecked = true;
+      if (FB.isAdmin){
+        FB.unsubs.push(FB.db.collection("drivers").onSnapshot(q => { FB.all = {}; q.forEach(d => FB.all[d.id] = cleanDoc(d)); refreshView(); }));
+        FB.unsubs.push(FB.db.collection("msgs").orderBy("at","desc").limit(300).onSnapshot(q => { FB.msgs = []; q.forEach(d => FB.msgs.push(cleanDoc(d))); refreshView(); }));
+      }
+    } else { ls.del(SKEY); FB.meLoaded = true; FB.adminChecked = true; }
+    refreshView();
+  });
+  await completeEmailLink();
+}
+async function completeEmailLink(){
+  if (!FB.auth.isSignInWithEmailLink(location.href)) return;
+  let email = ls.get("mandoob_email") || prompt(t("confirmEmail"));
+  if (!email) return;
+  try { await FB.auth.signInWithEmailLink(email.trim().toLowerCase(), location.href); ls.del("mandoob_email"); }
+  catch(e){ toast(t("netErr")); }
+  history.replaceState(null, "", location.pathname + location.hash);
+}
+function refreshView(){
+  const active = document.activeElement;
+  if (active && active.closest && active.closest("form, #acctPanel") && ["INPUT","TEXTAREA","SELECT"].includes(active.tagName)) return; // لا نقاطع المستخدم وهو يكتب
+  if (curView==="order" && order && !$("#ordStep2").classList.contains("hidden")) renderList();
+  if (curView==="account") renderAccount();
+  if (curView==="admin") renderAdmin();
+  if (curView==="join") renderJoin(true);
+}
+function authErrText(err){
+  const c = (err && err.code) || "unknown", host = location.hostname;
+  const M = {
+    "auth/unauthorized-continue-uri": `الرابط ${host} غير مضاف في Firebase ← Authentication ← Settings ← Authorized domains.`,
+    "auth/invalid-continue-uri": `الرابط ${host} غير مضاف في Firebase ← Authentication ← Settings ← Authorized domains.`,
+    "auth/unauthorized-domain": `الرابط ${host} غير مضاف في Firebase ← Authentication ← Settings ← Authorized domains.`,
+    "auth/operation-not-allowed": "الدخول برابط الإيميل غير مفعّل في Firebase (Sign-in method ← Email/Password ← فعّل Email link).",
+    "auth/quota-exceeded": "وصلنا الحد اليومي لرسائل الدخول في الخطة المجانية (5 في اليوم). جرّب بكرة.",
+    "auth/too-many-requests": "محاولات كثيرة. انتظر شوي وجرّب مرة ثانية.",
+    "auth/network-request-failed": "مشكلة في الاتصال بالإنترنت.",
+    "auth/invalid-email": "صيغة الإيميل غير صحيحة.",
+    "auth/invalid-api-key": "مفتاح Firebase (apiKey) في ملف config.js فيه خطأ.",
+    "auth/api-key-not-valid.-please-pass-a-valid-api-key.": "مفتاح Firebase (apiKey) في ملف config.js فيه خطأ.",
+    "auth/invalid-credential": "الإيميل أو كلمة المرور غير صحيحة.",
+    "auth/wrong-password": "كلمة المرور غير صحيحة.",
+    "auth/user-not-found": "ما فيه مستخدم بهذا الإيميل.",
+    "auth/user-disabled": "هذا الحساب معطّل."
+  };
+  console.warn("auth error", err);
+  return (M[c] || "خطأ غير متوقع.") + ' <bdi dir="ltr" style="opacity:.7">(' + esc(c) + ')</bdi>';
+}
+function fbErr(e){ console.warn(e); toast(e && e.code==="permission-denied" ? t("eTakenOrInvalid") : t("netErr")); }
+async function ensureAuth(){ if (!FB.auth.currentUser) await FB.auth.signInAnonymously(); return FB.auth.currentUser.uid; }
+
+/* ===== OTP (تجريبي حتى الربط بالخادم) ===== */
+const OTP = {
+  pending:null,
+  send(channel, target){ const code = String(Math.floor(100000+Math.random()*900000)); OTP.pending = { channel, target, code, exp:Date.now()+300000, tries:0 }; return { demoCode: CONFIG.demoOtp ? code : null }; },
+  verify(input){ const p = OTP.pending; if (!p) return {ok:false,msg:t("otpNone")}; if (Date.now()>p.exp) return {ok:false,msg:t("otpExpired")}; if (++p.tries>5) return {ok:false,msg:t("otpMany")}; if (input!==p.code) return {ok:false,msg:t("otpWrong")}; OTP.pending=null; return {ok:true, channel:p.channel, target:p.target}; }
+};
+
+/* ===== أدوات ===== */
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const normPhone = v => { let d = String(v).replace(/\D/g,""); if (d.startsWith("00968")) d = d.slice(5); else if (d.startsWith("968") && d.length===11) d = d.slice(3); return d; };
+const validPhone = d => /^[79]\d{7}$/.test(d);
+const validEmail = e => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e);
+const waLink = (num, text) => "https://wa.me/" + num + "?text=" + encodeURIComponent(text);
+const fmtDate = ts => ts ? new Date(ts).toLocaleDateString(LANGS[LANG].loc,{day:"numeric",month:"short",year:"numeric"}) : "";
+const first = n => String(n).split(" ")[0];
+function toast(m){ const el=$("#toast"); el.textContent=m; el.classList.add("show"); clearTimeout(el._h); el._h=setTimeout(()=>el.classList.remove("show"),2400); }
+const isLive = d => d.status==="active" && (!d.paidUntil || d.paidUntil > Date.now());
+const isOnline = d => !!d.available && (d.onlineUntil||0) > Date.now();
+const roundC = x => Math.round(x*100)/100;
+function kmBetween(a,b){ const R=6371, r=Math.PI/180, dLat=(b.lat-a.lat)*r, dLng=(b.lng-a.lng)*r; const h=Math.sin(dLat/2)**2+Math.cos(a.lat*r)*Math.cos(b.lat*r)*Math.sin(dLng/2)**2; return 2*R*Math.asin(Math.sqrt(h)); }
+const fmtKm = k => k < 1 ? t("lessKm") : t("km",{n:(k<10 && !Number.isInteger(k)) ? k.toFixed(1) : Math.round(k)});
+function fmtLeft(m){ const h=Math.floor(m/60), mm=m%60;
+  if (LANG==="en") return (h?`${h} h `:"") + (mm||!h?`${mm} min`:"");
+  if (LANG==="ur") return (h?`${h} گھنٹے `:"") + (mm||!h?`${mm} منٹ`:"");
+  const hs = h===1?"ساعة":h===2?"ساعتين":`${h} ساعات`; return m>=60 ? `${hs}${mm?" و"+mm+" دقيقة":""}` : `${m} دقيقة`; }
+function getPos(){ return new Promise((res,rej)=>{ if(!navigator.geolocation) return rej(); navigator.geolocation.getCurrentPosition(p=>res({lat:p.coords.latitude,lng:p.coords.longitude}), rej, {enableHighAccuracy:true,timeout:10000}); }); }
+function fillGov(sel){ const v = sel.value; sel.innerHTML = REG.map(r=>`<option value="${esc(r[0])}">${esc(pl(r[0]))}</option>`).join(""); if (v) sel.value = v; }
+function fillWil(sel, gov){ const v = sel.value; sel.innerHTML = WILS(gov).map(w=>`<option value="${esc(w)}">${esc(pl(w))}</option>`).join(""); if (v && WILS(gov).includes(v)) sel.value = v; }
+
+/* ===== تطبيق اللغة ===== */
+let fT, fD;
+function applyLang(){
+  const L = LANGS[LANG];
+  document.documentElement.lang = LANG; document.documentElement.dir = L.dir;
+  document.querySelectorAll("[data-i18n]").forEach(el => el.textContent = t(el.dataset.i18n));
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => el.placeholder = t(el.dataset.i18nPh));
+  document.querySelectorAll("[data-i18n-html]").forEach(el => el.innerHTML = t(el.dataset.i18nHtml));
+  document.querySelectorAll("[data-i18n-aria]").forEach(el => el.setAttribute("aria-label", t(el.dataset.i18nAria)));
+  document.querySelectorAll(".brandText").forEach(el => el.textContent = brand());
+  $("#helloTitle").textContent = t("hello",{b:brand()});
+  document.querySelectorAll(".feeTxt").forEach(el => el.textContent = t("feeChip",{f:CONFIG.deliveryFrom}));
+  document.querySelectorAll(".priceTxt").forEach(el => el.textContent = t("priceTxt",{p:CONFIG.price.toFixed(3), d:CONFIG.days}));
+  $("#langFlag").textContent = L.flag; $("#langCode").textContent = L.code;
+  document.title = LANG==="en" ? "Mandoob | Delivery drivers in Oman" : LANG==="ur" ? "مندوب | عمان میں ڈیلیوری ڈرائیور" : "مندوب | دليل مندوبي التوصيل في عُمان";
+  fT = new Intl.DateTimeFormat(L.loc,{timeZone:"Asia/Muscat",hour:"numeric",minute:"2-digit",second:"2-digit",hour12:true});
+  fD = new Intl.DateTimeFormat(L.loc,{timeZone:"Asia/Muscat",weekday:"long",day:"numeric",month:"long"});
+  tick();
+  // القوائم
+  fillGov($("#oGov")); fillWil($("#oWil"), $("#oGov").value);
+  fillGov($("#jGov")); fillWil($("#jWil"), $("#jGov").value);
+  const wv = $("#oWhen").selectedIndex; $("#oWhen").innerHTML = t("whenOpts").map((w,i)=>`<option value="${i}">${esc(w)}</option>`).join(""); $("#oWhen").selectedIndex = Math.max(0,wv);
+  const vv = $("#jVehicle").value; $("#jVehicle").innerHTML = Object.keys(VEHICLES).map(k=>`<option value="${k}">${esc(vehName(k))}</option>`).join(""); if (vv) $("#jVehicle").value = vv;
+  const checked = [...document.querySelectorAll("#jServices input:checked")].map(x=>x.value);
+  $("#jServices").innerHTML = Object.keys(SERVICES).map(k=>`<label><input type="checkbox" value="${k}" ${checked.includes(k)?"checked":""}> ${esc(svcName(k))}</label>`).join("");
+  buildFilterChips();
+  $("#termsPrevail").textContent = t("prevail");
+  renderTerms();
+  route(true);
+}
+function tick(){ const n = new Date(); if (fT){ $("#clkTime").textContent = fT.format(n); $("#clkDate").textContent = fD.format(n); } }
+function setLang(l){ const firstTime = !ls.get(LKEY); LANG = l; ls.set(LKEY, l); $("#langGate").classList.add("hidden"); document.body.classList.remove("lock"); applyLang(); if (firstTime) showSplash(); }
+/* شاشة الافتتاح: مشهدين بسيطين + خط يمشي، مرة وحدة في كل زيارة */
+let spTimers = [], spTick = null;
+function showSplash(){
+  try { if (sessionStorage.getItem("mandoob_splash")) return; sessionStorage.setItem("mandoob_splash","1"); } catch(e){}
+  const total = CONFIG.splashSeconds*1000;
+  $("#splash").classList.remove("hidden"); document.body.classList.add("lock");
+  spTimers.forEach(clearTimeout); spTimers = [];
+  const scene = n => { ["sc1","sc2"].forEach((id,i) => $("#"+id).classList.toggle("on", i===n)); ["dt1","dt2"].forEach((id,i) => $("#"+id).classList.toggle("on", i===n)); };
+  scene(-1);
+  spTimers.push(setTimeout(() => scene(0), 350));
+  spTimers.push(setTimeout(() => scene(1), total*0.5));
+  const t0 = Date.now(); clearInterval(spTick);
+  spTick = setInterval(() => {
+    const f = Math.min(1, (Date.now()-t0)/total);
+    $("#bootBar").style.width = Math.round(f*100) + "%";
+    if (f >= 1){ clearInterval(spTick); spTimers.push(setTimeout(hideSplash, 350)); }
+  }, 100);
+}
+function hideSplash(){ clearInterval(spTick); spTimers.forEach(clearTimeout); $("#splash").classList.add("hidden"); if (document.querySelector(".sheet-wrap:not(.hidden)") == null && $("#langGate").classList.contains("hidden")) document.body.classList.remove("lock"); }
+function openLangGate(){ document.querySelectorAll(".lang-opt").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.l===LANG && !!ls.get(LKEY)))); $("#langGate").classList.remove("hidden"); document.body.classList.add("lock"); }
+
+/* ===== طلب التوصيل ===== */
+const state = { service:"", nowOnly:false, wide:false };
+let order = null, orderLoc = "", orderPos = null;
+function buildFilterChips(){
+  const box = $("#fServices");
+  box.innerHTML = `<button type="button" class="chip" data-s="" aria-pressed="${state.service===""}">${t("all")}</button>` +
+    Object.keys(SERVICES).map(k=>`<button type="button" class="chip" data-s="${k}" aria-pressed="${state.service===k}">${esc(svcName(k))}</button>`).join("") +
+    `<button type="button" class="chip now" id="nowChip" aria-pressed="${state.nowOnly}">${t("onlineChip")}</button>`;
+}
+function initOrder(){
+  $("#oGov").addEventListener("change", () => { $("#oWil").value = ""; fillWil($("#oWil"), $("#oGov").value); });
+  try { const c = JSON.parse(ls.get(CKEY)||"{}"); if (c.name) $("#oName").value = c.name;
+    if (c.gov){ fillGov($("#oGov")); $("#oGov").value = c.gov; fillWil($("#oWil"), c.gov); if (c.wil) $("#oWil").value = c.wil; } } catch(e){}
+  $("#oLoc").addEventListener("click", async () => {
+    const b = $("#oLoc"); b.disabled = true; b.textContent = t("locating");
+    try { const p = await getPos(); orderPos = p; orderLoc = `https://maps.google.com/?q=${p.lat.toFixed(6)},${p.lng.toFixed(6)}`; $("#oLocOk").classList.remove("hidden"); $("#eoTo").textContent = ""; }
+    catch(e){ toast(navigator.geolocation ? t("noLoc") : t("noGeo")); }
+    b.disabled = false; b.textContent = t("myLoc");
+  });
+  $("#orderForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const v = id => $("#"+id).value.trim();
+    const errs = { eoName: v("oName").length<2 ? t("errName") : "", eoWhat: v("oWhat").length<3 ? t("errWhat") : "", eoFrom: v("oFrom") ? "" : t("errFrom"), eoTo: (v("oTo")||orderLoc) ? "" : t("errTo") };
+    let ok = true; Object.entries(errs).forEach(([k,m]) => { $("#"+k).textContent = m; if (m) ok = false; });
+    if (!ok){ toast(t("fixFields")); return; }
+    order = { name:v("oName"), gov:v("oGov"), wil:v("oWil"), what:v("oWhat"), from:v("oFrom"), to:v("oTo"), loc:orderLoc, pos:orderPos, when:+$("#oWhen").value, note:v("oNote") };
+    ls.set(CKEY, JSON.stringify({ name:order.name, gov:order.gov, wil:order.wil }));
+    state.wide = false; showList();
+  });
+  $("#ordEdit").addEventListener("click", () => { $("#ordStep2").classList.add("hidden"); $("#ordStep1").classList.remove("hidden"); window.scrollTo(0,0); });
+  $("#fServices").addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    if (b.id==="nowChip") state.nowOnly = !state.nowOnly; else state.service = b.dataset.s;
+    buildFilterChips(); renderList();
+  });
+  $("#radarBox").addEventListener("click", e => { if (e.target.closest("#radarLoc")) shareCustomerLoc(); });
+  $("#grid").addEventListener("click", e => {
+    if (e.target.closest("#wideBtn")){ state.wide = true; renderList(); return; }
+    const s = e.target.closest(".send-btn"); if (s){ sendTo(s.dataset.id); return; }
+    const r = e.target.closest(".report"); if (!r) return;
+    const d = store.get(r.dataset.id); if (!d) return;
+    openReport(d);
+  });
+}
+function renderOrder(){ $("#ordStep1").classList.toggle("hidden", !!order); $("#ordStep2").classList.toggle("hidden", !order); if (order) showList(true); }
+function showList(keepScroll){
+  $("#ordStep1").classList.add("hidden"); $("#ordStep2").classList.remove("hidden");
+  $("#ordSum").innerHTML = `<p>${esc(order.name)} · ${esc(pl(order.wil))}${sep()}${esc(pl(order.gov))} · ${esc(t("whenOpts")[order.when])}</p>
+    <p>📦 ${esc(order.what)}</p><p>${esc(t("mFrom"))}: ${esc(order.from)} · ${esc(t("mTo"))}: ${esc(order.to || t("mAttached"))}</p>`;
+  renderList(); if (!keepScroll) window.scrollTo(0,0);
+}
+async function shareCustomerLoc(){
+  const b = $("#radarLoc"); if (b){ b.disabled = true; b.textContent = t("locating"); }
+  try { const p = await getPos(); order.pos = orderPos = p; order.loc = orderLoc = `https://maps.google.com/?q=${p.lat.toFixed(6)},${p.lng.toFixed(6)}`; renderList(); }
+  catch(e){ toast(t("noLoc")); if (b){ b.disabled = false; b.textContent = t("shareMyLoc"); } }
+}
+function radarSVG(me, pts){
+  const R = 138, maxKm = Math.max(3, Math.ceil(Math.max(0, ...pts.map(p=>p.km))/3)*3);
+  const ring = f => `<circle r="${R*f}" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="1"/>`;
+  const lbl = f => `<text x="4" y="${-R*f+12}" font-size="10" fill="rgba(255,255,255,.6)">${fmtKm(maxKm*f)}</text>`;
+  const dots = pts.map(p => {
+    const dx = (p.d.lng-me.lng)*Math.cos(me.lat*Math.PI/180)*111.32, dy = (p.d.lat-me.lat)*110.57;
+    let x = dx/maxKm*R, y = -dy/maxKm*R; const r = Math.hypot(x,y); if (r > R){ x = x/r*R; y = y/r*R; }
+    const nm = esc(first(p.d.name)), big = p.d.featured;
+    return `<g class="dotg" data-id="${esc(p.d.id)}" transform="translate(${x.toFixed(1)},${y.toFixed(1)})" role="button" tabindex="0" aria-label="${nm}، ${fmtKm(p.km)}">
+      <circle r="18" fill="transparent"/>${big?`<circle r="12" fill="none" stroke="#FFD27A" stroke-width="2"/>`:""}<circle r="7" fill="var(--signal)" stroke="#fff" stroke-width="2"/>
+      <text y="${big?-16:-12}" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">${nm}</text></g>`;
+  }).join("");
+  return `<svg class="radar" viewBox="-160 -160 320 320" aria-label="${esc(t("radarAria"))}">
+    <defs><linearGradient id="sw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
+    <circle r="${R}" fill="rgba(255,255,255,.05)"/>${ring(1/3)}${ring(2/3)}${ring(1)}
+    <line x1="${-R}" y1="0" x2="${R}" y2="0" stroke="rgba(255,255,255,.12)"/><line x1="0" y1="${-R}" x2="0" y2="${R}" stroke="rgba(255,255,255,.12)"/>
+    <g class="sweep"><path d="M0 0 L${R} 0 A${R} ${R} 0 0 0 ${(R*Math.cos(-Math.PI/5)).toFixed(1)} ${(R*Math.sin(-Math.PI/5)).toFixed(1)} Z" fill="url(#sw)"/></g>
+    ${lbl(1/3)}${lbl(2/3)}${lbl(1)}
+    <circle class="pulse" r="8" fill="#4ADE80"/><circle r="6" fill="#4ADE80" stroke="#fff" stroke-width="2"/>
+    <text y="22" text-anchor="middle" font-size="11" fill="#fff">${esc(t("you"))}</text>${dots}</svg>`;
+}
+function renderList(){
+  const live = store.all().filter(isLive).filter(d => d.gov===order.gov);
+  let list = live.filter(d => state.wide || d.wil===order.wil);
+  if (state.service) list = list.filter(d => d.services.includes(state.service));
+  if (state.nowOnly) list = list.filter(isOnline);
+  const me = order.pos;
+  list.forEach(d => d._km = (me && isOnline(d) && d.lat!=null) ? kmBetween(me, d) : null);
+  list.sort((a,b) => (isOnline(b)-isOnline(a)) || (b.featured-a.featured) || ((a._km??1e9)-(b._km??1e9)) || (b.createdAt-a.createdAt));
+  const place = state.wide ? t("govOf",{g:pl(order.gov)}) : pl(order.wil);
+  $("#ordTitle").textContent = t("pickIn",{p:place});
+  const onl = list.filter(isOnline);
+  $("#count").textContent = list.length ? t("countLine",{n:list.length, o:onl.length}) : "";
+  let radar = "";
+  if (onl.length){
+    if (!me) radar = `<div class="radar-card"><h3><span class="live"></span>${esc(t("radarCount",{n:onl.length}))}</h3><p>${esc(t("radarShare"))}</p>
+      <div class="radar-cta"><button type="button" class="btn btn-sm" id="radarLoc">${esc(t("shareMyLoc"))}</button></div></div>`;
+    else { const onMap = onl.filter(d => d.lat!=null);
+      if (onMap.length) radar = `<div class="radar-card"><h3><span class="live"></span>${esc(t("radarTitle"))}</h3><p>${esc(t("radarNote"))}</p>${radarSVG(me, onMap.map(d=>({d, km:d._km})))}</div>`; }
+  }
+  $("#radarBox").innerHTML = radar;
+  if (!list.length){
+    const others = live.filter(d => d.wil!==order.wil).length;
+    const share = waLink("", t("inviteMsg",{b:brand(), u:location.origin+location.pathname}));
+    $("#grid").innerHTML = `<div class="empty"><h3>${esc(t("emptyTitle",{p:place}))}</h3><p>${esc(t("emptySub"))}</p>
+      ${!state.wide && others ? `<button type="button" class="btn btn-sea" id="wideBtn">${esc(t("showGov",{g:pl(order.gov), n:others}))}</button>` : `<a class="btn btn-ghost" href="${share}" target="_blank" rel="noopener">${esc(t("invite"))}</a>`}</div>`;
+    return;
+  }
+  $("#grid").innerHTML = list.map(d => { const on = isOnline(d); return `<article class="card${d.featured?" featured":""}" id="card-${esc(d.id)}">
+      <div class="top-row"><div><h3>${esc(d.name)}</h3><div class="where">${esc(pl(d.wil))}${sep()}${esc(pl(d.gov))}</div></div>
+        <div class="badges">${d.featured?`<span class="badge feat">${t("featured")}</span>`:""}${(d.verifiedBy==="phone"||d.verifiedBy==="wa")?`<span class="badge ver">${t("verified")}</span>`:""}</div></div>
+      <span class="status${on?" on":""}"><i></i>${on?t("online"):t("offline")}${d._km!=null?` · <span class="dist">${esc(t("away",{d:fmtKm(d._km)}))}</span>`:""}</span>
+      <div class="meta"><span class="tag">${esc(vehName(d.vehicle))}</span>${d.services.map(s=>`<span class="tag">${esc(svcName(s))}</span>`).join("")}</div>
+      ${d.area?`<div class="line-info">📍 ${esc(d.area)}</div>`:""}${d.times?`<div class="line-info">🕒 ${esc(d.times)}</div>`:""}
+      <button type="button" class="btn btn-wa btn-block send-btn" data-id="${esc(d.id)}">${esc(t("sendTo",{n:first(d.name)}))}</button>
+      <button class="report" type="button" data-id="${esc(d.id)}">${t("report")}</button></article>`; }).join("");
+  $("#radarBox").querySelectorAll(".dotg").forEach(g => {
+    const go = () => { const c = document.getElementById("card-"+g.dataset.id); if (!c) return; c.scrollIntoView({behavior:"smooth",block:"center"}); c.classList.remove("flash"); void c.offsetWidth; c.classList.add("flash"); };
+    g.addEventListener("click", go); g.addEventListener("keydown", e => { if (e.key==="Enter"||e.key===" "){ e.preventDefault(); go(); } });
+  });
+}
+function sendTo(id){
+  const d = store.get(id); if (!d || !order) return;
+  const L = [t("mHi",{n:first(d.name), b:brand()}), "", t("mNew"),
+    `${t("mName")}: ${order.name}`, `${t("mOrder")}: ${order.what}`, `${t("mFrom")}: ${order.from}`,
+    `${t("mTo")}: ${order.to || t("mAttached")}${sep()}${pl(order.wil)}`];
+  if (order.loc) L.push(`${t("mMap")}: ${order.loc}`);
+  L.push(`${t("mTime")}: ${t("whenOpts")[order.when]}`);
+  if (order.note) L.push(`${t("mNote")}: ${order.note}`);
+  L.push("", t("mPrice",{f:CONFIG.deliveryFrom}));
+  window.open(waLink("968"+d.phone, L.join("\n")), "_blank");
+  toast(t("waOpened"));
+}
+
+/* ===== ودجت التحقق ===== */
+function otpWidget(el, { mode, onVerified }){
+  const fbPhone = FB.on && CONFIG.auth.phone, fbEmailOnly = FB.on && !CONFIG.auth.phone;
+  let channel = fbEmailOnly ? "email" : "wa";
+  el.innerHTML = `<div class="o-start" style="display:grid;gap:16px">
+    <div class="${fbEmailOnly?"hidden":""}"><span class="lbl">${t("verifyVia")}</span><div class="seg" role="group"><button type="button" data-c="wa" aria-pressed="${!fbEmailOnly}">${FB.on?t("smsTab"):t("waTab")}</button><button type="button" data-c="email" aria-pressed="${fbEmailOnly}">${t("emailTab")}</button></div></div>
+    <div class="o-wa ${fbEmailOnly?"hidden":""}"><label class="lbl">${t("waNumLbl")}</label><div class="phone-row"><span>+968</span><input class="inp o-phone" type="tel" inputmode="numeric" maxlength="12" placeholder="9XXXXXXX" aria-label="${esc(t("waNumLbl"))}"></div></div>
+    <div class="o-email ${fbEmailOnly?"":"hidden"}"><label class="lbl">${t("emailLbl")}</label><input class="inp ltr o-mail" type="email" inputmode="email" autocomplete="email" placeholder="name@example.com" aria-label="${esc(t("emailLbl"))}"></div>
+    <div class="err o-err1"></div><button type="button" class="btn btn-sea o-send" id="otpSend-${mode}">${fbEmailOnly ? t("sendLink") : t("sendCode")}</button></div>
+    <div class="o-code hidden" style="display:grid;gap:12px">
+      <div class="o-sent hint" style="margin:0"></div><div class="demo-code hidden o-demo"></div>
+      <div><label class="lbl">${t("enterCode")}</label><input class="inp code-inp o-codein" type="text" inputmode="numeric" maxlength="6" autocomplete="one-time-code" aria-label="${esc(t("enterCode"))}"></div>
+      <div class="err o-err2"></div><button type="button" class="btn btn-signal o-verify">${t("confirm")}</button>
+      <button type="button" class="linkish o-again" style="justify-self:start">${t("resend")}</button></div>`;
+  const q = s => el.querySelector(s);
+  el.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => {
+    channel = b.dataset.c; el.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", String(x===b)));
+    q(".o-wa").classList.toggle("hidden", channel!=="wa"); q(".o-email").classList.toggle("hidden", channel!=="email"); q(".o-err1").textContent = "";
+  }));
+  q(".o-phone").addEventListener("input", e => e.target.value = e.target.value.replace(/\D/g,""));
+  q(".o-codein").addEventListener("input", e => e.target.value = e.target.value.replace(/\D/g,""));
+  q(".o-send").addEventListener("click", async () => {
+    q(".o-err1").textContent = ""; let target;
+    if (channel==="wa"){ target = normPhone(q(".o-phone").value); if (!validPhone(target)){ q(".o-err1").textContent = t("ePhone"); return; } }
+    else { target = q(".o-mail").value.trim().toLowerCase(); if (!validEmail(target)){ q(".o-err1").textContent = t("eEmail"); return; } }
+    if (FB.on){
+      const btn = q(".o-send"); btn.disabled = true;
+      try {
+        if (channel==="email"){
+          await FB.auth.sendSignInLinkToEmail(target, { url: location.origin + location.pathname + (mode==="join" ? "#join" : "#account"), handleCodeInApp: true });
+          ls.set("mandoob_email", target);
+          q(".o-sent").innerHTML = t("sentLink",{x:`<bdi dir="ltr">${esc(target)}</bdi>`});
+          q(".o-start").classList.add("hidden"); q(".o-code").classList.remove("hidden");
+          [".o-codein",".o-verify"].forEach(s => q(s).closest("div, button").classList.add("hidden")); q(".o-verify").classList.add("hidden");
+        } else {
+          FB.recaptcha = FB.recaptcha || new firebase.auth.RecaptchaVerifier(btn, { size:"invisible" });
+          FB.confirm = await FB.auth.signInWithPhoneNumber("+968" + target, FB.recaptcha);
+          q(".o-sent").innerHTML = t("sentWa",{x:`<bdi dir="ltr">+968 ${target}</bdi>`}).replace(/واتساب|WhatsApp|واٹس ایپ/, t("smsTab"));
+          q(".o-start").classList.add("hidden"); q(".o-code").classList.remove("hidden"); q(".o-codein").focus();
+          el._fbTarget = target;
+        }
+      } catch(e){ q(".o-err1").innerHTML = authErrText(e); }
+      btn.disabled = false; return;
+    }
+    const exists = store.byContact(channel, target);
+    if (mode==="join" && exists){ q(".o-err1").innerHTML = t("existsGoLogin"); return; }
+    if (mode==="login" && !exists){ q(".o-err1").innerHTML = t("notFound"); return; }
+    const r = OTP.send(channel, target);
+    q(".o-sent").innerHTML = channel==="wa" ? t("sentWa",{x:`<bdi dir="ltr">+968 ${target}</bdi>`}) : t("sentEmail",{x:`<bdi dir="ltr">${esc(target)}</bdi>`});
+    q(".o-demo").classList.toggle("hidden", !r.demoCode);
+    if (r.demoCode) q(".o-demo").innerHTML = `${t("demoCode",{c:`<b>${r.demoCode}</b>`})}<br>${t("demoNote")}`;
+    q(".o-start").classList.add("hidden"); q(".o-code").classList.remove("hidden"); q(".o-codein").focus();
+  });
+  q(".o-verify").addEventListener("click", async () => {
+    if (FB.on){
+      try { await FB.confirm.confirm(q(".o-codein").value.trim()); onVerified({ ok:true, channel:"phone", target: el._fbTarget }); }
+      catch(e){ q(".o-err2").textContent = t("otpWrong"); }
+      return;
+    }
+    const r = OTP.verify(q(".o-codein").value.trim()); if (!r.ok){ q(".o-err2").textContent = r.msg; return; } onVerified(r);
+  });
+  q(".o-again").addEventListener("click", () => otpWidget(el, { mode, onVerified }));
+}
+
+/* ===== التسجيل ===== */
+let joinVer = null;
+/* ===== الدفع =====
+   النسخة الحالية: بوابة تجريبية.
+   عند الإطلاق: start() يطلب من الخادم إنشاء جلسة دفع في ثواني ويحوّل المندوب لصفحة الدفع،
+   وثواني تبلّغ الخادم (webhook) بنجاح الدفع، والخادم يفعّل الإعلان تلقائياً. */
+const PAY = {
+  start(d){ return new Promise(res => {
+    $("#payGwAmt").innerHTML = `${CONFIG.price.toFixed(3)} <small>${t("omr")}</small>`;
+    $("#payGwWho").textContent = d.label || `${d.name} · +968 ${d.phone}`;
+    $("#payWrap").classList.remove("hidden"); document.body.classList.add("lock");
+    const close = ok => { $("#payWrap").classList.add("hidden"); document.body.classList.remove("lock"); $("#payGwOk").onclick = $("#payGwCancel").onclick = null; res(ok); };
+    $("#payGwOk").onclick = () => close(true); $("#payGwCancel").onclick = () => close(false);
+  }); }
+};
+function activatePaid(id){
+  const d = store.get(id); if (!d) return;
+  const now = Date.now();
+  const free = FB.on && CONFIG.trialFree;   // التجربة المجانية: ما تنحسب دخل
+  store.update(id, { status:"active", paidUntil: Math.max(now, d.paidUntil||0) + CONFIG.days*DAY, payHist: free ? (d.payHist||[]) : [...(d.payHist||[]), now] });
+}
+async function payFor(id, after){
+  const d = store.get(id); if (!d) return;
+  const ok = await PAY.start(d);
+  if (!ok){ toast(t("payCancelled")); return; }
+  activatePaid(id); after && after();
+}
+function setSteps(n){ ["sb1","sb2","sb3"].forEach((id,i)=>$("#"+id).classList.toggle("on", i<n)); }
+function joinShow(which){ ["joinVerify","joinPay","joinForm","joinDone"].forEach(id => $("#"+id).classList.toggle("hidden", id!==which)); }
+function initJoin(){
+  $("#jGov").addEventListener("change", () => { $("#jWil").value = ""; fillWil($("#jWil"), $("#jGov").value); });
+  $("#jPhone").addEventListener("input", e => { e.target.value = e.target.value.replace(/\D/g,""); });
+  $("#joinForm").addEventListener("submit", submitJoin);
+  // روابط الشروط داخل النموذج تفتح نافذة بدل الانتقال
+  $("#joinForm").addEventListener("click", e => { const a = e.target.closest('a[href="#terms"]'); if (a){ e.preventDefault(); openTermsSheet(); } });
+  $("#termsClose").onclick = closeTermsSheet;
+  $("#termsWrap").addEventListener("click", e => { if (e.target.id==="termsWrap") closeTermsSheet(); });
+  $("#termsAgree").onclick = () => { $("#jAgree").checked = true; $("#eAgree").textContent = ""; closeTermsSheet(); };
+  $("#paidGo").onclick = () => { closeSheet("#paidWrap"); $("#jName").focus(); };
+  $("#paidTerms").onclick = () => { closeSheet("#paidWrap"); openTermsSheet(); };
+}
+function openSheet(sel){ $(sel).classList.remove("hidden"); document.body.classList.add("lock"); }
+function closeSheet(sel){ $(sel).classList.add("hidden"); if (!document.querySelector(".sheet-wrap:not(.hidden)")) document.body.classList.remove("lock"); }
+function openTermsSheet(){ $("#termsSheetBody").innerHTML = TERMS[LANG].terms + TERMS[LANG].privacy; $("#termsWrap").querySelector(".sheet").scrollTop = 0; openSheet("#termsWrap"); }
+function closeTermsSheet(){ closeSheet("#termsWrap"); }
+const myDriver = () => { const id = ls.get(SKEY); return id && store.get(id); };
+const fbVer = () => FB.user.phoneNumber ? { channel:"phone", target: FB.user.phoneNumber.replace(/^\+968/,"") } : { channel:"email", target: FB.user.email };
+function renderJoin(keep){
+  if (FB.on){
+    if (FB.user && !FB.user.isAnonymous){
+      if (!FB.meLoaded){ joinShow("joinDone"); $("#joinDone").innerHTML = `<p class="hint">${t("loading")}</p>`; return; }
+      if (FB.me){ if ($("#joinDone").classList.contains("hidden") || !keep) location.hash = "#account"; return; }
+      joinVer = fbVer();
+      if (keep && !$("#joinForm").classList.contains("hidden")) return;
+      showPayStep(); return;
+    }
+    joinVer = null; setSteps(1); joinShow("joinVerify");
+    if (!keep || $("#joinVerify").dataset.fb !== "1"){ otpWidget($("#joinVerify"), { mode:"join", onVerified: () => {} }); $("#joinVerify").dataset.fb = "1"; } // الدخول يكمل عن طريق onAuthStateChanged
+    return;
+  }
+  const me = myDriver();
+  if (me && me.status==="incomplete"){ showJoinForm(me); return; }
+  if (keep && !$("#joinDone").classList.contains("hidden") && me){ showLive(me); return; }
+  if (keep && joinVer && !$("#joinPay").classList.contains("hidden")){ showPayStep(); return; }
+  joinVer = null; setSteps(1); joinShow("joinVerify");
+  otpWidget($("#joinVerify"), { mode:"join", onVerified: r => { joinVer = r; showPayStep(); } });
+}
+function showPayStep(){
+  setSteps(2); joinShow("joinPay");
+  const who = (joinVer.channel==="wa"||joinVer.channel==="phone") ? `+968 ${joinVer.target}` : joinVer.target;
+  if (FB.on){
+    $("#joinPay").innerHTML = `<div class="pay-card">
+      <div class="verified">${joinVer.channel==="phone" ? t("verifiedWa",{x:`<bdi dir="ltr">${esc(who)}</bdi>`}) : t("verifiedEmail",{x:`<bdi dir="ltr">${esc(who)}</bdi>`})}</div>
+      <h2 style="margin:0">${esc(CONFIG.trialFree ? t("trialTitle") : t("stepPay"))}</h2>
+      ${CONFIG.trialFree ? "" : `<div class="pay-amt">${CONFIG.price.toFixed(3)} <small>${t("omr")} · ${t("payPer",{d:CONFIG.days})}</small></div>`}
+      <p style="margin:0;color:var(--muted)">${esc(CONFIG.trialFree ? t("trialInfo") : t("payInfoFB"))}</p>
+      <button type="button" class="btn btn-signal btn-block" id="payBtn">${esc(t("continueData"))}</button></div>`;
+    $("#payBtn").onclick = () => showJoinForm({ verifiedBy: joinVer.channel, phone: joinVer.channel==="phone" ? joinVer.target : "", email: joinVer.channel==="email" ? joinVer.target : "", paidUntil:null });
+    window.scrollTo(0,0); return;
+  }
+  $("#joinPay").innerHTML = `<div class="pay-card">
+    <div class="verified">${joinVer.channel==="wa" ? t("verifiedWa",{x:`<bdi dir="ltr">${esc(who)}</bdi>`}) : t("verifiedEmail",{x:`<bdi dir="ltr">${esc(who)}</bdi>`})}</div>
+    <h2 style="margin:0">${esc(t("stepPay"))}</h2>
+    <div class="pay-amt">${CONFIG.price.toFixed(3)} <small>${t("omr")} · ${t("payPer",{d:CONFIG.days})}</small></div>
+    <ul class="pay-lines"><li>${esc(t("payL2"))}</li><li>${esc(t("payL3"))}</li></ul>
+    <button type="button" class="btn btn-signal btn-block" id="payBtn">${esc(t("payNow",{p:CONFIG.price.toFixed(3)}))}</button>
+    <p class="secure">${esc(t("secure"))}</p></div>`;
+  $("#payBtn").onclick = async () => {
+    const ok = await PAY.start({ name: t("stepPay"), phone: who, label: who });
+    if (!ok){ toast(t("payCancelled")); return; }
+    const now = Date.now();
+    const d = { id:"m"+now.toString(36)+Math.random().toString(36).slice(2,5), name:"", phone: joinVer.channel==="wa" ? joinVer.target : "", email: joinVer.channel==="email" ? joinVer.target : "",
+      verifiedBy: joinVer.channel, gov:"", wil:"", services:[], vehicle:"car", area:"", times:"", lang: LANG,
+      status:"incomplete", featured:false, available:false, onlineUntil:0, lat:null, lng:null, createdAt: now, paidUntil: now + CONFIG.days*DAY, payHist:[now] };
+    store.add(d); ls.set(SKEY, d.id);
+    showJoinForm(d);
+    $("#paidOkSub").textContent = t("paidOkSub");
+    openSheet("#paidWrap");
+  };
+  window.scrollTo(0,0);
+}
+function showJoinForm(d){
+  setSteps(3); joinShow("joinForm");
+  $("#joinPaidChip").textContent = d.paidUntil ? t("paidChip",{d:fmtDate(d.paidUntil)}) : (FB.on && CONFIG.trialFree ? t("trialChip") : t("pendingChip"));
+  const isWa = d.verifiedBy==="wa" || d.verifiedBy==="phone";
+  $("#joinVerified").innerHTML = isWa ? t("verifiedWa",{x:`<bdi dir="ltr">+968 ${esc(d.phone)}</bdi>`}) : t("verifiedEmail",{x:`<bdi dir="ltr">${esc(d.email)}</bdi>`});
+  if (isWa) $("#jPhone").value = d.phone; $("#jPhone").readOnly = isWa;
+  if (d.name && !$("#jName").value) $("#jName").value = d.name;
+}
+async function submitJoin(e){
+  e.preventDefault();
+  if (FB.on) return submitJoinFB();
+  const me = myDriver(); if (!me || me.status!=="incomplete"){ renderJoin(); return; }
+  ["eName","ePhone","eServices","eAgree"].forEach(id=>$("#"+id).textContent="");
+  const name = $("#jName").value.trim(), phone = normPhone($("#jPhone").value);
+  const services = [...document.querySelectorAll("#jServices input:checked")].map(x=>x.value);
+  let ok = true;
+  if (name.length<3){ $("#eName").textContent = t("eName3"); ok=false; }
+  if (!validPhone(phone)){ $("#ePhone").textContent = t("ePhone"); ok=false; }
+  else if (store.all().some(x => x.id!==me.id && x.phone===phone)){ $("#ePhone").textContent = t("eTaken"); ok=false; }
+  if (!services.length){ $("#eServices").textContent = t("eSvc"); ok=false; }
+  if (!$("#jAgree").checked){ $("#eAgree").textContent = t("eAgree"); ok=false; }
+  if (!ok){ toast(t("checkFields")); return; }
+  store.update(me.id, { name, phone, gov:$("#jGov").value, wil:$("#jWil").value, services, vehicle:$("#jVehicle").value,
+    area:$("#jArea").value.trim(), times:$("#jTimes").value.trim(), lang: LANG, agreedAt: Date.now(),
+    status: (me.paidUntil && me.paidUntil > Date.now()) ? "active" : "unpaid" });
+  $("#joinForm").reset();
+  showLive(store.get(me.id));
+}
+async function submitJoinFB(){
+  if (!FB.user || FB.user.isAnonymous || !joinVer){ renderJoin(); return; }
+  ["eName","ePhone","eServices","eAgree"].forEach(id=>$("#"+id).textContent="");
+  const name = $("#jName").value.trim(), phone = normPhone($("#jPhone").value);
+  const services = [...document.querySelectorAll("#jServices input:checked")].map(x=>x.value);
+  let ok = true;
+  if (name.length<3){ $("#eName").textContent = t("eName3"); ok=false; }
+  if (!validPhone(phone)){ $("#ePhone").textContent = t("ePhone"); ok=false; }
+  if (!services.length){ $("#eServices").textContent = t("eSvc"); ok=false; }
+  if (!$("#jAgree").checked){ $("#eAgree").textContent = t("eAgree"); ok=false; }
+  if (!ok){ toast(t("checkFields")); return; }
+  const now = Date.now();
+  const d = { name, phone, email: FB.user.email || "", verifiedBy: joinVer.channel, gov:$("#jGov").value, wil:$("#jWil").value, services, vehicle:$("#jVehicle").value,
+    area:$("#jArea").value.trim(), times:$("#jTimes").value.trim(), lang: LANG, createdAt: now, agreedAt: now,
+    status:"pending", featured:false, paidUntil:null, payHist:[], available:false, onlineUntil:0, lat:null, lng:null };
+  const btn = $("#joinForm button[type=submit]"); btn.disabled = true;
+  try { await store.createDriver(d); $("#joinForm").reset(); showRegistered(); }
+  catch(e){ $("#ePhone").textContent = t("eTakenOrInvalid"); console.warn(e); }
+  btn.disabled = false;
+}
+function showRegistered(){
+  joinShow("joinDone");
+  $("#joinDone").innerHTML = `<div class="pay-card" style="text-align:center">
+    <svg class="check-anim" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="36"/><path d="M24 41l11 11 22-24"/></svg>
+    <h2 style="margin:0">${esc(t("regDoneTitle"))}</h2><p style="margin:0;color:var(--muted)">${esc(t("regDoneSub"))}</p>
+    <a class="btn btn-sea btn-block" href="#account">${esc(t("acctTitle"))}</a></div>`;
+  window.scrollTo(0,0);
+}
+function showLive(d){
+  joinShow("joinDone");
+  $("#joinDone").innerHTML = `<div class="pay-card" style="text-align:center">
+    <svg class="check-anim" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="36"/><path d="M24 41l11 11 22-24"/></svg>
+    <h2 style="margin:0">${esc(t("liveTitle",{n:first(d.name)}))}</h2>
+    <p style="margin:0;color:var(--muted)">${esc(t("doneSub",{w:pl(d.wil)}))}</p>
+    <a class="btn btn-ok btn-block" href="#account">${esc(t("goOnline"))}</a><p class="hint" style="margin:0">${esc(t("goOnlineHint"))}</p></div>`;
+  window.scrollTo(0,0);
+}
+
+/* ===== حساب المندوب ===== */
+let onlineTimer = null;
+function renderAccount(){
+  clearInterval(onlineTimer);
+  if (FB.on && FB.user && !FB.user.isAnonymous && !FB.meLoaded){ $("#acctLogin").classList.add("hidden"); $("#acctPanel").classList.remove("hidden"); $("#acctPanel").innerHTML = `<p class="hint">${t("loading")}</p>`; return; }
+  if (FB.on && FB.user && !FB.user.isAnonymous && !FB.me){
+    $("#acctSub").classList.add("hidden"); $("#acctLogin").classList.add("hidden"); $("#acctPanel").classList.remove("hidden");
+    $("#acctPanel").innerHTML = `<div class="box"><p style="margin:0 0 12px">${esc(t("noListing"))}</p><a class="btn btn-signal btn-block" href="#join">${esc(t("joinTitle"))}</a></div>
+      <div><button type="button" class="btn btn-ghost btn-sm" id="aOut">${t("logout")}</button></div>`;
+    $("#aOut").onclick = () => FB.auth.signOut();
+    return;
+  }
+  const id = FB.on ? (FB.me && FB.me.id) : ls.get(SKEY), d = id && store.get(id);
+  if (!d){
+    $("#acctSub").classList.remove("hidden"); $("#acctLogin").classList.remove("hidden"); $("#acctPanel").classList.add("hidden");
+    if (FB.on){ if ($("#acctLogin").dataset.fb !== "1"){ otpWidget($("#acctLogin"), { mode:"login", onVerified: () => {} }); $("#acctLogin").dataset.fb = "1"; } return; }
+    otpWidget($("#acctLogin"), { mode:"login", onVerified: r => { const u = store.byContact(r.channel, r.target); if (u){ ls.set(SKEY, u.id); renderAccount(); } } });
+    return;
+  }
+  $("#acctSub").classList.add("hidden"); $("#acctLogin").classList.add("hidden"); $("#acctPanel").classList.remove("hidden");
+  if (d.status==="incomplete"){
+    $("#acctPanel").innerHTML = `<div class="box renew-box"><h2>${esc(t("stIncomplete"))}</h2><p style="margin:0 0 12px">${esc(t("incompleteBox"))}</p><a class="btn btn-signal btn-block" href="#join">${esc(t("completeNow"))}</a></div>
+      <div style="display:flex;gap:8px"><button type="button" class="btn btn-ghost btn-sm" id="aOut">${t("logout")}</button></div>`;
+    $("#aOut").onclick = () => { if (FB.on) return FB.auth.signOut(); ls.del(SKEY); renderAccount(); };
+    return;
+  }
+  const [cls, txt] = d.status==="pending" ? ["pending",t("stPendingAdmin")] : d.status==="unpaid" ? ["pending",t("stUnpaid")] : d.status==="stopped" ? ["off",t("stStopped")] : isLive(d) ? ["active",t("stLive")] : ["off",t("stExpired")];
+  const daysLeft = d.paidUntil ? Math.ceil((d.paidUntil - Date.now())/DAY) : 0;
+  const payBox = d.status==="stopped" ? "" : d.status==="pending" ? `<div class="box renew-box"><p style="margin:0">${esc(t("pendingBox"))}</p></div>` : (!isLive(d) || daysLeft <= 5) ? `<div class="box renew-box"><p style="margin:0 0 10px">${esc(d.status==="unpaid" ? t("unpaidBox") : !isLive(d) ? t("expiredBox") : t("renewSoon",{n:daysLeft}))}</p>
+      <button type="button" class="btn btn-signal btn-block" id="aPay">${esc(d.status==="unpaid" ? t("payNow",{p:CONFIG.price.toFixed(3)}) : t("renewNow",{p:CONFIG.price.toFixed(3)}))}</button><p class="secure" style="margin:8px 0 0">${esc(t("secure"))}</p></div>` : "";
+  const on = isOnline(d);
+  const left = () => fmtLeft(Math.max(0, Math.round(((store.get(d.id)||d).onlineUntil - Date.now())/60000)));
+  const onSub = () => on ? `${d.lat!=null?t("onSubRadar"):t("onSubNoLoc")} · ${t("offIn",{t:left()})} · ${t("tapStop")}` : t("offSub");
+  $("#acctPanel").innerHTML = `
+    <div class="box"><h2>${esc(t("hi",{n:first(d.name)}))}</h2>
+      <p style="margin:0 0 6px">${t("adStatus")} <span class="st ${cls}">${txt}</span></p>
+      <p class="hint" style="margin:0">${esc(pl(d.wil))}${sep()}${esc(pl(d.gov))}${d.paidUntil?` · ${esc(t("subEnds",{d:fmtDate(d.paidUntil)}))}`:""}</p>
+</div>${payBox}
+    <button type="button" class="online-btn${on?" on":""}" id="aOnline" aria-pressed="${on}"><span class="dot" aria-hidden="true"></span>
+      <span><b>${on?t("onBtnOn"):t("onBtnOff")}</b><small id="aOnlineSub">${esc(onSub())}</small></span></button>
+    <div class="box"><h2>${t("adData")}</h2><div style="display:grid;gap:12px">
+      <div><label class="lbl" for="aArea">${t("area")}</label><input class="inp" id="aArea" maxlength="80" value="${esc(d.area)}"></div>
+      <div><label class="lbl" for="aTimes">${t("times")}</label><input class="inp" id="aTimes" maxlength="60" value="${esc(d.times)}"></div>
+      <button type="button" class="btn btn-sea" id="aSave">${t("save")}</button></div></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap"><button type="button" class="btn btn-ghost btn-sm" id="aOut">${t("logout")}</button><button type="button" class="btn btn-danger btn-sm" id="aDel">${t("delAcct")}</button></div>`;
+  $("#aOnline").onclick = async () => {
+    if (isOnline(store.get(d.id))){ store.update(d.id,{available:false,onlineUntil:0,lat:null,lng:null}); toast(t("nowOffline")); renderAccount(); return; }
+    $("#aOnline").disabled = true; $("#aOnlineSub").textContent = t("locatingApprox");
+    const patch = { available:true, onlineUntil: Date.now()+ONLINE_HOURS*3600000, lat:null, lng:null };
+    try { const p = await getPos(); patch.lat = roundC(p.lat); patch.lng = roundC(p.lng); toast(t("nowOnline")); } catch(e){ toast(t("onNoLoc")); }
+    store.update(d.id, patch); renderAccount();
+  };
+  if ($("#aPay")){ if (FB.on){ $("#aPay").textContent = t("renewContact"); $("#aPay").onclick = openContact; } else $("#aPay").onclick = () => payFor(d.id, () => { toast(t("paidTitle")); renderAccount(); }); }
+  if (on) onlineTimer = setInterval(() => { if (!isOnline(store.get(d.id))) renderAccount(); else $("#aOnlineSub").textContent = onSub(); }, 30000);
+  $("#aSave").onclick = () => { store.update(d.id,{area:$("#aArea").value.trim(), times:$("#aTimes").value.trim()}); toast(t("saved")); };
+  $("#aOut").onclick = () => { if (FB.on) return FB.auth.signOut(); ls.del(SKEY); renderAccount(); };
+  $("#aDel").onclick = () => { if (confirm(t("delConfirm"))){ store.remove(d.id); if (!FB.on) ls.del(SKEY); toast(t("deleted")); renderAccount(); } };
+}
+
+/* ===== تواصل وبلاغات (داخل المنصة، بدون أي رقم شخصي) ===== */
+let reportDriver = null;
+function openContact(){ $("#contactForm").reset(); $("#ecMsg").textContent = ""; openSheet("#contactWrap"); }
+function openReport(d){
+  reportDriver = d; $("#reportForm").reset(); $("#erWhy").textContent = "";
+  $("#reportTitle").textContent = t("repTitle",{n:first(d.name)});
+  $("#repReasons").innerHTML = t("reasons").map((r,i)=>`<label><input type="radio" name="rWhy" value="${i}"> ${esc(r)}</label>`).join("");
+  openSheet("#reportWrap");
+}
+function initMessages(){
+  document.addEventListener("click", e => { const c = e.target.closest("[data-close]"); if (c) closeSheet(c.dataset.close); });
+  ["#contactWrap","#reportWrap"].forEach(sel => $(sel).addEventListener("click", e => { if (e.target === $(sel)) closeSheet(sel); }));
+  $("#navContact").addEventListener("click", e => { e.preventDefault(); openContact(); });
+  $("#contactForm").addEventListener("submit", e => {
+    e.preventDefault(); const msg = $("#cMsg").value.trim();
+    if (msg.length < 3){ $("#ecMsg").textContent = t("cErr"); return; }
+    store.addMsg({ id:"c"+Date.now().toString(36), type:"contact", name:$("#cName").value.trim(), reach:$("#cReach").value.trim(), text:msg, lang:LANG, at:Date.now(), read:false });
+    closeSheet("#contactWrap"); toast(t("cSent"));
+  });
+  $("#reportForm").addEventListener("submit", e => {
+    e.preventDefault(); const r = document.querySelector('input[name=rWhy]:checked');
+    if (!r){ $("#erWhy").textContent = t("repPick"); return; }
+    store.addMsg({ id:"r"+Date.now().toString(36), type:"report", driverId:reportDriver.id, driverName:reportDriver.name, reason: STR.reasons[0][+r.value], text:$("#rMore").value.trim(), lang:LANG, at:Date.now(), read:false });
+    closeSheet("#reportWrap"); toast(t("repSent"));
+  });
+}
+
+/* ===== الشروط (بثلاث لغات) ===== */
+let termsTab = "terms";
+const TERMS = {
+  ar:{
+    terms:`<p class="hint">آخر تحديث: 30 سبتمبر 2026 – سلطنة عُمان</p>
+      <p>باستخدامك لمنصة «مندوب» فإنك تقر بأنك قرأت هذه الشروط ووافقت عليها.</p>
+      <h2>1. ما هي منصة مندوب؟</h2>
+      <p>منصة مندوب منصة إلكترونية تساعد العملاء على العثور على مندوبين مستقلين والتواصل معهم لطلب الخدمات، وتتيح للمندوبين عرض خدماتهم.</p>
+      <p>المنصة ليست شركة توصيل، والمندوب ليس موظفاً أو ممثلاً للمنصة. دور المنصة هو توفير وسيلة إلكترونية للتواصل بين العميل والمندوب عبر واتساب، ولا تكون طرفاً في الاتفاق الذي يتم بينهما.</p>
+      <h2>2. التسجيل واستخدام الحساب</h2>
+      <ul>
+        <li>العميل لا يحتاج إلى حساب لإرسال طلب.</li>
+        <li>يسجّل المندوب بعد التحقق من بريده الإلكتروني أو رقم هاتفه (بحسب الوسيلة المتاحة) برابط أو رمز تحقق يصله، ويُفعَّل إعلانه بعد مراجعة الإدارة.</li>
+        <li>يجب أن يكون عمر المستخدم 18 عاماً أو أكثر.</li>
+        <li>يجب تقديم معلومات صحيحة، وعدم استخدام بيانات شخص آخر أو رقم هاتف لا يخصك.</li>
+        <li>يجب المحافظة على سرية رابط أو رمز التحقق وعدم مشاركته مع أي شخص.</li>
+        <li>قد نطلب معلومات إضافية للتحقق عند الحاجة، لأغراض الأمان والامتثال للأنظمة المعمول بها، وسنُعلمك بذلك.</li>
+      </ul>
+      <h2>3. الاتفاق بين العميل والمندوب</h2>
+      <p>عند اختيار العميل لمندوب والتواصل معه، يكون أي اتفاق مباشراً بين العميل والمندوب، ويشمل تفاصيل الخدمة مثل:</p>
+      <ul><li>السعر.</li><li>وقت تنفيذ الخدمة.</li><li>مكان الاستلام والتسليم.</li><li>طريقة الدفع.</li><li>أي شروط أخرى متعلقة بالخدمة.</li></ul>
+      <p>المنصة لا تحدد سعر الخدمة، ولا تستلم قيمتها، ولا تضمن إتمام الاتفاق بين الطرفين. وقد تعرض المنصة سعراً استرشادياً للتوصيل يبدأ من 2 ريال عماني للاستئناس فقط، وهو غير ملزم، والسعر النهائي يُتفق عليه بين الطرفين.</p>
+      <h2>4. الاستخدام الممنوع</h2>
+      <p>يُمنع استخدام المنصة في أي من الحالات التالية:</p>
+      <ul>
+        <li>القيام بأي نشاط مخالف للقوانين والأنظمة المعمول بها في سلطنة عُمان.</li>
+        <li>نقل أو توصيل مواد أو أشياء ممنوعة قانوناً.</li>
+        <li>انتحال شخصية شخص آخر.</li>
+        <li>استخدام معلومات أو رقم هاتف غير صحيح.</li>
+        <li>تقديم خدمة تتطلب ترخيصاً أو تصريحاً رسمياً دون امتلاك الحق أو الترخيص اللازم.</li>
+        <li>الاحتيال أو الخداع أو محاولة الإضرار بالمستخدمين.</li>
+        <li>التهديد أو الإساءة أو التحرش.</li>
+        <li>استخدام المنصة بطريقة تؤثر على أمنها أو تشغيلها.</li>
+        <li>مشاركة رابط أو رمز التحقق، أو محاولة الدخول إلى حساب شخص آخر.</li>
+      </ul>
+      <h2>5. الرسوم</h2>
+      <ul>
+        <li>خلال المرحلة التجريبية (Beta) يكون استخدام المنصة مجانياً، ولا تفرض المنصة عمولة على الاتفاقات بين العملاء والمندوبين.</li>
+        <li>إذا طُبّقت رسوم مستقبلاً، ومنها اشتراك للمندوبين مقابل عرض إعلاناتهم، فسنوضحها قبل بدء تطبيقها.</li>
+        <li>لا يعني الاستخدام المجاني أن المنصة تستلم قيمة الخدمة أو تدير الدفع بين العميل والمندوب.</li>
+      </ul>
+      <h2>6. مسؤولية المستخدم</h2>
+      <p>كل مستخدم مسؤول عن المعلومات التي يقدمها وعن استخدامه للمنصة. والمندوب وحده مسؤول عن الحصول على أي تراخيص أو تصاريح يتطلبها نشاطه، وعن جودة خدمته وسلامة الطلبات.</p>
+      <p>نعمل على توفير وسائل تساعد على حماية المستخدمين، مثل مراجعة بيانات المندوب قبل تفعيل إعلانه، والنظر في البلاغات واتخاذ الإجراء المناسب، لكن لا يمكننا ضمان أن جميع المعلومات صحيحة أو أن كل اتفاق سيتم تنفيذه دون مشكلة. لذلك يُنصح بالتأكد من الطرف الآخر قبل إرسال الأموال أو تسليم المستندات أو الممتلكات، والاتفاق على السعر قبل بدء الخدمة.</p>
+      <h2>7. دور المنصة في حالة وجود مشكلة</h2>
+      <p>إذا حدثت مشكلة بين العميل والمندوب، يمكن للمستخدم إرسال التفاصيل عبر «تواصل» أو «بلّغ عن هذا الرقم». وقد تقوم المنصة، حسب الحالة والمعلومات المتوفرة، بمراجعة الحساب أو البلاغ واتخاذ إجراءات داخل المنصة، مثل:</p>
+      <ul><li>إرسال تنبيه.</li><li>تعليق الحساب.</li><li>إيقاف الحساب.</li><li>حظر الحساب.</li></ul>
+      <p>ولا يعني تقديم البلاغ أن المنصة تضمن نتيجة معينة أو تتحمل الاتفاق الخاص بين الطرفين.</p>
+      <h2>8. المعلومات والخصوصية</h2>
+      <p>نجمع فقط المعلومات اللازمة لتشغيل المنصة، ولا نبيع معلومات المستخدمين. تفاصيل ما نجمعه وكيف نستخدمه وحقوقك موضحة في تبويب «الخصوصية»، وهي جزء من هذه الشروط.</p>
+      <h2>9. إيقاف أو حذف الحساب</h2>
+      <p>يحق للمنصة تعليق أو إيقاف أو حظر أي حساب عند وجود مخالفة لهذه الشروط أو إساءة استخدام للمنصة أو وجود أسباب تتعلق بأمن المستخدمين والمنصة، ويكون الإجراء بحسب طبيعة الحالة والمعلومات المتوفرة. ويحق للمندوب حذف حسابه وبياناته في أي وقت من صفحة «حسابي».</p>
+      <h2>10. تحديث المنصة والشروط</h2>
+      <p>قد نقوم بتطوير المنصة أو إضافة خدمات أو تعديل بعض الخصائص، وقد نحدّث هذه الشروط عند الحاجة. سيتم نشر النسخة المحدثة داخل المنصة مع توضيح تاريخ آخر تحديث.</p>
+      <h2>11. القانون المعمول به</h2>
+      <p>تخضع هذه الشروط لاختصاص وقوانين سلطنة عُمان، وذلك بالقدر المسموح به قانوناً.</p>
+      <h2>12. التواصل معنا</h2>
+      <p>للاستفسارات أو الشكاوى أو الإبلاغ عن مشكلة، استخدم زر «تواصل» في أسفل الشاشة، أو «بلّغ عن هذا الرقم» تحت بطاقة المندوب.</p>
+      <p><b>باستخدامك لمنصة مندوب أو إنشاء حساب فيها، فإنك تؤكد أنك قرأت هذه الشروط وفهمتها ووافقت على الالتزام بها.</b></p>
+      <p class="hint">منصة مندوب — نسهّل التواصل، والاتفاق بين الطرفين.</p>`,
+    privacy:`<p class="hint">آخر تحديث: 30 سبتمبر 2026</p>
+      <h2>ما نجمعه</h2>
+      <ul>
+        <li><b>المندوب:</b> الاسم، رقم الواتساب، البريد الإلكتروني، معلومات التحقق وتسجيل الدخول، الولاية ونوع الخدمة والمركبة، المناطق وأوقات التوفر، وما يختار إضافته لحسابه.</li>
+        <li><b>عند ضغط «أنا متصل الآن»:</b> موقع تقريبي (بدقة حوالي كيلومتر، وليس موقعك الدقيق) ليظهر للزبائن القريبين. يُخفى تلقائياً من الرادار بعد ساعتين، ويُمسح عند ضغط «إيقاف» أو حذف الحساب.</li>
+        <li><b>العميل:</b> لا نحفظ تفاصيل طلبك ولا موقعك؛ تُرسل من جوالك إلى المندوب عبر واتساب. يُحفظ اسمك وولايتك على جهازك فقط لتسهيل طلبك القادم.</li>
+        <li>الرسائل والبلاغات التي ترسلها لنا.</li>
+      </ul>
+      <h2>كيف نستخدم المعلومات</h2>
+      <p>لعرض إعلان المندوب، والتحقق من الحسابات، ومعالجة البلاغات، وتحسين الخدمة. لا نبيع بياناتك ولا نشاركها لأغراض إعلانية.</p>
+      <h2>أين تُحفظ ومع من تُشارك</h2>
+      <p>نستخدم مزودي خدمات تقنية، مثل Google (Firebase) لقاعدة البيانات وتسجيل الدخول، وGitHub لاستضافة الموقع. تُخزَّن بيانات الحسابات على خوادم في دولة قطر (الدوحة)، أي خارج سلطنة عُمان، وقد يعالج هؤلاء المزودون بيانات تقنية مثل عنوان الشبكة (IP).</p>
+      <h2>الدفع</h2>
+      <p>لا نجمع بيانات بطاقات. وعند تفعيل الدفع مستقبلاً سيتم عبر بوابة دفع مرخصة، ولن تمر بيانات البطاقة على المنصة.</p>
+      <h2>مدة الاحتفاظ</h2>
+      <p>نحتفظ ببيانات المندوب ما دام حسابه قائماً، وتُحذف عند حذف الحساب. وتُحفظ الرسائل والبلاغات للمدة اللازمة لمراجعتها.</p>
+      <h2>حقوقك</h2>
+      <p>يقدر المندوب تعديل بياناته أو حذف حسابه وكل بياناته من «حسابي» في أي وقت. ولأي طلب آخر يخص بياناتك، راسلنا من «تواصل».</p>
+      <h2>الأطفال</h2>
+      <p>المنصة لمن عمره 18 عاماً فأكثر، ولا نجمع عمداً بيانات من هم دون ذلك.</p>
+      <h2>الحماية</h2>
+      <p>نستخدم اتصالاً مشفراً وقواعد وصول تمنع أي شخص من الاطلاع على بيانات غيره أو تعديلها.</p>`
+  },
+  en:{
+    terms:`<p class="hint">Last updated: 30 September 2026 – Sultanate of Oman</p>
+      <p>By using the Mandoob platform, you confirm that you have read and agreed to these terms.</p>
+      <h2>1. What is Mandoob?</h2>
+      <p>Mandoob is an online platform that helps customers find independent drivers and contact them to request services, and lets drivers list their services.</p>
+      <p>The platform is not a delivery company, and a driver is not an employee or representative of the platform. Its role is to provide an online way for customers and drivers to get in touch through WhatsApp; it is not a party to any agreement between them.</p>
+      <h2>2. Registration and account use</h2>
+      <ul>
+        <li>Customers do not need an account to send a request.</li>
+        <li>Drivers register after verifying their email or phone number (depending on the method available) with a link or code sent to them, and their listing is activated after review by the team.</li>
+        <li>Users must be 18 years or older.</li>
+        <li>Provide accurate information, and do not use another person's details or a phone number that is not yours.</li>
+        <li>Keep your verification link or code confidential and do not share it with anyone.</li>
+        <li>We may ask for additional information to verify you when needed, for security and legal compliance, and we will let you know.</li>
+      </ul>
+      <h2>3. Agreement between customer and driver</h2>
+      <p>When a customer chooses a driver and contacts them, any agreement is made directly between the two, and covers details such as:</p>
+      <ul><li>The price.</li><li>The time of service.</li><li>Pick-up and drop-off places.</li><li>The payment method.</li><li>Any other conditions.</li></ul>
+      <p>The platform does not set the price of a service, does not receive its payment, and does not guarantee that an agreement will be completed. It may show an indicative delivery price starting from 2 OMR as a guide only; this is not binding, and the final price is agreed between the two parties.</p>
+      <h2>4. Prohibited use</h2>
+      <p>You must not use the platform for any of the following:</p>
+      <ul>
+        <li>Any activity that breaks the laws and regulations in force in the Sultanate of Oman.</li>
+        <li>Carrying or delivering items that are prohibited by law.</li>
+        <li>Impersonating another person.</li>
+        <li>Using false information or a phone number that is not yours.</li>
+        <li>Offering a service that requires an official licence or permit without holding the required right or licence.</li>
+        <li>Fraud, deception, or trying to harm users.</li>
+        <li>Threats, abuse, or harassment.</li>
+        <li>Using the platform in a way that affects its security or operation.</li>
+        <li>Sharing a verification link or code, or trying to access another person's account.</li>
+      </ul>
+      <h2>5. Fees</h2>
+      <ul>
+        <li>During the trial (Beta) period, the platform is free to use, and it charges no commission on agreements between customers and drivers.</li>
+        <li>If fees are introduced in the future, including a subscription for drivers to display their listings, we will explain them before they start.</li>
+        <li>Free use does not mean the platform receives the price of the service or manages payment between customer and driver.</li>
+      </ul>
+      <h2>6. User responsibility</h2>
+      <p>Each user is responsible for the information they provide and for how they use the platform. The driver alone is responsible for obtaining any licences or permits their activity requires, and for the quality of their service and the safety of orders.</p>
+      <p>We work to provide measures that help protect users, such as reviewing a driver's details before activating their listing, and looking into reports and taking suitable action. However, we cannot guarantee that all information is accurate or that every agreement will be carried out without problems. So you are advised to check the other party before sending money or handing over documents or belongings, and to agree the price before the service starts.</p>
+      <h2>7. The platform's role if a problem occurs</h2>
+      <p>If a problem arises between a customer and a driver, the user can send the details through “Contact” or “Report this number”. Depending on the case and the information available, the platform may review the account or report and take action inside the platform, such as:</p>
+      <ul><li>Sending a warning.</li><li>Suspending the account.</li><li>Stopping the account.</li><li>Banning the account.</li></ul>
+      <p>Submitting a report does not mean the platform guarantees a particular outcome or takes responsibility for the private agreement between the two parties.</p>
+      <h2>8. Information and privacy</h2>
+      <p>We collect only the information needed to run the platform, and we do not sell users' information. Details of what we collect, how we use it, and your rights are in the “Privacy” tab, which forms part of these terms.</p>
+      <h2>9. Suspending or deleting an account</h2>
+      <p>The platform may suspend, stop, or ban any account if these terms are breached, the platform is misused, or there are reasons relating to the safety of users and the platform. The action depends on the nature of the case and the information available. A driver can delete their account and data at any time from “My account”.</p>
+      <h2>10. Updates to the platform and terms</h2>
+      <p>We may develop the platform, add services, or change some features, and we may update these terms when needed. The updated version will be published inside the platform with the date of the last update.</p>
+      <h2>11. Governing law</h2>
+      <p>These terms are subject to the jurisdiction and laws of the Sultanate of Oman, to the extent permitted by law.</p>
+      <h2>12. Contact us</h2>
+      <p>For enquiries, complaints, or to report a problem, use the “Contact” button at the bottom of the screen, or “Report this number” under a driver's card.</p>
+      <p><b>By using Mandoob or creating an account, you confirm that you have read and understood these terms and agree to abide by them.</b></p>
+      <p class="hint">Mandoob — we make contact easy; the agreement is between the two parties.</p>`,
+    privacy:`<p class="hint">Last updated: 30 September 2026</p>
+      <h2>What we collect</h2>
+      <ul>
+        <li><b>Drivers:</b> name, WhatsApp number, email, verification and sign-in information, wilayat, service and vehicle type, areas and working hours, and anything they choose to add to their account.</li>
+        <li><b>When you tap “I'm online”:</b> an approximate location (to about one kilometre, not your exact position) so nearby customers can see you. It is hidden from the radar automatically after two hours, and erased when you tap “Stop” or delete your account.</li>
+        <li><b>Customers:</b> we do not store your order details or location; they go from your phone to the driver on WhatsApp. Your name and wilayat are saved on your device only, to make your next order easier.</li>
+        <li>Messages and reports you send us.</li>
+      </ul>
+      <h2>How we use information</h2>
+      <p>To show driver listings, verify accounts, handle reports, and improve the service. We do not sell your data or share it for advertising.</p>
+      <h2>Where it is stored and who it is shared with</h2>
+      <p>We use technical service providers, such as Google (Firebase) for the database and sign-in, and GitHub for hosting the website. Account data is stored on servers in Qatar (Doha), which is outside the Sultanate of Oman, and these providers may process technical data such as network addresses (IP).</p>
+      <h2>Payments</h2>
+      <p>We do not collect card details. When payment is introduced in the future, it will go through a licensed payment gateway, and card details will not pass through the platform.</p>
+      <h2>How long we keep data</h2>
+      <p>We keep a driver's data while their account exists, and it is deleted when the account is deleted. Messages and reports are kept for as long as needed to review them.</p>
+      <h2>Your rights</h2>
+      <p>Drivers can edit their details or delete their account and all their data from “My account” at any time. For any other request about your data, message us via “Contact”.</p>
+      <h2>Children</h2>
+      <p>The platform is for people aged 18 or over, and we do not knowingly collect data from anyone younger.</p>
+      <h2>Security</h2>
+      <p>We use encrypted connections and access rules that stop anyone from viewing or changing other people's data.</p>`
+  },
+  ur:{
+    terms:`<p class="hint">آخری اپ ڈیٹ: 30 ستمبر 2026 – سلطنتِ عمان</p>
+      <p>مندوب پلیٹ فارم استعمال کر کے آپ تصدیق کرتے ہیں کہ آپ نے یہ شرائط پڑھ لی ہیں اور ان سے اتفاق کرتے ہیں۔</p>
+      <h2>1. مندوب کیا ہے؟</h2>
+      <p>مندوب ایک آن لائن پلیٹ فارم ہے جو گاہکوں کو آزاد ڈرائیور ڈھونڈنے اور خدمات کے لیے ان سے رابطہ کرنے میں مدد دیتا ہے، اور ڈرائیوروں کو اپنی خدمات دکھانے کی سہولت دیتا ہے۔</p>
+      <p>پلیٹ فارم کوئی ڈیلیوری کمپنی نہیں، اور ڈرائیور پلیٹ فارم کا ملازم یا نمائندہ نہیں۔ پلیٹ فارم کا کردار واٹس ایپ کے ذریعے گاہک اور ڈرائیور کے درمیان رابطے کا ذریعہ فراہم کرنا ہے، اور وہ ان کے درمیان طے پانے والے کسی معاہدے کا فریق نہیں۔</p>
+      <h2>2. رجسٹریشن اور اکاؤنٹ کا استعمال</h2>
+      <ul>
+        <li>گاہک کو آرڈر بھیجنے کے لیے اکاؤنٹ کی ضرورت نہیں۔</li>
+        <li>ڈرائیور اپنی ای میل یا فون نمبر (دستیاب طریقے کے مطابق) کی تصدیق لنک یا کوڈ کے ذریعے کرنے کے بعد رجسٹر ہوتا ہے، اور ٹیم کے جائزے کے بعد اس کا اشتہار فعال کیا جاتا ہے۔</li>
+        <li>صارف کی عمر 18 سال یا اس سے زیادہ ہونی چاہیے۔</li>
+        <li>درست معلومات دیں، اور کسی اور کی تفصیل یا ایسا فون نمبر استعمال نہ کریں جو آپ کا نہیں۔</li>
+        <li>تصدیقی لنک یا کوڈ کو خفیہ رکھیں اور کسی کے ساتھ شیئر نہ کریں۔</li>
+        <li>ضرورت پڑنے پر ہم سیکیورٹی اور قوانین کی پابندی کے لیے تصدیق کی خاطر اضافی معلومات مانگ سکتے ہیں، اور آپ کو مطلع کریں گے۔</li>
+      </ul>
+      <h2>3. گاہک اور ڈرائیور کے درمیان معاہدہ</h2>
+      <p>جب گاہک کوئی ڈرائیور چنتا ہے اور اس سے رابطہ کرتا ہے تو کوئی بھی معاہدہ براہِ راست دونوں کے درمیان ہوتا ہے، جس میں یہ تفصیلات شامل ہیں:</p>
+      <ul><li>قیمت۔</li><li>خدمت کا وقت۔</li><li>اٹھانے اور پہنچانے کی جگہ۔</li><li>ادائیگی کا طریقہ۔</li><li>کوئی اور شرط۔</li></ul>
+      <p>پلیٹ فارم خدمت کی قیمت طے نہیں کرتا، اس کی رقم وصول نہیں کرتا، اور معاہدہ مکمل ہونے کی ضمانت نہیں دیتا۔ وہ صرف رہنمائی کے لیے 2 عمانی ریال سے شروع ہونے والی اندازاً قیمت دکھا سکتا ہے، جو لازمی نہیں؛ حتمی قیمت دونوں فریق آپس میں طے کرتے ہیں۔</p>
+      <h2>4. ممنوعہ استعمال</h2>
+      <p>پلیٹ فارم کو درج ذیل کاموں کے لیے استعمال کرنا منع ہے:</p>
+      <ul>
+        <li>سلطنتِ عمان کے نافذ قوانین اور ضوابط کی خلاف ورزی پر مبنی کوئی بھی سرگرمی۔</li>
+        <li>ایسی اشیا لے جانا یا پہنچانا جو قانوناً ممنوع ہیں۔</li>
+        <li>کسی اور کی شناخت اختیار کرنا۔</li>
+        <li>غلط معلومات یا ایسا فون نمبر استعمال کرنا جو آپ کا نہیں۔</li>
+        <li>ایسی خدمت پیش کرنا جس کے لیے سرکاری لائسنس یا اجازت نامہ درکار ہو اور آپ کے پاس وہ نہ ہو۔</li>
+        <li>فراڈ، دھوکہ دہی، یا صارفین کو نقصان پہنچانے کی کوشش۔</li>
+        <li>دھمکی، بدسلوکی یا ہراسانی۔</li>
+        <li>پلیٹ فارم کو اس طرح استعمال کرنا جو اس کی سیکیورٹی یا کارکردگی کو متاثر کرے۔</li>
+        <li>تصدیقی لنک یا کوڈ شیئر کرنا، یا کسی اور کے اکاؤنٹ تک رسائی کی کوشش۔</li>
+      </ul>
+      <h2>5. فیس</h2>
+      <ul>
+        <li>تجرباتی مرحلے (Beta) میں پلیٹ فارم کا استعمال مفت ہے، اور پلیٹ فارم گاہکوں اور ڈرائیوروں کے معاہدوں پر کوئی کمیشن نہیں لیتا۔</li>
+        <li>اگر مستقبل میں کوئی فیس لاگو کی گئی، جس میں ڈرائیوروں کے اشتہار دکھانے کے بدلے سبسکرپشن بھی ہو سکتی ہے، تو لاگو ہونے سے پہلے اس کی وضاحت کی جائے گی۔</li>
+        <li>مفت استعمال کا مطلب یہ نہیں کہ پلیٹ فارم خدمت کی رقم وصول کرتا ہے یا گاہک اور ڈرائیور کے درمیان ادائیگی سنبھالتا ہے۔</li>
+      </ul>
+      <h2>6. صارف کی ذمہ داری</h2>
+      <p>ہر صارف اپنی دی ہوئی معلومات اور پلیٹ فارم کے استعمال کا خود ذمہ دار ہے۔ ڈرائیور اپنی سرگرمی کے لیے درکار لائسنس یا اجازت نامے حاصل کرنے، اپنی خدمت کے معیار اور آرڈر کی حفاظت کا اکیلا ذمہ دار ہے۔</p>
+      <p>ہم صارفین کے تحفظ کے لیے اقدامات کرتے ہیں، جیسے اشتہار فعال کرنے سے پہلے ڈرائیور کی معلومات کا جائزہ اور شکایات کی جانچ اور مناسب کارروائی، لیکن ہم اس کی ضمانت نہیں دے سکتے کہ تمام معلومات درست ہیں یا ہر معاہدہ بغیر مسئلے کے پورا ہوگا۔ اس لیے رقم بھیجنے یا دستاویزات اور سامان حوالے کرنے سے پہلے دوسرے فریق کی تصدیق کریں، اور خدمت شروع ہونے سے پہلے قیمت طے کر لیں۔</p>
+      <h2>7. مسئلہ ہونے کی صورت میں پلیٹ فارم کا کردار</h2>
+      <p>گاہک اور ڈرائیور کے درمیان مسئلہ ہو تو صارف «رابطہ» یا «اس نمبر کی شکایت کریں» کے ذریعے تفصیل بھیج سکتا ہے۔ صورتحال اور دستیاب معلومات کے مطابق پلیٹ فارم اکاؤنٹ یا شکایت کا جائزہ لے کر پلیٹ فارم کے اندر کارروائی کر سکتا ہے، جیسے:</p>
+      <ul><li>تنبیہ بھیجنا۔</li><li>اکاؤنٹ معطل کرنا۔</li><li>اکاؤنٹ بند کرنا۔</li><li>اکاؤنٹ پر پابندی لگانا۔</li></ul>
+      <p>شکایت جمع کرانے کا مطلب یہ نہیں کہ پلیٹ فارم کسی مخصوص نتیجے کی ضمانت دیتا ہے یا دونوں فریقوں کے نجی معاہدے کی ذمہ داری لیتا ہے۔</p>
+      <h2>8. معلومات اور رازداری</h2>
+      <p>ہم صرف پلیٹ فارم چلانے کے لیے ضروری معلومات جمع کرتے ہیں، اور صارفین کی معلومات فروخت نہیں کرتے۔ ہم کیا جمع کرتے ہیں، کیسے استعمال کرتے ہیں اور آپ کے حقوق کیا ہیں، اس کی تفصیل «رازداری» ٹیب میں ہے، جو ان شرائط کا حصہ ہے۔</p>
+      <h2>9. اکاؤنٹ معطل یا حذف کرنا</h2>
+      <p>شرائط کی خلاف ورزی، پلیٹ فارم کے غلط استعمال، یا صارفین اور پلیٹ فارم کی سیکیورٹی سے متعلق وجوہات ہوں تو پلیٹ فارم کسی بھی اکاؤنٹ کو معطل، بند یا اس پر پابندی لگا سکتا ہے۔ کارروائی کیس کی نوعیت اور دستیاب معلومات کے مطابق ہوتی ہے۔ ڈرائیور کسی بھی وقت «میرا اکاؤنٹ» سے اپنا اکاؤنٹ اور ڈیٹا حذف کر سکتا ہے۔</p>
+      <h2>10. پلیٹ فارم اور شرائط کی اپ ڈیٹ</h2>
+      <p>ہم پلیٹ فارم کو بہتر بنا سکتے ہیں، خدمات شامل کر سکتے ہیں یا کچھ خصوصیات بدل سکتے ہیں، اور ضرورت پڑنے پر ان شرائط کو اپ ڈیٹ کر سکتے ہیں۔ نیا ورژن پلیٹ فارم کے اندر آخری اپ ڈیٹ کی تاریخ کے ساتھ شائع کیا جائے گا۔</p>
+      <h2>11. لاگو قانون</h2>
+      <p>یہ شرائط قانون کی اجازت کی حد تک سلطنتِ عمان کے قوانین اور دائرۂ اختیار کے تحت ہیں۔</p>
+      <h2>12. ہم سے رابطہ</h2>
+      <p>سوالات، شکایات یا مسئلے کی اطلاع کے لیے اسکرین کے نیچے «رابطہ» بٹن یا ڈرائیور کارڈ کے نیچے «اس نمبر کی شکایت کریں» استعمال کریں۔</p>
+      <p><b>مندوب کے استعمال یا اس میں اکاؤنٹ بنانے سے آپ تصدیق کرتے ہیں کہ آپ نے یہ شرائط پڑھ لی ہیں، سمجھ لی ہیں اور ان کی پابندی پر متفق ہیں۔</b></p>
+      <p class="hint">مندوب — رابطہ آسان، اور معاہدہ دونوں فریقوں کے درمیان۔</p>`,
+    privacy:`<p class="hint">آخری اپ ڈیٹ: 30 ستمبر 2026</p>
+      <h2>ہم کیا جمع کرتے ہیں</h2>
+      <ul>
+        <li><b>ڈرائیور:</b> نام، واٹس ایپ نمبر، ای میل، تصدیق اور لاگ ان کی معلومات، ولایت، سروس اور گاڑی کی قسم، علاقے اور کام کے اوقات، اور جو کچھ وہ اپنے اکاؤنٹ میں شامل کرنا چاہے۔</li>
+        <li><b>«میں آن لائن ہوں» دبانے پر:</b> تقریبی لوکیشن (تقریباً ایک کلومیٹر تک، آپ کا اصل مقام نہیں) تاکہ قریبی گاہک دیکھ سکیں۔ یہ دو گھنٹے بعد خود بخود ریڈار سے چھپ جاتی ہے، اور «بند کریں» دبانے یا اکاؤنٹ حذف کرنے پر مٹا دی جاتی ہے۔</li>
+        <li><b>گاہک:</b> ہم آپ کے آرڈر کی تفصیل یا لوکیشن محفوظ نہیں کرتے؛ یہ آپ کے فون سے واٹس ایپ پر سیدھی ڈرائیور کو جاتی ہے۔ آپ کا نام اور ولایت اگلا آرڈر آسان بنانے کے لیے صرف آپ کے فون پر رہتے ہیں۔</li>
+        <li>آپ کے بھیجے گئے پیغامات اور شکایات۔</li>
+      </ul>
+      <h2>ہم معلومات کیسے استعمال کرتے ہیں</h2>
+      <p>ڈرائیور کا اشتہار دکھانے، اکاؤنٹس کی تصدیق، شکایات نمٹانے اور سروس بہتر کرنے کے لیے۔ ہم آپ کا ڈیٹا نہ بیچتے ہیں اور نہ اشتہارات کے لیے شیئر کرتے ہیں۔</p>
+      <h2>معلومات کہاں رکھی جاتی ہیں اور کس کے ساتھ شیئر ہوتی ہیں</h2>
+      <p>ہم تکنیکی سروس فراہم کنندگان استعمال کرتے ہیں، جیسے ڈیٹا بیس اور لاگ ان کے لیے Google (Firebase) اور ویب سائٹ کی ہوسٹنگ کے لیے GitHub۔ اکاؤنٹس کا ڈیٹا قطر (دوحہ) میں سرورز پر محفوظ ہوتا ہے، یعنی سلطنتِ عمان سے باہر، اور یہ فراہم کنندگان نیٹ ورک ایڈریس (IP) جیسا تکنیکی ڈیٹا پراسیس کر سکتے ہیں۔</p>
+      <h2>ادائیگی</h2>
+      <p>ہم کارڈ کی معلومات جمع نہیں کرتے۔ مستقبل میں ادائیگی شروع ہوئی تو لائسنس یافتہ پیمنٹ گیٹ وے سے ہوگی، اور کارڈ کی معلومات پلیٹ فارم سے نہیں گزریں گی۔</p>
+      <h2>ڈیٹا کتنی مدت رکھا جاتا ہے</h2>
+      <p>ڈرائیور کا ڈیٹا اس کا اکاؤنٹ قائم رہنے تک رکھا جاتا ہے اور اکاؤنٹ حذف کرنے پر مٹا دیا جاتا ہے۔ پیغامات اور شکایات جائزے کے لیے درکار مدت تک رکھی جاتی ہیں۔</p>
+      <h2>آپ کے حقوق</h2>
+      <p>ڈرائیور کسی بھی وقت «میرا اکاؤنٹ» سے اپنی معلومات بدل سکتا ہے یا اکاؤنٹ اور تمام ڈیٹا حذف کر سکتا ہے۔ اپنے ڈیٹا سے متعلق کسی اور درخواست کے لیے «رابطہ» سے پیغام بھیجیں۔</p>
+      <h2>بچے</h2>
+      <p>پلیٹ فارم 18 سال یا اس سے زیادہ عمر والوں کے لیے ہے، اور ہم جان بوجھ کر اس سے کم عمر افراد کا ڈیٹا جمع نہیں کرتے۔</p>
+      <h2>تحفظ</h2>
+      <p>ہم خفیہ کنکشن اور ایسے رسائی کے قواعد استعمال کرتے ہیں جو کسی کو دوسروں کا ڈیٹا دیکھنے یا بدلنے نہیں دیتے۔</p>`
+  }
+};
+function renderTerms(){ $("#termsBody").innerHTML = TERMS[LANG][termsTab]; $("#termsTabs").querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.t===termsTab))); }
+$("#termsTabs").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; termsTab = b.dataset.t; renderTerms(); });
+
+/* ===== الإدارة ===== */
+let adminTab = "pending";
+function healthMissing(d){
+  const missing = [];
+  if (!d.name || String(d.name).trim().length < 3) missing.push("الاسم");
+  if (!d.phone || !/^[79][0-9]{7}$/.test(String(d.phone))) missing.push("رقم الواتساب");
+  if (!d.gov || String(d.gov).trim().length < 2) missing.push("المحافظة");
+  if (!d.wil || String(d.wil).trim().length < 2) missing.push("الولاية");
+  if (!Array.isArray(d.services) || !d.services.length) missing.push("الخدمات");
+  if (!d.vehicle) missing.push("المركبة");
+  if (d.verifiedBy === "email" && !d.email) missing.push("البريد الإلكتروني");
+  if (!d.verifiedBy || !["email","phone"].includes(d.verifiedBy)) missing.push("طريقة التحقق");
+  return missing;
+}
+async function repairIncompleteDriver(id){
+  if (!FB.on || !FB.isAdmin) return toast("يلزم دخول الإدارة");
+  const d = store.get(id), missing = d && healthMissing(d);
+  if (!d) return toast("لم يتم العثور على المندوب");
+  if (d.status !== "incomplete" || missing.length) return toast(missing.length ? "لا يمكن الإصلاح: البيانات ناقصة" : "لا يحتاج هذا السجل إصلاحاً");
+  try {
+    await FB.db.collection("drivers").doc(id).update({status:"pending", available:false, onlineUntil:0, lat:null, lng:null});
+    toast("تم إصلاح الحالة: بانتظار تفعيل الإدارة");
+    renderAdmin();
+  } catch(e){ toast("تعذر إصلاح السجل"); console.warn(e); }
+}
+function renderHealth(all){
+  const issues = all.filter(d => d.status === "incomplete" || healthMissing(d).length);
+  const completeIncomplete = issues.filter(d => d.status === "incomplete" && !healthMissing(d).length);
+  const counts = ["pending","active","incomplete","unpaid","stopped"].map(s => `${s}: ${all.filter(d=>d.status===s).length}`).join(" · ");
+  const rows = issues.length ? issues.map(d => {
+    const missing = healthMissing(d), canRepair = d.status === "incomplete" && !missing.length;
+    return `<div class="row"><div class="r-head"><b>${esc(d.name || d.email || "بدون اسم")}</b><span class="badge ${canRepair?"ver":"demo"}">${esc(d.status || "بدون حالة")}</span></div><div class="r-meta">${missing.length ? "الناقص: " + missing.join("، ") : "البيانات الأساسية مكتملة"}</div><div class="r-actions">${canRepair ? `<button type="button" class="btn btn-sm btn-ok" data-health-a="repair" data-id="${esc(d.id)}">إصلاح إلى بانتظار التفعيل</button>` : ""}</div></div>`;
+  }).join("") : `<div class="empty"><h3>لا توجد مشكلات مكتشفة</h3><p>تم فحص الحقول الأساسية وحالات المندوبين الحالية.</p></div>`;
+  $("#adminList").innerHTML = `<div class="box"><h2>فحص صحة المنصة</h2><p style="margin:0 0 8px">هذه أداة تشخيص آمنة. لا تغيّر إلا حالة سجل مكتمل من <b>incomplete</b> إلى <b>pending</b>، ولا تفعّل أي مندوب تلقائياً.</p><p class="hint" style="margin:0">${counts}</p><button type="button" class="btn btn-ghost btn-sm" data-health-a="run" style="margin-top:12px">إعادة الفحص</button><p class="hint" style="margin:8px 0 0">سجلات تحتاج مراجعة: ${issues.length} · سجلات يمكن إصلاح حالتها: ${completeIncomplete.length}</p></div>${rows}`;
+}
+function initAdmin(){
+  $("#pinForm").addEventListener("submit", async e => {
+    e.preventDefault(); if (!FB.on) return; $("#ePin").textContent = "";
+    const btn = $("#pinForm button[type=submit]"); btn.disabled = true;
+    const email = String(CONFIG.adminEmail || "").trim().toLowerCase();
+    if (!email || email.includes("ضع-إيميل-المدير")) { $("#ePin").textContent = "لم يتم إعداد إيميل مدير Firebase."; btn.disabled = false; return; }
+    try { await FB.auth.signInWithEmailAndPassword(email, $("#admPass").value); $("#admPass").value = ""; }
+    catch(err){
+      $("#ePin").innerHTML = authErrText(err);
+    }
+    btn.disabled = false;
+  });
+  $("#admShow").addEventListener("change", e => { $("#admPass").type = e.target.checked ? "text" : "password"; });
+  $("#admForgot").addEventListener("click", async () => {
+    const msg = $("#admResetMsg"), btn = $("#admForgot");
+    msg.classList.add("hidden"); $("#ePin").textContent = "";
+    const email = String(CONFIG.adminEmail || "").trim().toLowerCase();
+    if (!email || email.includes("ضع-إيميل-المدير")) { $("#ePin").textContent = "إيميل استعادة كلمة المرور غير مُعد."; return; }
+    btn.disabled = true;
+    try {
+      await FB.auth.sendPasswordResetEmail(email);
+      msg.textContent = "تم إرسال رابط تغيير كلمة المرور إلى البريد المسجّل في Firebase. افحص البريد والرسائل غير المرغوب فيها.";
+      msg.classList.remove("hidden");
+    } catch(err) {
+      $("#ePin").innerHTML = authErrText(err);
+    }
+    btn.disabled = false;
+  });
+  ["#admOut","#admOut2"].forEach(sel => $(sel).addEventListener("click", () => FB.on && FB.auth.signOut()));
+  $("#adminTabs").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; adminTab = b.dataset.t; renderAdmin(); });
+  $("#adminList").addEventListener("click", e => {
+    const h = e.target.closest("button[data-health-a]");
+    if (h){ if (h.dataset.healthA === "repair") repairIncompleteDriver(h.dataset.id); else renderAdmin(); return; }
+    const m = e.target.closest("button[data-m]");
+    if (m){ const id = m.dataset.id, x = store.msgs().find(y=>y.id===id); if (!x) return;
+      if (m.dataset.m==="read") store.msgUpdate(id, { read: !x.read });
+      if (m.dataset.m==="del") store.msgDelete(id);
+      if (m.dataset.m==="stop" && x.driverId){ store.update(x.driverId,{status:"stopped", available:false}); store.msgUpdate(id, { read:true }); toast("تم إيقاف المندوب"); }
+      if (!FB.on) renderAdmin(); return; }
+    const b = e.target.closest("button[data-a]"); if (!b) return;
+    const id = b.dataset.id, a = b.dataset.a, d = store.get(id); if (!d) return;
+    if (a==="activate" || a==="renew"){ activatePaid(id); toast("تم التفعيل لمدة " + CONFIG.days + " يوم" + (FB.on && CONFIG.trialFree ? " (فترة تجريبية)" : " (دفع يدوي)")); }
+    if (a==="resume"){ store.update(id,{status: d.paidUntil && d.paidUntil > Date.now() ? "active" : "unpaid"}); toast("تم إلغاء الإيقاف"); }
+    if (a==="stop"){ store.update(id,{status:"stopped", available:false}); toast("تم الإيقاف"); }
+    if (a==="feat"){ store.update(id,{featured:!d.featured}); }
+    if (a==="del"){ if (confirm(`حذف ${d.name} نهائياً؟`)){ store.remove(id); toast("تم الحذف"); } }
+    renderAdmin();
+  });
+}
+function renderAdmin(){
+  const signedIn = FB.on && FB.user && !FB.user.isAnonymous, authed = FB.on && FB.isAdmin && FB.all !== null;
+  $("#adminLocal").classList.toggle("hidden", FB.on);
+  $("#pinForm").classList.toggle("hidden", !FB.on || signedIn);
+  $("#adminDenied").classList.toggle("hidden", !(signedIn && FB.adminChecked && !FB.isAdmin));
+  $("#adminPanel").classList.toggle("hidden", !authed); if (!authed) return;
+  const all = store.all();
+  const G = { pending: all.filter(d=>d.status==="pending"), incomplete: all.filter(d=>d.status==="incomplete"), unpaid: all.filter(d=>d.status==="unpaid"), active: all.filter(isLive), expired: all.filter(d=>d.status==="active" && d.paidUntil && d.paidUntil<=Date.now()), stopped: all.filter(d=>d.status==="stopped") };
+  const since = Date.now() - 30*DAY;
+  const paid30 = all.reduce((n,d) => n + (d.payHist||[]).filter(x => x > since).length, 0);
+  const total = all.reduce((n,d) => n + (d.payHist||[]).length, 0);
+  $("#stats").innerHTML = `<div class="stat"><b>${G.active.length}</b><span>مشترك فعّال</span></div><div class="stat"><b>${(paid30*CONFIG.price).toFixed(3)}</b><span>ر.ع دخل آخر 30 يوم</span></div><div class="stat"><b>${(total*CONFIG.price).toFixed(3)}</b><span>ر.ع إجمالي الدخل</span></div>`;
+  G.inbox = store.msgs();
+  const unread = G.inbox.filter(m=>!m.read).length;
+  const labels = { health:"فحص الصحة", inbox:`📥 الرسائل والبلاغات${unread?" ("+unread+" جديد)":""}`, pending:"بانتظار التفعيل", active:"فعّال", incomplete:"دفع ولم يكمل بياناته", unpaid:"بانتظار الدفع", expired:"منتهي", stopped:"موقوف" };
+  $("#adminTabs").innerHTML = Object.keys(labels).map(k=>`<button type="button" class="chip" data-t="${k}" aria-pressed="${k===adminTab}">${labels[k]}${k==="inbox" || k==="health" ? "" : " (" + G[k].length + ")"}</button>`).join("");
+  if (adminTab === "health"){ renderHealth(all); return; }
+  const list = G[adminTab];
+  if (adminTab==="inbox"){
+    $("#adminList").innerHTML = list.length ? list.map(m => `<div class="row" style="${m.read?"opacity:.65":""}">
+      <div class="r-head"><b>${m.type==="report" ? "🚩 بلاغ عن " + esc(m.driverName) : "💬 " + esc(m.name || "رسالة من زائر")}</b><span class="hint">${new Date(m.at).toLocaleString("ar-OM-u-nu-latn")}</span></div>
+      <div class="r-meta">${m.type==="report" ? "السبب: " + esc(m.reason) + (m.text ? "، " + esc(m.text) : "") : esc(m.text)}${m.reach ? "<br>للرد: <bdi dir=\"ltr\">" + esc(m.reach) + "</bdi>" : ""}</div>
+      <div class="r-actions"><button type="button" class="btn btn-sm btn-ghost" data-m="read" data-id="${esc(m.id)}">${m.read?"غير مقروء":"تم الاطلاع"}</button>${m.type==="report" && m.driverId ? `<button type="button" class="btn btn-sm btn-danger" data-m="stop" data-id="${esc(m.id)}">إيقاف المندوب</button>` : ""}<button type="button" class="btn btn-sm btn-ghost" data-m="del" data-id="${esc(m.id)}">حذف</button></div></div>`).join("")
+      : `<div class="empty"><p style="margin:0">ما في رسائل.</p></div>`;
+    return;
+  }
+  $("#adminList").innerHTML = list.length ? list.map(d => {
+    const btn = (a,tx,c) => `<button type="button" class="btn btn-sm ${c}" data-a="${a}" data-id="${esc(d.id)}">${tx}</button>`;
+    const acts = adminTab==="pending" ? btn("activate", CONFIG.trialFree ? "تفعيل (بعد التحقق من الرقم)" : "تفعيل (بعد التأكد من الدفع)","btn-ok")+btn("stop","إيقاف","btn-ghost")+btn("del","حذف","btn-danger") : adminTab==="incomplete" ? btn("del","حذف","btn-danger") : adminTab==="unpaid" ? btn("activate","تفعيل (دفع يدوي)","btn-ok")+btn("del","حذف","btn-danger") : adminTab==="active" ? btn("feat", d.featured?"إلغاء التمييز":"تمييز","btn-ghost")+btn("renew","تمديد " + CONFIG.days + " يوم","btn-ghost")+btn("stop","إيقاف","btn-danger") : adminTab==="expired" ? btn("renew","تجديد (دفع يدوي)","btn-ok")+btn("stop","إيقاف","btn-ghost") : btn("resume","إلغاء الإيقاف","btn-ok")+btn("del","حذف","btn-danger");
+    const bits = [d.verifiedBy==="phone" ? "رقم موثّق برسالة" : d.verifiedBy==="email" ? "تحقق بالإيميل، الرقم غير موثّق: تأكد منه قبل التفعيل" : "", d.wil ? `${esc(d.wil)}، ${esc(d.gov)}` : "بدون ولاية", `دفع ${(d.payHist||[]).length} مرة`, d.paidUntil ? "ينتهي " + new Date(d.paidUntil).toLocaleDateString("ar-OM-u-nu-latn") : "لم يدفع", d.verifiedBy==="email"?`تحقق بالإيميل (${esc(d.email)})`:"تحقق بالواتساب", `اللغة: ${d.lang==="en"?"English":d.lang==="ur"?"اردو":"عربي"}`, isOnline(d)?"متصل الآن":"غير متصل"];
+    bits.push("سُجّل " + new Date(d.createdAt).toLocaleDateString("ar-OM-u-nu-latn"));
+    return `<div class="row"><div class="r-head"><b>${esc(d.name || d.email || "بدون اسم")}${d.featured?' <span class="badge feat">مميز</span>':""}</b><a href="https://wa.me/968${esc(d.phone)}" target="_blank" rel="noopener" dir="ltr">+968 ${esc(d.phone)}</a></div><div class="r-meta">${bits.join("، ")}</div><div class="r-actions">${acts}</div></div>`;
+  }).join("") : `<div class="empty"><p style="margin:0">ما في شي في هذا القسم.</p></div>`;
+}
+
+/* ===== التنقل ===== */
+let curView = "home";
+function route(keep){
+  let v = (location.hash||"#home").slice(1); const views = ["home","order","join","account","terms","admin"];
+  if (v==="privacy"){ termsTab = "privacy"; renderTerms(); v = "terms"; }
+  const cur = views.includes(v) ? v : "home"; const changed = cur !== curView; curView = cur;
+  views.forEach(x => $("#view-"+x).classList.toggle("hidden", x!==cur));
+  const tab = cur==="join" ? "account" : cur;
+  document.querySelectorAll(".bnav a[data-v]").forEach(a => { if (a.dataset.v===tab) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+  $("#bnav").classList.toggle("hidden", cur==="admin");
+  if (cur!=="account") clearInterval(onlineTimer);
+  if (cur==="order") renderOrder();
+  if (cur==="join") renderJoin(keep===true);
+  if (cur==="account") renderAccount();
+  if (cur==="admin") renderAdmin();
+  if (keep!==true || changed) window.scrollTo(0,0);
+}
+
+/* ===== التشغيل ===== */
+document.querySelectorAll(".lang-opt").forEach(b => b.addEventListener("click", () => setLang(b.dataset.l)));
+$("#langBtn").addEventListener("click", openLangGate);
+$("#spSkip").addEventListener("click", hideSplash);
+document.addEventListener("keydown", e => { if (e.key==="Escape" && ls.get(LKEY) && !$("#langGate").classList.contains("hidden")){ $("#langGate").classList.add("hidden"); document.body.classList.remove("lock"); } });
+$("#yr").textContent = new Date().getFullYear();
+setInterval(tick, 1000);
+initOrder(); initJoin(); initAdmin(); initMessages();
+window.addEventListener("hashchange", () => route());
+const saved = ls.get(LKEY);
+LANG = LANGS[saved] ? saved : "ar";
+applyLang();
+if (!saved) openLangGate(); else if (location.hash==="" || location.hash==="#home") showSplash();
+initBackend();
+</script>
+</body>
+</html>
