@@ -1,0 +1,86 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return signedIn()
+        && exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+        && get(/databases/$(database)/documents/admins/$(request.auth.uid)).data.active == true;
+    }
+
+    function isOwner(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function immutableAccountFields() {
+      return [
+        'role', 'admin', 'accountStatus', 'paymentStatus',
+        'subscriptionStart', 'subscriptionEnd', 'paidUntil',
+        'payHist', 'featured', 'suspendedAt', 'suspendedReason',
+        'createdAt', 'agreedAt', 'verifiedBy', 'email'
+      ];
+    }
+
+    match /admins/{uid} {
+      allow read: if isAdmin() || isOwner(uid);
+      allow write: if false;
+    }
+
+    match /drivers/{uid} {
+      allow read: if isAdmin()
+        || (resource.data.accountStatus == 'active'
+          && resource.data.paymentStatus == 'paid'
+          && resource.data.subscriptionEnd > request.time.toMillis())
+        || isOwner(uid);
+
+      allow create: if isOwner(uid)
+        && request.resource.data.role == 'driver'
+        && request.resource.data.accountStatus == 'pending'
+        && request.resource.data.paymentStatus == 'pending'
+        && request.resource.data.featured == false
+        && request.resource.data.payHist.size() == 0
+        && request.resource.data.subscriptionStart == null
+        && request.resource.data.subscriptionEnd == null;
+
+      allow update: if isAdmin()
+        || (isOwner(uid)
+          && request.resource.data.diff(resource.data).affectedKeys()
+            .hasOnly([
+              'name', 'phone', 'gov', 'wil', 'services', 'vehicle', 'area',
+              'times', 'lang', 'available', 'onlineUntil', 'lat', 'lng', 'updatedAt'
+            ])
+          && request.resource.data.role == resource.data.role
+          && request.resource.data.accountStatus == resource.data.accountStatus
+          && request.resource.data.paymentStatus == resource.data.paymentStatus
+          && request.resource.data.subscriptionEnd == resource.data.subscriptionEnd
+          && request.resource.data.paidUntil == resource.data.paidUntil
+          && request.resource.data.featured == resource.data.featured
+          && (request.resource.data.available == false
+            || (request.resource.data.available == true
+              && resource.data.accountStatus == 'active'
+              && resource.data.paymentStatus == 'paid'
+              && resource.data.subscriptionEnd > request.time.toMillis())));
+
+      allow delete: if isAdmin() || isOwner(uid);
+    }
+
+    match /phones/{phone} {
+      allow read: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
+      allow create: if signedIn()
+        && request.resource.data.uid == request.auth.uid
+        && !exists(/databases/$(database)/documents/phones/$(phone));
+      allow update, delete: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
+    }
+
+    match /msgs/{id} {
+      allow create: if signedIn()
+        && request.resource.data.by == request.auth.uid
+        && request.resource.data.read == false;
+      allow read, update, delete: if isAdmin();
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "drivers",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "accountStatus", "order": "ASCENDING" },
+        { "fieldPath": "paymentStatus", "order": "ASCENDING" },
+        { "fieldPath": "subscriptionEnd", "order": "ASCENDING" }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}
